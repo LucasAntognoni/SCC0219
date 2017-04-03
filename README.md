@@ -1,2 +1,3 @@
-# SCC0219_Web_Development
-Repository for SCC0219 - Introduction to Web Development projects
+# SCC0219 - Introduction to Web Development
+
+Repository for class projects and exercises
