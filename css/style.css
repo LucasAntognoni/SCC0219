@@ -1,0 +1,69 @@
+/*__________________HEADER__________________*/
+
+.header {
+  width: auto;
+  border-radius: 0;
+  border: 0;
+  background-color: #0066ff;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover*/
+li a:hover {
+    background-color: #1a75ff;
+}
+
+/*__________________END__________________*/
+
+
+/*__________________FOOTER__________________*/
+.footer{
+  width: auto;
+  border-radius: 0;
+  border: 0;
+  background-color: #0066ff;
+  margin-top: 20px;
+}
+
+section{
+  align-items: center;
+}
+
+#hours{
+  color: white;
+  text-align: left;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#adress{
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#copyright{
+  color: white;
+  text-align: left;
+  padding: 14px 16px;
+  text-decoration: none;
+}
