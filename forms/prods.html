@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <title>Adicionar Produto - Pet Shop</title>
+    <link rel="stylesheet" href="../css/style.css">
+  </head>
+  <body>
+    <header>
+      <div class="header">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#serviços">Serviços</a></li>
+            <li style="float:right"><a href="#login">Login</a></li>
+          </ul>
+      </div>
+    </header>
+	<div class = "header">
+		<h1>Registre um Novo Produto</h1>
+	</div>
+		<form>
+			<div class=textlines>
+				Nome do Produto:
+				<input type="text" name="produto"><br></br>
+				ID:
+				<input type="text" name="ID"><br></br>
+				Descrição:
+				<input type="text" name="Descrição" size=200><br</br>
+				Imagem: <!--- ainda não sei como pedir pela entrada de imagem do
+				usuário--!> <br></br>
+
+				Preço:
+				<input type="number" name="Preço" max=9999.99 min=0.0
+				default=0.0>
+				Estoque:
+				<input type="number" name="Estoque" min=0 max=999>
+				Quantidade Vedida:
+				<input type="number" name="Vendas" min=0>
+			</div>
+			
+		</form>
+    <footer>
+      <div class="footer">
+
+        <section id="hours">
+          <span>Horário:</span>
+        </section>
+
+        <section id="adress">
+          <span>Endereço:</span>
+        </section>
+
+        <div id="copyright">&copy; Copyright Pet Shop 2017</div>
+
+      </div>
+    </footer>
+
+  </body>
+</html>
