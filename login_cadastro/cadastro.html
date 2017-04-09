@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Pet Shop</title>
+      <link rel="stylesheet" href="../css/style.css">
+            <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <nav>
+          <ul>
+            <li><a href="../index.html"><img border="0" alt="PetJava" width="20%" height="20%" src="../img/logo.PNG"></a></li>
+            <li><a href="../index.html">Home</a></li>
+            <!--<li><input type="text" autocomplete="on"> </li>
+            <li><button type="submit" onclick="">Search</button></li> -->
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#serviços">Serviços</a></li>
+            <li><a href="./login.html">Login</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+
+    <h2>Cadastre-se</h2>
+
+    <form style="border:1px solid #ccc">
+        <div class="container">
+            <label><b>Nome</b></label>
+            <input type="text" placeholder="Digite o nome completo" name="name" required>
+
+            <label><b>Foto</b></label></br>
+            <input type="file" name="pic" accept="image/*"></br></br>
+
+            <label><b>Telefone</b></label>
+            <input type="text" placeholder="Digite telefone para contato" name="phone" required>
+
+            <label><b>Endereço</b></label>
+            <input type="text" placeholder="Digite endereço de cobrança" name="address" required>
+
+            <label><b>Email</b></label>
+            <input type="text" placeholder="Digite o email" name="email" required>
+
+            <label><b>Senha</b></label>
+            <input type="password" placeholder="Digete a senha" name="psw" required>
+
+            <label><b>Confirme senha</b></label>
+            <input type="password" placeholder="Repita a senha" name="psw-repeat" required>
+            <input type="checkbox" checked="checked"> Salvar dados
+            <p>Ao criar seu cadastro estará aceitando nossa <a href="#">Política de termos</a>.</p>
+
+            <div class="clearfix">
+                <button class="button" type="submit"><span>Cadastrar</span></button>
+                <button class="cancelbtn">Cancelar</button>
+            </div>
+        </div>
+    </form>
+
+    <footer>
+      <div class="footer">
+
+        <section id="hours">
+          <span>Horário:</span>
+        </section>
+
+        <section id="adress">
+          <span>Endereço:</span>
+        </section>
+
+        <div id="copyright">&copy; Copyright Pet Shop 2017</div>
+
+      </div>
+    </footer>
+
+  </body>
+</html>
