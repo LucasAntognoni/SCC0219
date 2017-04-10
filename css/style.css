@@ -92,6 +92,10 @@ section{
 
 form {
     border: 3px solid #f1f1f1;
+	font-size=18pt;
+	height:420px;
+	width:800px;
+	font-size: 0.8em;
 }
 
 input[type=text], input[type=password] {
@@ -191,5 +195,6 @@ span.new {
        width: 100%;
     }
 }
+
 
 /*__________________END__________________*/
