@@ -20,20 +20,27 @@
 		<h1>Registre um Novo pet</h1>
 	</div>
 		<form>
-			<div class=textlines>
+				
 				Nome do Serviço:
-				<input type="text" name="serviço"><br></br>
+				<input type="text" placeholder="Informe o nome do PET"  name="servico"><br></br>
+				
 				ID:
 				<input type="text" name="ID"><br></br>
+				
 				Raça:
-				<input type="text" name="Raça" size=70><br</br>
+				<input type="text" placeholder="Informe a raça do pet" name="Raca" size=70><br</br>
+				
 				Idade:
-				<input type="number" name="Idade" max=99 min=0
-				default=0.0>
-				Imagem: <!--- ainda não sei como pedir pela entrada de imagem do
-				usuário---> <br></br>
-			</div>
-			
+				<input type="number" placeholder="Idade" name="Idade" max=99 min=0
+											 default=0.0><br></br>
+				
+				Imagem: <!---Falta Estilizar --->
+				<input type="file" accept="image/*"><br></br>
+		
+            <div class="clearfix">
+                <button class="button" type="submit"><span>Registrar</span></button>
+                <button class="cancelbtn">Cancelar</button>
+            </div>
 		</form>
     <footer>
       <div class="footer">

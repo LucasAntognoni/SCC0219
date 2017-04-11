@@ -20,25 +20,32 @@
 		<h1>Registre um Novo Produto</h1>
 	</div>
 		<form>
-			<div class=textlines>
 				Nome do Produto:
-				<input type="text" name="produto"><br></br>
+				<input type="text" placeholder="Insira o Nome do Produto."name="produto"><br></br>
+
 				ID:
 				<input type="text" name="ID"><br></br>
+				
 				Descrição:
 				<input type="text" name="Descrição" size=200><br</br>
-				Imagem: <!--- ainda não sei como pedir pela entrada de imagem do
-				usuário--!> <br></br>
+				
+				Imagem: <!---Falta Estilizar --->
+				<input type="file" accept="image/*"><br></br>
 
 				Preço:
-				<input type="number" name="Preço" max=9999.99 min=0.0
-				default=0.0>
+				<input type="number" placeholder="valor" name="Preço" max=9999.99 min=0.0
+						 default=0.0> <br></br>
+				
 				Estoque:
-				<input type="number" name="Estoque" min=0 max=999>
+				<input type="number" placeholder="Quantia" name="Estoque" min=0 max=999>
+			
 				Quantidade Vedida:
 				<input type="number" name="Vendas" min=0>
-			</div>
 			
+            <div class="clearfix">
+                <button class="button" type="submit"><span>Registrar</span></button>
+                <button class="cancelbtn">Cancelar</button>
+            </div>
 		</form>
     <footer>
       <div class="footer">
