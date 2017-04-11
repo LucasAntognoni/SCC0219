@@ -92,10 +92,9 @@ section{
 
 form {
     border: 3px solid #f1f1f1;
-	font-size=18pt;
-	height:420px;
-	width:800px;
-	font-size: 0.8em;
+    max-width: 50%;
+    max-height: 50%;
+    margin: 0 auto;
 }
 
 input[type=text], input[type=password] {
