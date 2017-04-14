@@ -1,90 +1,207 @@
-/*__________________HEADER__________________*/
-
 body {
     font-family: 'Roboto', sans-serif;
-    font-size: 1em;
 }
 
-.header {
-  width: auto;
-  border-radius: 0;
-  border: 0;
-  background-color: #1fa67a;
+/*__________________HEADER__________________*/
+
+header {
+  min-height: 60px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  border-bottom: 1px solid #24bf3e;
+  z-index: 2;
+  background-color: #24bf3e;
 }
 
-ul {
+header div{
+    overflow: hidden;
+    height: 5em;
+    display:inline-block;    
+}
+
+#logo, #links{
+    position: relative;
+     width:calc(100% / 4);
+}
+
+#searchbar form {
+    box-sizing: border-box;
+    font-size: 14px;
+    height: 50px;
+    line-height: 20px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    outline-color: rgb(153, 153, 153);
+    outline-style: none;
+    outline-width: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    position: relative;
+    margin-top: 20px;
+}
+
+#searchbar form input{
+height: 100%;
+width: 90%;
+}
+
+#subSearch {
+    padding-left: 8px;
+    padding-right: 6px;
+}
+#subSearch:hover {
+    padding-left: 8px;
+    padding-right: 6px;
+}
+
+
+header ul {
     list-style-type: none;
     margin: 0px;
     padding: 0px;
     overflow: hidden;
+    display:flex;
 }
 
-li {
-    float: left;
+header li {
+    width:calc(25%/4);
+    height: 5em;
+    display:inline-block;
 }
 
-li a {
+header a {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-size: 1.2em;
 }
 
-/* Change the link color to #111 (black) on hover*/
-li a:hover {
-    background-color: #87E5bf;
+header nav ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    display:flex;
 }
 
-li input {
-    margin-top: 1.3em; 
+header nav li {
+    width:13em;
+    height: 5em;
+    display:inline-block; 
 }
 
-li button {
-    margin-top: 1.3em; 
+header nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.4em;
+    margin-top: 8px;
 }
- nav {
-    background: linear-gradient(359deg, rgba(255, 255, 255, 0.247059) 0%, rgba(255, 255, 255, 0) 80%);
+header nav li a:hover {
+    background-color: #187f29;
+}
+
+header nav {
+    background:#24bf3e;
     display: block;
 }
+.material-icons.md-48 { font-size: 40px; }
+/*__________________END OF HEADER__________________*/
 
-/*__________________END__________________*/
+/*_______________NAVBAR MENU__________________*/
+
+/* Change the link color to #111 (black) on hover*/
+
+#menu nav ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    display:flex;
+}
+
+#menu nav li {
+    width:50%;
+    height: 4em;
+    display:inline-block; 
+}
+
+#menu nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin-top: 8px;
+}
+#menu nav li a:hover {
+    background-color: #187f29;
+}
+ #menu nav {
+    background-color:#24bf3e;
+    margin-top: -4em;
+    display: block;
+    min-height: 60px;
+    position: fixed;
+    right: 0;
+    left: 0;
+    border-bottom: 1px solid #24bf3e;
+    z-index: 2;
+}
+
+li img {
+     vertical-align: middle;
+}
+/*__________________END OF NAVBAR MENU__________________*/
+
+
+/*__________________INDEX BODY___________*/
+
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
+
+.content {
+    margin-top: 150px;
+}
+
+
+
+/*__________________END OF INDEX BODY ___________*/
 
 
 /*__________________FOOTER__________________*/
-.footer{
+footer{
   width: auto;
   border-radius: 0;
   border: 0;
   background: linear-gradient(359deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.247059) 80%);
-  background-color: #1fa67a;
-  margin-top: 20px;
+  background-color: #24bf3e;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
 
-section{
-  align-items: center;
+
+#about, #contact, #social{
+   display:inline-block;
+   position:relative;
+   width:calc(100% / 3.1);
+   color: white;
+   text-align: center;
+   text-decoration: none;
+    margin-top: 1em;
 }
 
-#hours{
-  color: white;
-  text-align: left;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-#adress{
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-#copyright{
-  color: white;
-  text-align: left;
-  padding: 14px 16px;
-  text-decoration: none;
-}
 
 /*__________________END__________________*/
 
@@ -93,8 +210,7 @@ section{
 form {
     border: 3px solid #f1f1f1;
 	font-size=18pt;
-	height:420px;
-	width:800px;
+	width:600px;
 	font-size: 0.8em;
 }
 
@@ -111,21 +227,18 @@ button {
     background-color: #1fa67a;
     color: white;
     padding: 14px 20px;
-    margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 50%;
     transition: all 0.5s;
 }
-
-.button span {
+button span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
 }
 
-.button span:after {
+button span:after {
     content: '\00bb';
     position: absolute;
     opacity: 0;
@@ -134,11 +247,11 @@ button {
     transition: 0.5s;
 }
 
-.button:hover span {
+button:hover span {
   padding-right: 25px;
 }
 
-.button:hover span:after {
+button:hover span:after {
   opacity: 1;
   right: 0;
 }
