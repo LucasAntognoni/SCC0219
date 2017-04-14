@@ -19,6 +19,7 @@
 	<div class = "header">
 		<h1>Registre um Novo Produto</h1>
 	</div>
+		<div class="form-group">
 		<form>
 				Nome do Produto:
 				<input type="text" placeholder="Insira o Nome do Produto."name="produto"><br></br>
@@ -27,17 +28,19 @@
 				<input type="text" name="ID"><br></br>
 				
 				Descrição:
-				<input type="text" name="Descrição" size=200><br</br>
+				<input type="text" placeholder="Descreva brevemente o produto"
+				name="Descricao" size=200><br</br>
 				
-				Imagem: <!---Falta Estilizar --->
+				Imagem: 
 				<input type="file" accept="image/*"><br></br>
 
 				Preço:
-				<input type="number" placeholder="valor" name="Preço" max=9999.99 min=0.0
-						 default=0.0> <br></br>
+				<input type="number" placeholder="Preço" name="Preço" max=9999.99
+				min=0.0 step=0.1> <br></br>
 				
 				Estoque:
-				<input type="number" placeholder="Quantia" name="Estoque" min=0 max=999>
+				<input type="number" placeholder="Quantia" name="Estoque" min=0 max=999
+				default=0 >
 			
 				Quantidade Vedida:
 				<input type="number" name="Vendas" min=0>
@@ -47,6 +50,7 @@
                 <button class="cancelbtn">Cancelar</button>
             </div>
 		</form>
+		</div>
     <footer>
       <div class="footer">
 

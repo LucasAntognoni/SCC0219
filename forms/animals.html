@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt">
+  
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <title>Adicionar Pet - Pet Shop</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <title>Pet Shop</title>
+      <link rel="stylesheet" href="../css/style.css">
+            <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
   </head>
-  <body>
+
+	<body>
     <header>
       <div class="header">
           <ul>
@@ -19,11 +24,10 @@
 	<div class = header>
 		<h1>Registre um Novo pet</h1>
 	</div>
-		<form>
-				
-				Nome do Serviço:
+				<div class="form-group">
+				<form>
+				Nome do PET:
 				<input type="text" placeholder="Informe o nome do PET"  name="servico"><br></br>
-				
 				ID:
 				<input type="text" name="ID"><br></br>
 				
@@ -34,14 +38,15 @@
 				<input type="number" placeholder="Idade" name="Idade" max=99 min=0
 											 default=0.0><br></br>
 				
-				Imagem: <!---Falta Estilizar --->
+				Imagem: 
 				<input type="file" accept="image/*"><br></br>
 		
             <div class="clearfix">
                 <button class="button" type="submit"><span>Registrar</span></button>
                 <button class="cancelbtn">Cancelar</button>
             </div>
-		</form>
+				</form>
+		</div>
     <footer>
       <div class="footer">
 
