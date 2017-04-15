@@ -37,11 +37,11 @@ li a:hover {
 }
 
 li input {
-    margin-top: 1.3em; 
+    margin-top: 1.3em;
 }
 
 li button {
-    margin-top: 1.3em; 
+    margin-top: 1.3em;
 }
  nav {
     background: linear-gradient(359deg, rgba(255, 255, 255, 0.247059) 0%, rgba(255, 255, 255, 0) 80%);
@@ -218,3 +218,6 @@ tr:nth-child(even) {
 }
 
 /*__________________END__________________*/
+
+
+/*______________AGENDAMENTO______________*/

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Pet Shop</title>
+  </head>
+  <body>
+
+    <header class="header" id="header">
+        <div id="logo">
+          <a href="./index.html" style="float:right" ><img border="0" alt="PetJava" width="60%" height="60%" src="./img/petjavawhite.png"></a>
+        </div>
+        <div id="searchbar">
+            <form method="get" action="searchShop">
+                <input type="search" name="inputSearch" placeholder="Procurar produtos e serviços">
+                <button id="subSearch" type="submit">Buscar</button>
+            </form>
+        </div>
+        <div id="links">
+            <nav>
+                <ul>
+                    <li><a href="./login_cadastro/login.html"> <i class="material-icons md-48" style='vertical-align: middle'>account_circle</i>   Login</a></li>
+                    <li><a href="#cart"><i class="material-icons md-48">shopping_cart</i></a></li>
+                  </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <div class="conteudo">
+      <div class="menu">
+        <div class="left">
+          <button class="consultar" type="button">CONSULTAR</button>
+          <button class="atualizar" type="button">ATUALIZAR</button>
+        </div>
+        <div class="right">
+          <button class="adicionar" type="button">ADICIONAR</button>
+          <button class="remover" type="button">REMOVER</button>
+        </div>
+      </div>
+
+      <div class="tela_produtos">
+        <ul>
+          <li>Nome:</li>
+            <p>Ração Doggo</p>
+          <li>ID:</li>
+            <p>89778</p>
+          <li>Descrição:</li>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <li>Foto:</li>
+            <img src="doggo.png" alt="racao">
+          <li>Preço:</li>
+            <p>R$200,00</p>
+          <li>Estoque:</li>
+            <p>40</p>
+          <li>Quantidade Vendida:</li>
+            <p>80</p>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      <section id="about">
+      <h3>SOBRE</h3>
+        <p>PetJava é o petshop perfeito para o seu pet! Temos os melhores produtos das melhores marcas disponíveis no mercado,
+          além de oferecermos o melhor tratamento para seu amigo!</p>
+      </section>
+
+      <section id="contact">
+      <h3>CONTATO</h3>
+        <p>e-mail: petjava@gmail.com</p>
+        <p>endereço: Av. Trabalhador São Carlense, 1400, Pq. Arnold Schimidt - São Carlos/SP</p>
+        <p>Horário de funcionamento: 10h - 18h</p>
+        <p>Telefone: (16)3370-7070</p>
+      </section>
+
+      <section id="social">
+        <h3>SIGA A GENTE!</h3>
+        <p>e-mail: petjava@gmail.com</p>
+        <p>endereço: Av. Trabalhador São Carlense, 1400, Pq. Arnold Schimidt - São Carlos/SP</p>
+        <p>Horário de funcionamento: 10h - 18h</p>
+        <p>Telefone: (16)3370-7070</p>
+      </section>
+      <div id="copyright">&copy; Copyright Pet Shop 2017</div>
+    </footer>
+
+  </body>
+</html>
