@@ -84,7 +84,6 @@ section{
   padding: 14px 16px;
   text-decoration: none;
 }
-
 /*__________________END__________________*/
 
 /*_________________LOGIN/CADASTRO_________________*/
@@ -359,32 +358,9 @@ td {
   font-size: 1em;
 }
 
-img {
+.tela_produtos img {
   height: 20%;
   width: 20%;
-}
-
-.calendario, th ,td {
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  table-layout: fixed;
-  border-collapse: collapse;
-}
-
-th {
-  border: 1px solid black;
-  background-color: #1abc9c;
-  color: white;
-}
-
-tr:nth-child(odd) {
-    background-color: #dddddd;
-}
-
-td {
-  border: 1px solid black;
-  table-layout: auto;
 }
 
 #data {
