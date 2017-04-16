@@ -89,11 +89,8 @@ section{
 /*_________________LOGIN/CADASTRO_________________*/
 
 form {
-    border: 3px solid #f1f1f1;
-	font-size=18pt;
-	height:420px;
-	width:800px;
-	font-size: 0.8em;
+	border: 3px solid #f1f1f1;
+	font-size=0.5em;
 }
 
 input[type=text], input[type=password] {
@@ -371,5 +368,19 @@ td {
   font-size: 2em;
   text-align: center;
   background-color: #1abc9c;
+/*__________________Forms__________________*/
+.form-group{
+	display:inline-block;
+	height:420px;
+	width:800px;
+	margin:0.5% auto 0.5% 25%;
+	font-size:0.8em;
+	text-align:left;
+}
+
+.input-group{
+	padding: 5px 10px;
+	
+	
 }
 /*__________________END__________________*/
