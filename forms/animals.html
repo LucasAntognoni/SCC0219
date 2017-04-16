@@ -2,24 +2,36 @@
 <html lang="pt">
   
   <head>
+  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <title>Pet Shop</title>
-      <link rel="stylesheet" href="../css/style.css">
-            <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Pet Shop - Registre um novo Pet</title>
 
-  </head>
+	</head>
 
 	<body>
-    <header>
-      <div class="header">
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#produtos">Produtos</a></li>
-            <li><a href="#serviços">Serviços</a></li>
-            <li style="float:right"><a href="#login">Login</a></li>
-          </ul>
-      </div>
+    <header class="header" id="header">
+        <div id="logo">
+          <a href="./index.html" style="float:right" ><img border="0" alt="PetJava" width="60%" height="60%" src="../img/petjavawhite.png"></a>
+        </div>
+        <div id="searchbar">
+            <form method="get" action="searchShop">
+                <input type="search" name="inputSearch" placeholder="Procurar produtos e serviços">
+                <button id="subSearch" type="submit">Buscar</button>
+            </form>
+        </div>
+        <div id="links">
+            <nav>
+                <ul>
+                    <li><a href="./login_cadastro/login.html"> <i class="material-icons md-48" style='vertical-align: middle'>account_circle</i>   Login</a></li>
+                    <li><a href="#cart"><i class="material-icons md-48">shopping_cart</i></a></li>
+                  </ul>
+            </nav>
+
+        </div>
     </header>
 	<div class = header>
 		<h1>Registre um Novo pet</h1>

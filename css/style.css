@@ -370,7 +370,6 @@ td {
   background-color: #1abc9c;
 /*__________________Forms__________________*/
 .form-group{
-	display:inline-block;
 	height:420px;
 	width:800px;
 	margin:0.5% auto 0.5% 25%;
