@@ -1,61 +1,80 @@
 <!DOCTYPE html>
 <html lang="pt">
-  <head>
-    <meta charset="utf-8">
-    <title>Adicionar Serviço - Pet Shop</title>
-    <link rel="stylesheet" href="../css/style.css">
-  </head>
-  <body>
-    <header>
-      <div class="header">
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#produtos">Produtos</a></li>
-            <li><a href="#serviços">Serviços</a></li>
-            <li style="float:right"><a href="#login">Login</a></li>
-          </ul>
-      </div>
-    </header>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="../css/style.css">
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<title>Pet Shop - Registre um Novo Serviço</title>
+</head>
+
+<body>
+	<header class="header" id="header">
+		<div id="logo">
+			<a href="../index.html" style="float:right" ><img border="0" alt="PetJava" width="60%" height="60%" src="../img/petjavawhite.png"></a>
+		</div>
+		
+		<div id="searchbar">
+			<form method="get" action="searchShop">
+				<input type="search" name="inputSearch" placeholder="Procurar produtos e serviços">
+				<button id="subSearch" type="submit">Buscar</button>
+			</form>
+		</div>
+		
+		<div id="links">
+			<nav>
+				<ul>
+					<li><a href="../login_cadastro/login.html"> <i class="material-icons md-48" style='vertical-align: middle'>account_circle</i>   Login</a></li>
+					<li><a href="#cart"><i class="material-icons md-48">shopping_cart</i></a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	
 	<div class = header>
 		<h1>Registre um Novo Serviço</h1>
 	</div>
+	
+	<div class="form-group">
 		<form>
-				Nome do Serviço:
-				<input type="text" placeholder "Nome do Serviço" name="serviço"><br></br>
-				
-				ID:
-				<input type="text" name="ID"><br></br>
-				
-				Descrição:
-				<input type="text" name="Descrição" size=200><br</br>
-	 			
-				Imagem: <!---Falta Estilizar --->
-				<input type="file" accept="image/*"><br></br>
-				
-				Preço:
-				<input type="number" placeholder="Valor" name="Preço" max=9999.99 min=0.0
-				default=0.0>
-			
-            <div class="clearfix">
-                <button class="button" type="submit"><span>Registrar</span></button>
-                <button class="cancelbtn">Cancelar</button>
-            </div>
+			Nome do Serviço:
+			<input type="text" placeholder "Nome do Serviço" name="serviço"><br></br>
+
+			ID:
+			<input type="text" name="ID"><br></br>
+
+			Descrição:
+			<input type="text" name="Descrição" size=200><br</br>
+
+			Imagem:
+			<input type="file" accept="image/*"><br></br>
+
+			Preço:
+			<input type="number" placeholder="Preço" name="Preço" max=9999.99 min=0.0
+			default=0.0>
+
+			<div class="clearfix">
+				<button class="button" type="submit"><span>Registrar</span></button>
+				<button class="cancelbtn">Cancelar</button>
+			</div>
 		</form>
-    <footer>
-      <div class="footer">
+	</div>
+<footer>
+	<div class="footer">
 
-        <section id="hours">
-          <span>Horário:</span>
-        </section>
+	<section id="hours">
+		<span>Horário:</span>
+	</section>
 
-        <section id="adress">
-          <span>Endereço:</span>
-        </section>
+		<section id="adress">
+			<span>Endereço:</span>
+		</section>
 
-        <div id="copyright">&copy; Copyright Pet Shop 2017</div>
+		<div id="copyright">&copy; Copyright Pet Shop 2017</div>
 
-      </div>
-    </footer>
+	</div>
+</footer>
 
-  </body>
+</body>
 </html>
