@@ -602,7 +602,9 @@ td {
   font-size: 2em;
   text-align: center;
   background-color: #1abc9c;
+}
 /*__________________Forms__________________*/
+
 .form-group{
 	height:420px;
 	width:800px;
