@@ -9,14 +9,14 @@ a {
 }
 
 
-form {
+.start form {
     border: 3px solid #f1f1f1;
 	font-size=18pt;
 	width:600px;
 	font-size: 0.8em;
 }
 
-input[type=text], input[type=password] {
+.start input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -25,7 +25,7 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 
-button {
+.start button {
     background-color: #1fa67a;
     color: white;
     padding: 14px 20px;
@@ -33,14 +33,14 @@ button {
     cursor: pointer;
     transition: all 0.5s;
 }
-button span {
+.start button span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
 }
 
-button span:after {
+.start button span:after {
     content: '\00bb';
     position: absolute;
     opacity: 0;
@@ -49,16 +49,16 @@ button span:after {
     transition: 0.5s;
 }
 
-button:hover span {
+.start button:hover span {
   padding-right: 25px;
 }
 
-button:hover span:after {
+.start button:hover span:after {
   opacity: 1;
   right: 0;
 }
 
-button:hover {
+.start button:hover {
     opacity: 0.8;
 }
 
@@ -248,7 +248,8 @@ li img {
     text-decoration: none;
     display: inline-block;
     vertical-align:middle; 
-    text-align:center
+    text-align:center;
+    padding-bottom: 40px;
 }
 
 .product-box img{

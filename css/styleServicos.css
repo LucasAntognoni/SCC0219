@@ -275,102 +275,6 @@ li img {
 
 .content {
     margin-top: 230px;
-     padding-bottom: 50px;
-}
-
-.imagecarousel{
-    width: calc(100%/1.5);
-    align-content: center;
-    display: block;
-    align-items: center;
-    text-decoration: none;
-}
-
-.product-box{
-    width: calc(100%/4.3);
-    align-items: center;
-    text-decoration: none;
-    display: inline-block;
-    vertical-align:middle; 
-    text-align:center;
-         padding-bottom: 50px;
-}
-
-.product-box img{
-    vertical-align: middle;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.product-price-label{
-    box-sizing: border-box;
-    color: rgb(73, 125, 170);
-    font-family: "Arial",sans-serif;
-    font-size: 14px;
-    line-height: 20px;
-    text-align: center;   
-}
-
-.product-price{
-    box-sizing: border-box;
-color: rgb(20, 99, 155);
-font-family: "Arial",sans-serif;
-font-size: 22.4px;
-line-height: 20px;
-text-align: center;
-
-}
-
-.product-title{
-    box-sizing: border-box;
-    color: rgb(102, 102, 102);
-    font-family: "Arial",sans-serif;
-    font-size: 14px;
-    font-weight: 500;   
-    line-height: 16.8px;
-    margin-bottom: 0px; 
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 0px;
-    padding-bottom: 2px;
-    padding-left: 0px;
-    padding-right: 0px;
-    padding-top: 9px;
-    text-align: center;
-}
-
-.brands{
-    display: inline-block;
-    align-content: center;
-}
-
-.brand-logo{
-    opacity: 0.8;
-    display: inline-block;
-}
-
-
-.brand-logo img{
-    opacity: 0.8;
-    opacity: 0.8;
-    width: calc(100%/1.2);
-
-}
-
-.brand-logo:hover{
-    opacity: 1;
-}
-
-.title{
-    margin-left: 2em;
-}
-
-.servicecarousel{
-    width: calc(100%/1.5);
-    align-content: center;
-    display: block;
-    align-items: center;
-    text-decoration: none;
 }
 
 .service-box{
@@ -379,38 +283,34 @@ text-align: center;
     text-decoration: none;
     display: inline-block;
     vertical-align:middle; 
-    text-align:center
+    text-align:center;
+    padding-bottom: 50px;
 }
 
-.service-box img{
+.service-img{
     vertical-align: middle;
     margin-left: auto;
     margin-right: auto;
+    align-content: center;
+    display: block;
+    align-items: center;
+    text-decoration: none;
 }
 
-.service-price-label{
+.service-description{
+    padding-left: 5px;
+    padding-right: 5px;
     box-sizing: border-box;
-    color: rgb(73, 125, 170);
-    font-family: "Arial",sans-serif;
-    font-size: 14px;
-    line-height: 50px;
-    text-align: center;   
-}
-
-.service-price{
-    box-sizing: border-box;
-    color: rgb(20, 99, 155);
-    font-family: "Arial",sans-serif;
-    font-size: 22.4px;
-    line-height: 20px;
-    text-align: center;
+    color: rgb(20, 20, 0);
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center; 
 }
 
 .service-title{
     box-sizing: border-box;
     color: rgb(102, 102, 102);
-    font-family: "Arial",sans-serif;
-    font-size: 1.6em;
+    font-size: 1.4em;
     font-weight: 500;   
     line-height: 46px;
     margin-bottom: 0px; 
@@ -423,6 +323,15 @@ text-align: center;
     padding-top: 9px;
     text-align: center;
 }
+
+.service-text{
+    
+}
+
+.service-link{
+    
+}
+
 
 
 /*__________________END OF INDEX BODY ___________*/
