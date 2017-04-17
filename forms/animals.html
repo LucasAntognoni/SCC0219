@@ -1,79 +1,84 @@
 <!DOCTYPE html>
 <html lang="pt">
-  
-  <head>
-  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="../css/style.css">
-    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>Pet Shop - Registre um novo Pet</title>
 
-	</head>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="../css/style.css">
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<title>Pet Shop - Registre um novo Pet</title>
+</head>
 
-	<body>
-    <header class="header" id="header">
-        <div id="logo">
-          <a href="../index.html" style="float:right" ><img border="0" alt="PetJava" width="60%" height="60%" src="../img/petjavawhite.png"></a>
-        </div>
-        <div id="searchbar">
-            <form method="get" action="searchShop">
-                <input type="search" name="inputSearch" placeholder="Procurar produtos e serviços">
-                <button id="subSearch" type="submit">Buscar</button>
-            </form>
-        </div>
-        <div id="links">
-            <nav>
-                <ul>
-                    <li><a href="../login_cadastro/login.html"> <i class="material-icons md-48" style='vertical-align: middle'>account_circle</i>   Login</a></li>
-                    <li><a href="#cart"><i class="material-icons md-48">shopping_cart</i></a></li>
-                  </ul>
-            </nav>
-
-        </div>
-    </header>
-	<div class = header>
-		<h1>Registre um Novo pet</h1>
-	</div>
-		<div class="form-group">
-				<form>
-				Nome do PET:
-				<input type="text" placeholder="Informe o nome do PET"  name="servico"><br></br>
-				ID:
-				<input type="text" name="ID"><br></br>
-				
-				Raça:
-				<input type="text" placeholder="Informe a raça do pet" name="Raca" size=70><br</br>
-				
-				Idade:
-				<input type="number" placeholder="Idade" name="Idade" max=99 min=0
-											 default=0.0><br></br>
-				
-				Imagem: 
-				<input type="file" accept="image/*"><br></br>
+<body>
+	
+	<header class="header" id="header">
+		<div id="logo">
+				<a href="../index.html" style="float:right" ><img border="0" alt="PetJava" width="60%" height="60%" src="../img/petjavawhite.png"></a>
+		</div>
 		
-            <div class="clearfix">
-                <button class="button" type="submit"><span>Registrar</span></button>
-                <button class="cancelbtn">Cancelar</button>
-            </div>
+		<div id="searchbar">
+				<form method="get" action="searchShop">
+						<input type="search" name="inputSearch" placeholder="Procurar produtos e serviços">
+						<button id="subSearch" type="submit">Buscar</button>
 				</form>
 		</div>
-    <footer>
-      <div class="footer">
+		
+		<div id="links">
+				<nav>
+						<ul>
+								<li><a href="../login_cadastro/login.html"> <i class="material-icons md-48" style='vertical-align: middle'>account_circle</i>   Login</a></li>
+								<li><a href="#cart"><i class="material-icons md-48">shopping_cart</i></a></li>
+						</ul>
+				</nav>
 
-        <section id="hours">
-          <span>Horário:</span>
-        </section>
+		</div>
+	</header>
 
-        <section id="adress">
-          <span>Endereço:</span>
-        </section>
+		<div class = header>
+				<h1>Registre um Novo pet</h1>
+		</div>
 
-        <div id="copyright">&copy; Copyright Pet Shop 2017</div>
+	<div class="form-group">
+		<form>
+			Nome do PET:
+			<input type="text" placeholder="Informe o nome do PET"  name="servico"><br></br>
+			
+			ID:
+			<input type="text" name="ID"><br></br>
+			
+			Raça:
+			<input type="text" placeholder="Informe a raça do pet" name="Raca" size=70><br</br>
+			
+			Idade:
+			<input type="number" placeholder="Idade" name="Idade" max=99 min=0
+			default=0.0><br></br>
 
-      </div>
-    </footer>
+			Imagem: 
+			<input type="file" accept="image/*"><br></br>
 
-  </body>
+			<div class="clearfix">
+				<button class="button" type="submit"><span>Registrar</span></button>
+				<button class="cancelbtn">Cancelar</button>
+			</div>
+		</form>
+	</div>
+
+	<footer>
+		<div class="footer">
+
+			<section id="hours">
+				<span>Horário:</span>
+			</section>
+
+			<section id="adress">
+				<span>Endereço:</span>
+			</section>
+
+		<div id="copyright">&copy; Copyright Pet Shop 2017</div>
+
+		</div>
+	</footer>
+
+</body>
 </html>
