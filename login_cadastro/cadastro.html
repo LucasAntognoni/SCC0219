@@ -4,76 +4,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>Pet Shop</title>
-      <link rel="stylesheet" href="../css/style.css">
-            <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styleLoginCadastro.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-    <header>
-      <div class="header">
-        <nav>
+      <div class="start">
+      <header class="header" id="header">
+          <div id="logo">
+            <a href="../index.html" style="float:right" ><img border="0" alt="PetJava" width="60%" height="60%" src="../img/petjavawhite.png"></a>
+          </div>
+          <div id="searchbar">
+              <form method="get" action="searchShop">
+                  <input type="search" name="inputSearch" placeholder="Procurar produtos e serviços">
+                  <button id="subSearch" type="submit">Buscar</button>
+              </form>
+          </div>
+          <div id="links">
+              <nav>
+                  <ul>
+                      <li><a href="./login.html"> <i class="material-icons md-48" style='vertical-align: middle'>account_circle</i>   Login</a></li>
+                      <li><a href="#cart"><i class="material-icons md-48">shopping_cart</i></a></li>
+                    </ul>
+              </nav>
+              
+          </div>
+      </header>
+      <div id="menu">
+      <nav>
           <ul>
-            <li><a href="../index.html"><img border="0" alt="PetJava" width="20%" height="20%" src="../img/logo.PNG"></a></li>
-            <li><a href="../index.html">Home</a></li>
-            <!--<li><input type="text" autocomplete="on"> </li>
-            <li><button type="submit" onclick="">Search</button></li> -->
-            <li><a href="#produtos">Produtos</a></li>
-            <li><a href="#serviços">Serviços</a></li>
-            <li><a href="./login.html">Login</a></li>
+              <li><a href="vendaProdutos.html">Produtos</a></li>
+              <li><a href="vendaServicos.html">Serviços</a></li>
           </ul>
-        </nav>
-      </div>
-    </header>
+      </nav>
+    </div>
+    </div>
+    
+    <div style="padding: 20px 20px;">
+      <h2>Cadastre-se</h2>
 
+      <form class="logForm" style="border:1px solid #ccc">
+          <div class="container">
+              <label><b>Nome</b></label>
+              <input class="logInput" type="text" placeholder="Digite o nome completo" name="name" required>
 
-    <h2 style="text-align: center";>Cadastre-se</h2>
+              <label><b>Foto</b></label></br>
+              <input class="logInput" type="file" name="pic" accept="image/*"></br></br>
 
-    <form style="border:1px solid #ccc">
-        <div class="container">
-            <label><b>Nome</b></label>
-            <input type="text" placeholder="Digite o nome completo" name="name" required>
+              <label><b>Telefone</b></label>
+              <input class="logInput" type="text" placeholder="Digite telefone para contato" name="phone" required>
 
-            <label><b>Foto</b></label></br>
-            <input type="file" name="pic" accept="image/*"></br></br>
+              <label><b>Endereço</b></label>
+              <input class="logInput" type="text" placeholder="Digite endereço de cobrança" name="address" required>
 
-            <label><b>Telefone</b></label>
-            <input type="text" placeholder="Digite telefone para contato" name="phone" required>
+              <label><b>Email</b></label>
+              <input class="logInput" type="text" placeholder="Digite o email" name="email" required>
 
-            <label><b>Endereço</b></label>
-            <input type="text" placeholder="Digite endereço de cobrança" name="address" required>
+              <label><b>Senha</b></label>
+              <input class="logInput" type="password" placeholder="Digete a senha" name="psw" required>
 
-            <label><b>Email</b></label>
-            <input type="text" placeholder="Digite o email" name="email" required>
+              <label><b>Confirme senha</b></label>
+              <input class="logInput" type="password" placeholder="Repita a senha" name="psw-repeat" required>
+              <input type="checkbox" checked="checked"> Salvar dados
+              <p>Ao criar seu cadastro estará aceitando nossa <a href="#">Política de termos</a>.</p>
 
-            <label><b>Senha</b></label>
-            <input type="password" placeholder="Digete a senha" name="psw" required>
-
-            <label><b>Confirme senha</b></label>
-            <input type="password" placeholder="Repita a senha" name="psw-repeat" required>
-            <input type="checkbox" checked="checked"> Salvar dados
-            <p>Ao criar seu cadastro estará aceitando nossa <a href="#">Política de termos</a>.</p>
-
-            <div class="clearfix">
-                <button class="button" type="submit"><span>Cadastrar</span></button>
-                <button class="cancelbtn">Cancelar</button>
-            </div>
-        </div>
+              <div class="clearfix">
+                  <button class="logButton" type="submit"><span>Cadastrar</span></button>
+                  <button class="logButton logCancelbtn">Cancelar</button>
+              </div>
+          </div>
     </form>
+    </div>
 
     <footer>
-      <div class="footer">
 
-        <section id="hours">
-          <span>Horário:</span>
+        <section id="about">
+        <h3>SOBRE</h3>
+          <p>PetJava é o petshop perfeito para o seu pet! Temos os melhores produtos das melhores marcas disponíveis no mercado,
+            além de oferecermos o melhor tratamento para seu amigo!</p>
         </section>
 
-        <section id="adress">
-          <span>Endereço:</span>
+        <section id="contact">
+        <h3>CONTATO</h3>
+            <ul style="list-style-type: none;">
+                <li><a><i class="material-icons" style='vertical-align: middle'>email</i>         petjava@gmail.com</a></li>
+                <li><a><i class="material-icons" style='vertical-align: middle'>location_on</i>       Av. Trabalhador São Carlense, 1400, Pq. Arnold Schimidt - São Carlos/SP</a></li>
+                <li><a><i class="material-icons" style='vertical-align: middle'>watch_later</i>        Segunda a sexta feira, 10h - 18h</a></li>
+                <li><a><i class="material-icons" style='vertical-align: middle'>call</i>        (16)3370-7070</a></li>
+            </ul>
         </section>
+          
+          <section id="social">
+            <h3>NOS ACOMPANHE NAS REDES SOCIAIS!</h3>
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-google"></a>
+          </section>
+        
+          
 
-        <div id="copyright">&copy; Copyright Pet Shop 2017</div>
+        <div id="copyright" style="margin-left:auto; margin-right:auto;"> &copy; Copyright Pet Shop 2017</div>
 
-      </div>
     </footer>
 
   </body>
