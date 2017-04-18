@@ -278,6 +278,15 @@ text-align: center;
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+form {
+    border: 3px solid #f1f1f1;
+    max-width: 50%;
+    max-height: 50%;
+    margin: 0 auto;
+=======
+>>>>>>> master
 .product-title{
     box-sizing: border-box;
     color: rgb(102, 102, 102);
@@ -294,6 +303,7 @@ text-align: center;
     padding-right: 0px;
     padding-top: 9px;
     text-align: center;
+<<<<<<< HEAD
 =======
 form {
     border: 3px solid #f1f1f1;
@@ -301,6 +311,9 @@ form {
     max-height: 50%;
     margin: 0 auto;
 >>>>>>> farm
+=======
+>>>>>>> 3f04aa8c1a947bf3a3010e3ec1e218ca2d3bf280
+>>>>>>> master
 }
 
 .brands{
