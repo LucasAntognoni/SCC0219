@@ -13,7 +13,7 @@
       <script>
           var slideIndex = 1;
           showDivs(slideIndex);
-          
+
           function plusDivs(n) {
               showDivs(slideIndex += n);
           }
@@ -26,23 +26,23 @@
               var i;
               var x = document.getElementsByClassName("mySlides");
               var dots = document.getElementsByClassName("demo");
-              if (n > x.length) {slideIndex = 1}    
+              if (n > x.length) {slideIndex = 1}
               if (n < 1) {slideIndex = x.length}
               for (i = 0; i < x.length; i++) {
-                  x[i].style.display = "none";  
+                  x[i].style.display = "none";
               }
               for (i = 0; i < dots.length; i++) {
                   dots[i].className = dots[i].className.replace(" w3-white", "");
               }
-              x[slideIndex-1].style.display = "block";  
+              x[slideIndex-1].style.display = "block";
               dots[slideIndex-1].className += " w3-white";
           }
       </script>
-      
+
       <div class="start">
       <header class="header" id="header">
           <div id="logo">
-            <a href="./index.html" style="float:right" ><img border="0" alt="PetJava" width="60%" height="60%" src="./img/petjavawhite.png"></a>
+            <a href="./index.html" style="float:right" ><img border="0" alt="PetJava" width="60%" height="60%" src="../img/petjavawhite.png"></a>
           </div>
           <div id="searchbar">
               <form method="get" action="searchShop">
@@ -53,23 +53,23 @@
           <div id="links">
               <nav>
                   <ul>
-                      <li><a href="./login_cadastro/login.html"> <i class="material-icons md-48" style='vertical-align: middle'>account_circle</i>   Login</a></li>
+                      <li><a href="../login_cadastro/login.html"> <i class="material-icons md-48" style='vertical-align: middle'>account_circle</i>   Login</a></li>
                       <li><a href="#cart"><i class="material-icons md-48">shopping_cart</i></a></li>
                     </ul>
               </nav>
-              
+
           </div>
       </header>
       <div id="menu">
       <nav>
           <ul>
-              <li><a href="vendaProdutos.html">Produtos</a></li>
-              <li><a href="vendaServicos.html">Serviços</a></li>
+              <li><a href="../vendas/vendaProdutos.html">Produtos</a></li>
+              <li><a href="../vendas/vendaServicos.html">Serviços</a></li>
           </ul>
       </nav>
     </div>
     </div>
-      
+
     <div class="content">
 
           <div class="start">
@@ -79,10 +79,10 @@
             <button class="start" onclick="plusDivs(-1)">&#10094;</button>
             <button class="start" onclick="plusDivs(1)">&#10095;</button>
         </div>
-        
+
         <p></p>
         <!--- END OF SLIDER AND START OF CONTENT -->
-        
+
         <!--- OFERTAS DA SEMANA -->
         <div class="box" id="ofertas">
             <h2 class="title">Ofertas da semana</h2>
@@ -160,7 +160,7 @@
             </div>
         </div>
         <hr>
-        
+
         <!--- LANCAMENTOS DA SEMANA-->
         <div class="box" id="lancamentos">
             <h2 class="title">Lançamentos</h2>
@@ -236,7 +236,7 @@
                     </div>
                 </a>
             </div>
-            
+
         </div>
         <hr>
         <div class="box" id="marcas">
@@ -294,11 +294,11 @@
                 </div>
             </div>
         </div>
-        
+
         <hr>
-        
+
         <!--- SERVICE SECTION -->
-        
+
         <div class="box" id="servicos">
             <h2 class="title">Serviços para o seu pet</h2>
             <div class=service-box>
@@ -354,7 +354,7 @@
                 <li><a><i class="material-icons" style='vertical-align: middle'>call</i>        (16)3370-7070</a></li>
             </ul>
         </section>
-          
+
           <section id="social">
             <h3>NOS ACOMPANHE NAS REDES SOCIAIS!</h3>
             <a href="#" class="fa fa-facebook"></a>
@@ -362,8 +362,8 @@
             <a href="#" class="fa fa-instagram"></a>
             <a href="#" class="fa fa-google"></a>
           </section>
-        
-          
+
+
 
         <div id="copyright" style="margin-left:auto; margin-right:auto;"> &copy; Copyright Pet Shop 2017</div>
 
