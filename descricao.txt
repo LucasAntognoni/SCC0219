@@ -1,0 +1,69 @@
+Camila Stenico dos Santos - 8530952
+Henrique F. M. Freitas - 8937225
+Lucas de Almeida Carotta - 8598732
+Lucas Antognoni de Castro - 8936951
+
+
+____Arquivos____
+
+
+index.htm (Administrador/Usuário)
+
+- Interface principal do site
+
+
+login.html (Administrador/Usuário)
+
+- Interface de login do site
+
+
+cadastro.html (Administrador/Usuário)
+
+- Interface de cadastro do site
+
+
+ganhos.html (Administrador)
+
+- Interface que exibe todas as vendas de serviços e produtos e o total, por serviços e produtos.
+
+
+vendasProdutos.html (Usuário)
+
+- Interface da loja de produtos do pet shop
+
+
+vendasServicos.html (Usuário)
+
+- Interface que descreve os serviços oferecidos pelo pet shop
+
+
+produtos.html (Administrador)
+
+- Interface de gerenciamento de estoque de produtos (adicionar, atualizar, apagar, consultar)
+
+
+serviços.html (Administrador)
+
+- Interface para associar serviços a slots de horário, liberar slots reservados no calendário
+
+agendamento.html (Usuário)
+
+- Interface que permite clientes agendarem um horário via web para serviços
+
+
+animals.html (Usuário)
+
+- Interface de cadastro de um novo animal pelo cliente
+
+
+prods.html (Administrador)
+
+- Interface de cadastro de um novo produto pelo administrador
+
+
+servs.html (Administrador)
+
+- Interface de cadastro de um novo serviço pelo administrador
+
+
+Os arquivos HTMLs acompanham um CSS próprio que se encontram nos seus respectivos diretórios. 
