@@ -4,41 +4,369 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>Pet Shop</title>
-      <link rel="stylesheet" href="./css/style.css">
-            <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-
+    <link rel="stylesheet" href="./css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-    <header>
-      <div class="header">
-        <nav>
+      <script>
+          var slideIndex = 1;
+          showDivs(slideIndex);
+
+          function plusDivs(n) {
+              showDivs(slideIndex += n);
+          }
+
+          function currentDiv(n) {
+              showDivs(slideIndex = n);
+          }
+
+          function showDivs(n) {
+              var i;
+              var x = document.getElementsByClassName("mySlides");
+              var dots = document.getElementsByClassName("demo");
+              if (n > x.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = x.length}
+              for (i = 0; i < x.length; i++) {
+                  x[i].style.display = "none";
+              }
+              for (i = 0; i < dots.length; i++) {
+                  dots[i].className = dots[i].className.replace(" w3-white", "");
+              }
+              x[slideIndex-1].style.display = "block";
+              dots[slideIndex-1].className += " w3-white";
+          }
+      </script>
+
+      <div class="start">
+      <header class="header" id="header">
+          <div id="logo">
+            <a href="./index.html" style="float:right" ><img border="0" alt="PetJava" width="60%" height="60%" src="../img/petjavawhite.png"></a>
+          </div>
+          <div id="searchbar">
+              <form method="get" action="searchShop">
+                  <input type="search" name="inputSearch" placeholder="Procurar produtos e serviços">
+                  <button id="subSearch" type="submit">Buscar</button>
+              </form>
+          </div>
+          <div id="links">
+              <nav>
+                  <ul>
+                      <li><a href="../login_cadastro/login.html"> <i class="material-icons md-48" style='vertical-align: middle'>account_circle</i>   Login</a></li>
+                      <li><a href="#cart"><i class="material-icons md-48">shopping_cart</i></a></li>
+                    </ul>
+              </nav>
+
+          </div>
+      </header>
+      <div id="menu">
+      <nav>
           <ul>
-            <li><a href="#home"><img border="0" alt="PetJava" width="20%" height="20%" src="./img/logo.PNG"></a></li>
-            <li><a href="#home">Home</a></li>
-            <!--<li><input type="text" autocomplete="on"> </li>
-            <li><button type="submit" onclick="">Search</button></li> -->
-            <li><a href="#produtos">Produtos</a></li>
-            <li><a href="#serviços">Serviços</a></li>
-            <li><a href="./login_cadastro/login.html">Login</a></li>
+              <li><a href="../vendas/vendaProdutos.html">Produtos</a></li>
+              <li><a href="../vendas/vendaServicos.html">Serviços</a></li>
           </ul>
-        </nav>
+      </nav>
+    </div>
+    </div>
+
+    <div class="content">
+
+          <div class="start">
+            <div class="slider-images">
+            <img class="mySlides" src="./img/dog.png" style="width:100%">
+            </div>
+            <button class="start" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="start" onclick="plusDivs(1)">&#10095;</button>
+        </div>
+
+        <p></p>
+        <!--- END OF SLIDER AND START OF CONTENT -->
+
+        <!--- OFERTAS DA SEMANA -->
+        <div class="box" id="ofertas">
+            <h2 class="title">Ofertas da semana</h2>
+            <div class=product-box>
+                <a href="produtopage">
+                    <img class="imagecarousel" src="./img/maisvendidos1.jpeg">
+                    <div class="product-info">
+                        <h4 class="product-title">Areia Sanitária Chalesco Cristais de Sílica em Gel </h4>
+                        <div class="product-price-box">
+                            <div class="product-price-label">a partir de:</div>
+                            <div itemprop="price" class="product-price">R$17,90</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class=product-box>
+                <a href="produtopage">
+                    <img class="imagecarousel" src="./img/maisvendidos2.jpeg">
+                    <div class="product-info">
+                        <h4 class="product-title">Ração Premier Golden Special Cães Adultos Frango e Carne </h4>
+                        <div class="product-price-box">
+                            <div class="product-price-label">a partir de:</div>
+                            <div itemprop="price" class="product-price">R$104,90</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class=product-box>
+                <a href="produtopage">
+                    <img class="imagecarousel" src="./img/maisvendidos3.jpeg">
+                    <div class="product-info">
+                        <h4 class="product-title">Antipulgas e Carrapatos Frontline Plus para Cães de 1 a 10 kg </h4>
+                        <div class="product-price-box">
+                            <div class="product-price-label">a partir de:</div>
+                            <div itemprop="price" class="product-price">R$52,30</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class=product-box>
+                <a href="produtopage">
+                    <img class="imagecarousel" src="./img/maisvendidos4.jpeg">
+                    <div class="product-info">
+                        <h4 class="product-title">Ração Royal Canin Sachê Feline Sterilised para Gatos Castrados </h4>
+                        <div class="product-price-box">
+                            <div class="product-price-label">a partir de:</div>
+                            <div itemprop="price" class="product-price">R$5,49</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class=product-box>
+                <a href="produtopage">
+                    <img class="imagecarousel" src="./img/maisvendidos5.jpeg">
+                    <div class="product-info">
+                        <h4 class="product-title">Ração Pedigree Sachê Cordeiro ao Molho para Cães Adultos de Raças Pequenas </h4>
+                        <div class="product-price-box">
+                            <div class="product-price-label">a partir de:</div>
+                            <div itemprop="price" class="product-price">R$1,99</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class=product-box>
+                <a href="produtopage">
+                    <img class="imagecarousel" src="./img/maisvendidos6.jpeg">
+                    <div class="product-info">
+                        <h4 class="product-title">Ração Royal Canin Club Performance para Cães Adultos </h4>
+                        <div class="product-price-box">
+                            <div class="product-price-label">a partir de:</div>
+                            <div itemprop="price" class="product-price">R$ 37,99</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <hr>
+
+        <!--- LANCAMENTOS DA SEMANA-->
+        <div class="box" id="lancamentos">
+            <h2 class="title">Lançamentos</h2>
+            <div class=product-box>
+                <a href="produtopage">
+                    <img class="imagecarousel" src="./img/lancamento1.jpeg">
+                    <div class="product-info">
+                        <h4 class="product-title">Bifinho Love Bits Sabor Carne para Cães</h4>
+                        <div class="product-price-box">
+                            <div class="product-price-label">a partir de:</div>
+                            <div itemprop="price" class="product-price">R$4,49</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class=product-box>
+                <a href="produtopage">
+                    <img class="imagecarousel" src="./img/lancamento2.jpeg" >
+                    <div class="product-info">
+                        <h4 class="product-title">Apoquel Dermatológico Zoetis para Cães </h4>
+                        <div class="product-price-box">
+                            <div class="product-price-label">a partir de:</div>
+                            <div itemprop="price" class="product-price">R$159,90</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class=product-box>
+                <a href="produtopage">
+                    <img class="imagecarousel" src="./img/lancamento3.jpeg">
+                    <div class="product-info">
+                        <h4 class="product-title">Ração Pedigree Sachê Carne ao Molho para Cães Adultos</h4>
+                        <div class="product-price-box">
+                            <div class="product-price-label">a partir de:</div>
+                            <div itemprop="price" class="product-price">por R$1,99</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class=product-box>
+                <a href="produtopage">
+                    <img class="imagecarousel" src="./img/lancamento4.jpeg">
+                    <div class="product-info">
+                        <h4 class="product-title">Biscoitos The French Co Pão de Queijo Vegetariano </h4>
+                        <div class="product-price-box">
+                            <div class="product-price-label">a partir de:</div>
+                            <div itemprop="price" class="product-price">R$17,90</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class=product-box>
+                <a href="produtopage">
+                    <img class="imagecarousel" src="./img/lancamento5.jpeg">
+                    <div class="product-info">
+                        <h4 class="product-title">Antipulgas e Carrapatos MSD Bravecto para Cães de 2 a 4,5 kg </h4>
+                        <div class="product-price-box">
+                            <div class="product-price-label">a partir de:</div>
+                            <div itemprop="price" class="product-price">R$154,90</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class=product-box>
+                <a href="produtopage">
+                    <img class="imagecarousel" src="./img/lancamento6.jpeg">
+                    <div class="product-info">
+                        <h4 class="product-title"> Ração Alcon Basic para Peixes Ornamentais</h4>
+                        <div class="product-price-box">
+                            <div class="product-price-label">a partir de:</div>
+                            <div itemprop="price" class="product-price">R$8,50</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+        <hr>
+        <div class="box" id="marcas">
+            <h2 class="title">Marcas</h2>
+            <div class="brands">
+                <div class="brand-logo">
+                    <a href=#brand>
+                        <img src="./img/bayer.jpeg">
+                    </a>
+                </div>
+                <div class="brand-logo">
+                    <a href=#brand>
+                        <img src="./img/frontline.jpeg">
+                    </a>
+                </div>
+                <div class="brand-logo">
+                    <a href=#brand>
+                        <img src="./img/negard.jpeg">
+                    </a>
+                </div>
+                <div class="brand-logo">
+                    <a href=#brand>
+                        <img src="./img/pedigree.jpeg">
+                    </a>
+                </div>
+                <div class="brand-logo">
+                    <a href=#brand>
+                        <img src="./img/purina.jpeg">
+                    </a>
+                </div>
+                <div class="brand-logo">
+                    <a href=#brand>
+                        <img src="./img/royalcanin.jpeg">
+                    </a>
+                </div>
+                <div class="brand-logo">
+                    <a href=#brand>
+                        <img src="./img/whiskas.jpeg">
+                    </a>
+                </div>
+                <div class="brand-logo">
+                    <a href=#brand>
+                        <img src="./img/bravecto.jpeg">
+                    </a>
+                </div>
+                <div class="brand-logo">
+                    <a href=#brand>
+                        <img src="./img/apoquel.jpeg">
+                    </a>
+                </div>
+                <div class="brand-logo">
+                    <a href=#brand>
+                        <img src="./img/feliway.jpeg">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!--- SERVICE SECTION -->
+
+        <div class="box" id="servicos">
+            <h2 class="title">Serviços para o seu pet</h2>
+            <div class=service-box>
+                <a href="produtopage">
+                    <img class="servicecarousel" src="./img/servicohospedagem.png" style="width:100%">
+                    <div class="service-info">
+                        <h4 class="service-title">Hospedagem para o seu pet!</h4>
+                        <div class="service-price-box">
+                            <div class="service-price-label">Conheça mais ></div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class=service-box>
+                <a href="produtopage">
+                    <img class="servicecarousel" src="./img/servicoveterinaria.png" >
+                    <div class="service-info">
+                        <h4 class="service-title">Consulta Veterinária</h4>
+                        <div class="service-price-box">
+                            <div class="service-price-label">Conheça mais ></div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class=service-box>
+                <a href="produtopage">
+                    <img class="servicecarousel" src="./img/banhotosaservico.png" style="width:60%">
+                    <div class="service-info">
+                        <h4 class="service-title">Banho e tosa</h4>
+                        <div class="service-price-box">
+                            <div class="service-price-label">Conheça mais ></div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
       </div>
-    </header>
 
     <footer>
-      <div class="footer">
 
-        <section id="hours">
-          <span>Horário:</span>
+        <section id="about">
+        <h3>SOBRE</h3>
+          <p>PetJava é o petshop perfeito para o seu pet! Temos os melhores produtos das melhores marcas disponíveis no mercado,
+            além de oferecermos o melhor tratamento para seu amigo!</p>
         </section>
 
-        <section id="adress">
-          <span>Endereço:</span>
+        <section id="contact">
+        <h3>CONTATO</h3>
+            <ul style="list-style-type: none;">
+                <li><a><i class="material-icons" style='vertical-align: middle'>email</i>         petjava@gmail.com</a></li>
+                <li><a><i class="material-icons" style='vertical-align: middle'>location_on</i>       Av. Trabalhador São Carlense, 1400, Pq. Arnold Schimidt - São Carlos/SP</a></li>
+                <li><a><i class="material-icons" style='vertical-align: middle'>watch_later</i>        Segunda a sexta feira, 10h - 18h</a></li>
+                <li><a><i class="material-icons" style='vertical-align: middle'>call</i>        (16)3370-7070</a></li>
+            </ul>
         </section>
 
-        <div id="copyright">&copy; Copyright Pet Shop 2017</div>
+          <section id="social">
+            <h3>NOS ACOMPANHE NAS REDES SOCIAIS!</h3>
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-google"></a>
+          </section>
 
-      </div>
+
+
+        <div id="copyright" style="margin-left:auto; margin-right:auto;"> &copy; Copyright Pet Shop 2017</div>
+
     </footer>
 
   </body>

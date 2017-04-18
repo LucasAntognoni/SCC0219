@@ -9,14 +9,14 @@ a {
 }
 
 
-.start form {
+form {
     border: 3px solid #f1f1f1;
 	font-size=18pt;
 	width:600px;
 	font-size: 0.8em;
 }
 
-.start input[type=text], input[type=password] {
+input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -25,7 +25,7 @@ a {
     box-sizing: border-box;
 }
 
-.start button {
+button {
     background-color: #1fa67a;
     color: white;
     padding: 14px 20px;
@@ -33,14 +33,14 @@ a {
     cursor: pointer;
     transition: all 0.5s;
 }
-.start button span {
+button span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
 }
 
-.start button span:after {
+button span:after {
     content: '\00bb';
     position: absolute;
     opacity: 0;
@@ -49,16 +49,16 @@ a {
     transition: 0.5s;
 }
 
-.start button:hover span {
+button:hover span {
   padding-right: 25px;
 }
 
-.start button:hover span:after {
+button:hover span:after {
   opacity: 1;
   right: 0;
 }
 
-.start button:hover {
+button:hover {
     opacity: 0.8;
 }
 
@@ -209,7 +209,7 @@ header nav {
 }
  #menu nav {
     background-color:#24bf3e;
-    margin-top: -4em;
+    margin-top: -9em;
     display: block;
     min-height: 60px;
     position: fixed;
@@ -217,6 +217,49 @@ header nav {
     left: 0;
     border-bottom: 1px solid #24bf3e;
     z-index: 2;
+}
+
+#menu-produtos nav ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    display:flex;
+    
+}
+
+#menu-produtos nav li {
+    width:50%;
+    height: 4em;
+    display:inline-block; 
+    border-left: 1px solid #24bf3e;
+      border-right: 1px solid #24bf3e;
+}
+
+#menu-produtos nav a {
+    display: block;
+    color:#24bf3e;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin-top: 8px;
+}
+#menu-produtos nav li a:hover {
+    background-color: #D3d3d3;
+}
+ #menu-produtos nav {
+    background-color:#FFF;
+    margin-top: -5.4em;
+    display: block;
+    min-height: 60px;
+    position: fixed;
+    right: 0;
+    left: 0;
+    border-bottom: 2px solid #24bf3e;
+    border-left: 1px solid #24bf3e;
+    border-right: 1px solid #24bf3e;
+    z-index: 1;
 }
 
 li img {
@@ -231,110 +274,7 @@ li img {
 .w3-badge {height:13px;width:13px;padding:0}
 
 .content {
-    margin-top: 150px;
-}
-
-.imagecarousel{
-    width: calc(100%/1.5);
-    align-content: center;
-    display: block;
-    align-items: center;
-    text-decoration: none;
-}
-
-.product-box{
-    width: calc(100%/6.4);
-    align-items: center;
-    text-decoration: none;
-    display: inline-block;
-    vertical-align:middle; 
-    text-align:center;
-    padding-bottom: 40px;
-}
-
-.product-box img{
-    vertical-align: middle;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.product-price-label{
-    box-sizing: border-box;
-    color: rgb(73, 125, 170);
-    font-family: "Arial",sans-serif;
-    font-size: 14px;
-    line-height: 20px;
-    text-align: center;   
-}
-
-.product-price{
-    box-sizing: border-box;
-color: rgb(20, 99, 155);
-font-family: "Arial",sans-serif;
-font-size: 22.4px;
-line-height: 20px;
-text-align: center;
-
-}
-
-<<<<<<< HEAD
-form {
-    border: 3px solid #f1f1f1;
-    max-width: 50%;
-    max-height: 50%;
-    margin: 0 auto;
-=======
-.product-title{
-    box-sizing: border-box;
-    color: rgb(102, 102, 102);
-    font-family: "Arial",sans-serif;
-    font-size: 14px;
-    font-weight: 500;   
-    line-height: 16.8px;
-    margin-bottom: 0px; 
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 0px;
-    padding-bottom: 2px;
-    padding-left: 0px;
-    padding-right: 0px;
-    padding-top: 9px;
-    text-align: center;
->>>>>>> 3f04aa8c1a947bf3a3010e3ec1e218ca2d3bf280
-}
-
-.brands{
-    display: inline-block;
-    align-content: center;
-}
-
-.brand-logo{
-    opacity: 0.8;
-    display: inline-block;
-}
-
-
-.brand-logo img{
-    opacity: 0.8;
-    opacity: 0.8;
-    width: calc(100%/1.2);
-
-}
-
-.brand-logo:hover{
-    opacity: 1;
-}
-
-.title{
-    margin-left: 2em;
-}
-
-.servicecarousel{
-    width: calc(100%/1.5);
-    align-content: center;
-    display: block;
-    align-items: center;
-    text-decoration: none;
+    margin-top: 230px;
 }
 
 .service-box{
@@ -343,38 +283,34 @@ form {
     text-decoration: none;
     display: inline-block;
     vertical-align:middle; 
-    text-align:center
+    text-align:center;
+    padding-bottom: 50px;
 }
 
-.service-box img{
+.service-img{
     vertical-align: middle;
     margin-left: auto;
     margin-right: auto;
+    align-content: center;
+    display: block;
+    align-items: center;
+    text-decoration: none;
 }
 
-.service-price-label{
+.service-description{
+    padding-left: 5px;
+    padding-right: 5px;
     box-sizing: border-box;
-    color: rgb(73, 125, 170);
-    font-family: "Arial",sans-serif;
-    font-size: 14px;
-    line-height: 50px;
-    text-align: center;   
-}
-
-.service-price{
-    box-sizing: border-box;
-    color: rgb(20, 99, 155);
-    font-family: "Arial",sans-serif;
-    font-size: 22.4px;
-    line-height: 20px;
-    text-align: center;
+    color: rgb(20, 20, 0);
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center; 
 }
 
 .service-title{
     box-sizing: border-box;
     color: rgb(102, 102, 102);
-    font-family: "Arial",sans-serif;
-    font-size: 1.6em;
+    font-size: 1.4em;
     font-weight: 500;   
     line-height: 46px;
     margin-bottom: 0px; 
@@ -387,6 +323,15 @@ form {
     padding-top: 9px;
     text-align: center;
 }
+
+.service-text{
+    
+}
+
+.service-link{
+    
+}
+
 
 
 /*__________________END OF INDEX BODY ___________*/
@@ -425,12 +370,6 @@ footer{
     border-radius: 50%;
 }
 
-<<<<<<< HEAD
-/*__________________END__________________*/
-
-
-/*_________________GANHOS__________________*/
-=======
 /* Add a hover effect if you want */
 .fa:hover {
     opacity: 0.8;
@@ -443,7 +382,6 @@ footer{
     background: #3B5998;
     color: white;
 }
->>>>>>> master
 
 /* Twitter */
 .fa-twitter {
@@ -461,114 +399,4 @@ footer{
     color: white;
 }
 
-/*__________________END__________________*/
-
-
-
-<<<<<<< HEAD
-=======
-/*_____________GERENCIAMENTO_____________*/
-
-.conteudo {
-  width: 100%;
-  margin-top: 8%;
-  margin-bottom:50px;
-  border: 0;
-}
-
-.menu {
-  width: 100%;
-  margin-bottom: 1%;
-  display: inline-block;
-  align-content: center;
-}
-
-.left {
-  float: left;
-  width: 50%;
-  margin: 0;
-  padding: 0;
-}
-
-.right {
-  float: right;
-  width: 50%;
-  margin-left: 0;
-  padding: 0;
-}
-
-.consultar, .atualizar, .adicionar, .remover, .buscar {
-  border-radius: 11px;
-  width: 100%;
-  height: 50px;
-  color: white;
-  font-size: 1em;
-}
-
-.consultar, .buscar{
-  border: 1px solid #0b7ab0;
-  background-color:#0b7ab0;
-  margin-bottom: 2%;
-}
-
-.atualizar {
-  border: 1px solid #ff7403;
-  background-color:#ff7403;
-  margin-bottom: 2%;
-}
-
-.adicionar {
-  border: 1px solid #780482;
-  background-color: #780482;
-  margin-bottom: 2%;
-}
-
-.remover {
-  border: 1px solid #f01616;
-  background-color: #f01616;
-}
-
-.tela_produtos {
-  width: 100%;
-  margin-bottom: 10%;
-  font-size: 1em;
-  border: 1px solid black;
-}
-
-.tela_servicos {
-  width: 100%;
-  margin-bottom: 10%;
-  font-size: 1em;
-}
-
-.tela_produtos img {
-  height: 20%;
-  width: 20%;
-}
-
-#data {
-  width: 100%;
-  margin-bottom: 1%;
-  border: 1px solid #1abc9c;
-  color: white;
-  font-size: 2em;
-  text-align: center;
-  background-color: #1abc9c;
-}
->>>>>>> master
-/*__________________Forms__________________*/
-
-.form-group{
-	height:420px;
-	width:800px;
-	margin:0.5% auto 0.5% 25%;
-	font-size:0.8em;
-	text-align:left;
-}
-
-.input-group{
-	padding: 5px 10px;
-
-
-}
 /*__________________END__________________*/
