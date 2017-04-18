@@ -1,0 +1,108 @@
+/*_________________LOGIN/CADASTRO_________________*/
+
+.logForm {
+    border: 3px solid #f1f1f1;
+    max-width: 50%;
+    max-height: 50%;
+    margin: 0 auto;
+}
+
+.logInput {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.logButton {
+    background-color: #1fa67a;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    transition: all 0.5s;
+}
+
+.logButton span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.logButton span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.logButton:hover span {
+  padding-right: 25px;
+}
+
+.logButton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.logButton:hover {
+    opacity: 0.8;
+}
+
+.logCancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+    float: right;
+    width: 50%;
+}
+
+.logCancelbtn:hover {
+    width: 50%;
+    padding: 14px 20px;
+    background-color: #f44336;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+img.avatar {
+    width: 30%;
+    border-radius: 5%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: left;
+    padding-top: 2px;
+}
+
+span.new {
+    float: right;
+    padding-top: 2px;
+}
+
+/*  Atualiza as proporções dos botões em telas menores  */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .logCancelbtn {
+       width: 100%;
+    }
+}
+
+/*__________________END__________________*/

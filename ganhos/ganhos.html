@@ -4,56 +4,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>Pet Shop</title>
-      <link rel="stylesheet" href="../css/style.css">
-            <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styleGanhos.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
-
+  
   <body>
-    <header>
-      <div class="header">
-        <nav>
+      <div class="start">
+      <header class="header" id="header">
+          <div id="logo">
+            <a href="../index.html" style="float:right" ><img border="0" alt="PetJava" width="60%" height="60%" src="../img/petjavawhite.png"></a>
+          </div>
+          <div id="searchbar">
+              <form method="get" action="searchShop">
+                  <input type="search" name="inputSearch" placeholder="Procurar produtos e serviços">
+                  <button id="subSearch" type="submit">Buscar</button>
+              </form>
+          </div>
+          <div id="links">
+              <nav>
+                  <ul>
+                      <li><a href="./login.html"> <i class="material-icons md-48" style='vertical-align: middle'>account_circle</i>   Login</a></li>
+                      <li><a href="#cart"><i class="material-icons md-48">shopping_cart</i></a></li>
+                    </ul>
+              </nav>
+              
+          </div>
+      </header>
+      <div id="menu">
+      <nav>
           <ul>
-            <li><a href="#home"><img border="0" alt="PetJava" width="20%" height="20%" src="../img/logo.PNG"></a></li>
-            <li><a href="#home">Home</a></li>
-            <!--<li><input type="text" autocomplete="on"> </li>
-            <li><button type="submit" onclick="">Search</button></li> -->
-            <li><a href="#produtos">Produtos</a></li>
-            <li><a href="#serviços">Serviços</a></li>
-            <li><a href="./login_cadastro/login.html">Login</a></li>
+              <li><a href="vendaProdutos.html">Produtos</a></li>
+              <li><a href="vendaServicos.html">Serviços</a></li>
           </ul>
-        </nav>
-      </div>
-    </header>
-
-    </br><table>
-        <tr>
-            <th>Tipo</th>
-            <th>Total</th>
+      </nav>
+    </div>
+    </div>
+    
+    <div style="padding: 200px 50px;">
+      <table class="ganhos">
+        <tr class="trGanhos">
+            <th class="thGanhos">Tipo</th>
+            <th class="thGanhos">Total</th>
         </tr>
-        <tr>
-            <td>Serviços</td>
-            <td>$$$</td>
+        <tr class="trGanhos">
+            <td class="tdGanhos">Serviços</td>
+            <td class="tdGanhos">$$$</td>
         </tr>
-        <tr>
-            <td>Produtos</td>
-            <td>$$$</td>
+        <tr class="trGanhos">
+            <td class="tdGanhos">Produtos</td>
+            <td class="tdGanhos">$$$</td>
         </tr>
-    </table>    
+     </table>
+    </div>
 
     <footer>
-      <div class="footer">
 
-        <section id="hours">
-          <span>Horário:</span>
+        <section id="about">
+        <h3>SOBRE</h3>
+          <p>PetJava é o petshop perfeito para o seu pet! Temos os melhores produtos das melhores marcas disponíveis no mercado,
+            além de oferecermos o melhor tratamento para seu amigo!</p>
         </section>
 
-        <section id="adress">
-          <span>Endereço:</span>
+        <section id="contact">
+        <h3>CONTATO</h3>
+            <ul style="list-style-type: none;">
+                <li><a><i class="material-icons" style='vertical-align: middle'>email</i>         petjava@gmail.com</a></li>
+                <li><a><i class="material-icons" style='vertical-align: middle'>location_on</i>       Av. Trabalhador São Carlense, 1400, Pq. Arnold Schimidt - São Carlos/SP</a></li>
+                <li><a><i class="material-icons" style='vertical-align: middle'>watch_later</i>        Segunda a sexta feira, 10h - 18h</a></li>
+                <li><a><i class="material-icons" style='vertical-align: middle'>call</i>        (16)3370-7070</a></li>
+            </ul>
         </section>
+          
+          <section id="social">
+            <h3>NOS ACOMPANHE NAS REDES SOCIAIS!</h3>
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-google"></a>
+          </section>
+        
+          
 
-        <div id="copyright">&copy; Copyright Pet Shop 2017</div>
+        <div id="copyright" style="margin-left:auto; margin-right:auto;"> &copy; Copyright Pet Shop 2017</div>
 
-      </div>
     </footer>
 
   </body>
