@@ -78,7 +78,7 @@ header {
 header div{
     overflow: hidden;
     height: 5em;
-    display:inline-block;    
+    display:inline-block;
 }
 
 #logo, #links{
@@ -154,7 +154,7 @@ header nav ul {
 header nav li {
     width:13em;
     height: 5em;
-    display:inline-block; 
+    display:inline-block;
 }
 
 header nav a {
@@ -192,7 +192,7 @@ header nav {
 #menu nav li {
     width:50%;
     height: 4em;
-    display:inline-block; 
+    display:inline-block;
 }
 
 #menu nav a {
@@ -247,7 +247,7 @@ li img {
     align-items: center;
     text-decoration: none;
     display: inline-block;
-    vertical-align:middle; 
+    vertical-align:middle;
     text-align:center;
     padding-bottom: 40px;
 }
@@ -264,7 +264,7 @@ li img {
     font-family: "Arial",sans-serif;
     font-size: 14px;
     line-height: 20px;
-    text-align: center;   
+    text-align: center;
 }
 
 .product-price{
@@ -277,24 +277,20 @@ text-align: center;
 
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 form {
     border: 3px solid #f1f1f1;
     max-width: 50%;
     max-height: 50%;
     margin: 0 auto;
-=======
->>>>>>> master
+
 .product-title{
     box-sizing: border-box;
     color: rgb(102, 102, 102);
     font-family: "Arial",sans-serif;
     font-size: 14px;
-    font-weight: 500;   
+    font-weight: 500;
     line-height: 16.8px;
-    margin-bottom: 0px; 
+    margin-bottom: 0px;
     margin-left: 0px;
     margin-right: 0px;
     margin-top: 0px;
@@ -303,17 +299,12 @@ form {
     padding-right: 0px;
     padding-top: 9px;
     text-align: center;
-<<<<<<< HEAD
-=======
+
 form {
     border: 3px solid #f1f1f1;
     max-width: 50%;
     max-height: 50%;
     margin: 0 auto;
->>>>>>> farm
-=======
->>>>>>> 3f04aa8c1a947bf3a3010e3ec1e218ca2d3bf280
->>>>>>> master
 }
 
 .brands{
@@ -355,7 +346,7 @@ form {
     align-items: center;
     text-decoration: none;
     display: inline-block;
-    vertical-align:middle; 
+    vertical-align:middle;
     text-align:center
 }
 
@@ -371,7 +362,7 @@ form {
     font-family: "Arial",sans-serif;
     font-size: 14px;
     line-height: 50px;
-    text-align: center;   
+    text-align: center;
 }
 
 .service-price{
@@ -388,9 +379,9 @@ form {
     color: rgb(102, 102, 102);
     font-family: "Arial",sans-serif;
     font-size: 1.6em;
-    font-weight: 500;   
+    font-weight: 500;
     line-height: 46px;
-    margin-bottom: 0px; 
+    margin-bottom: 0px;
     margin-left: 0px;
     margin-right: 0px;
     margin-top: 0px;
@@ -438,12 +429,6 @@ footer{
     border-radius: 50%;
 }
 
-<<<<<<< HEAD
-/*__________________END__________________*/
-
-
-/*_________________GANHOS__________________*/
-=======
 /* Add a hover effect if you want */
 .fa:hover {
     opacity: 0.8;
@@ -456,7 +441,6 @@ footer{
     background: #3B5998;
     color: white;
 }
->>>>>>> master
 
 /* Twitter */
 .fa-twitter {
@@ -474,114 +458,4 @@ footer{
     color: white;
 }
 
-/*__________________END__________________*/
-
-
-
-<<<<<<< HEAD
-=======
-/*_____________GERENCIAMENTO_____________*/
-
-.conteudo {
-  width: 100%;
-  margin-top: 8%;
-  margin-bottom:50px;
-  border: 0;
-}
-
-.menu {
-  width: 100%;
-  margin-bottom: 1%;
-  display: inline-block;
-  align-content: center;
-}
-
-.left {
-  float: left;
-  width: 50%;
-  margin: 0;
-  padding: 0;
-}
-
-.right {
-  float: right;
-  width: 50%;
-  margin-left: 0;
-  padding: 0;
-}
-
-.consultar, .atualizar, .adicionar, .remover, .buscar {
-  border-radius: 11px;
-  width: 100%;
-  height: 50px;
-  color: white;
-  font-size: 1em;
-}
-
-.consultar, .buscar{
-  border: 1px solid #0b7ab0;
-  background-color:#0b7ab0;
-  margin-bottom: 2%;
-}
-
-.atualizar {
-  border: 1px solid #ff7403;
-  background-color:#ff7403;
-  margin-bottom: 2%;
-}
-
-.adicionar {
-  border: 1px solid #780482;
-  background-color: #780482;
-  margin-bottom: 2%;
-}
-
-.remover {
-  border: 1px solid #f01616;
-  background-color: #f01616;
-}
-
-.tela_produtos {
-  width: 100%;
-  margin-bottom: 10%;
-  font-size: 1em;
-  border: 1px solid black;
-}
-
-.tela_servicos {
-  width: 100%;
-  margin-bottom: 10%;
-  font-size: 1em;
-}
-
-.tela_produtos img {
-  height: 20%;
-  width: 20%;
-}
-
-#data {
-  width: 100%;
-  margin-bottom: 1%;
-  border: 1px solid #1abc9c;
-  color: white;
-  font-size: 2em;
-  text-align: center;
-  background-color: #1abc9c;
-}
->>>>>>> master
-/*__________________Forms__________________*/
-
-.form-group{
-	height:420px;
-	width:800px;
-	margin:0.5% auto 0.5% 25%;
-	font-size:0.8em;
-	text-align:left;
-}
-
-.input-group{
-	padding: 5px 10px;
-
-
-}
 /*__________________END__________________*/
