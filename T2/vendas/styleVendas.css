@@ -1,0 +1,493 @@
+/* GENERAL CSS */
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+
+form {
+    border: 3px solid #f1f1f1;
+	font-size=18pt;
+	width:600px;
+	font-size: 0.8em;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #1fa67a;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+button:hover span {
+  padding-right: 25px;
+}
+
+button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/*__________________HEADER__________________*/
+
+header {
+  min-height: 60px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  border-bottom: 1px solid #24bf3e;
+  z-index: 2;
+  background-color: #24bf3e;
+}
+
+header div{
+    overflow: hidden;
+    height: 5em;
+    display:inline-block;    
+}
+
+#logo, #links{
+    position: relative;
+     width:calc(100% / 4);
+}
+
+#searchbar form {
+    box-sizing: border-box;
+    font-size: 14px;
+    height: 50px;
+    line-height: 20px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    outline-color: rgb(153, 153, 153);
+    outline-style: none;
+    outline-width: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    position: relative;
+    margin-top: 20px;
+}
+
+#searchbar form input{
+height: 100%;
+width: 90%;
+}
+
+#subSearch {
+    padding-left: 8px;
+    padding-right: 6px;
+}
+#subSearch:hover {
+    padding-left: 8px;
+    padding-right: 6px;
+}
+
+
+header ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    display:flex;
+}
+
+header li {
+    width:calc(25%/4);
+    height: 5em;
+    display:inline-block;
+}
+
+header a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    display:flex;
+}
+
+header nav li {
+    width:13em;
+    height: 5em;
+    display:inline-block; 
+}
+
+header nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.4em;
+    margin-top: 8px;
+}
+header nav li a:hover {
+    background-color: #187f29;
+}
+
+header nav {
+    background:#24bf3e;
+    display: block;
+}
+.material-icons.md-48 { font-size: 40px; }
+/*__________________END OF HEADER__________________*/
+
+/*_______________NAVBAR MENU__________________*/
+
+/* Change the link color to #111 (black) on hover*/
+
+#menu nav ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    display:flex;
+}
+
+#menu nav li {
+    width:50%;
+    height: 4em;
+    display:inline-block; 
+}
+
+#menu nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin-top: 8px;
+}
+#menu nav li a:hover {
+    background-color: #187f29;
+}
+ #menu nav {
+    background-color:#24bf3e;
+    margin-top: -9em;
+    display: block;
+    min-height: 60px;
+    position: fixed;
+    right: 0;
+    left: 0;
+    border-bottom: 1px solid #24bf3e;
+    z-index: 2;
+}
+
+#menu-produtos nav ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    display:flex;
+    
+}
+
+#menu-produtos nav li {
+    width:50%;
+    height: 4em;
+    display:inline-block; 
+    border-left: 1px solid #24bf3e;
+      border-right: 1px solid #24bf3e;
+}
+
+#menu-produtos nav a {
+    display: block;
+    color:#24bf3e;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin-top: 8px;
+}
+#menu-produtos nav li a:hover {
+    background-color: #D3d3d3;
+}
+ #menu-produtos nav {
+    background-color:#FFF;
+    margin-top: -5.4em;
+    display: block;
+    min-height: 60px;
+    position: fixed;
+    right: 0;
+    left: 0;
+    border-bottom: 2px solid #24bf3e;
+    border-left: 1px solid #24bf3e;
+    border-right: 1px solid #24bf3e;
+    z-index: 1;
+}
+
+li img {
+     vertical-align: middle;
+}
+/*__________________END OF NAVBAR MENU__________________*/
+
+
+/*__________________INDEX BODY___________*/
+
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
+
+.content {
+    margin-top: 230px;
+     padding-bottom: 50px;
+}
+
+.imagecarousel{
+    width: calc(100%/1.5);
+    align-content: center;
+    display: block;
+    align-items: center;
+    text-decoration: none;
+}
+
+.product-box{
+    width: calc(100%/4.3);
+    align-items: center;
+    text-decoration: none;
+    display: inline-block;
+    vertical-align:middle; 
+    text-align:center;
+         padding-bottom: 50px;
+}
+
+.product-box img{
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-price-label{
+    box-sizing: border-box;
+    color: rgb(73, 125, 170);
+    font-family: "Arial",sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;   
+}
+
+.product-price{
+    box-sizing: border-box;
+color: rgb(20, 99, 155);
+font-family: "Arial",sans-serif;
+font-size: 22.4px;
+line-height: 20px;
+text-align: center;
+
+}
+
+.product-title{
+    box-sizing: border-box;
+    color: rgb(102, 102, 102);
+    font-family: "Arial",sans-serif;
+    font-size: 14px;
+    font-weight: 500;   
+    line-height: 16.8px;
+    margin-bottom: 0px; 
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    padding-bottom: 2px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 9px;
+    text-align: center;
+}
+
+.brands{
+    display: inline-block;
+    align-content: center;
+}
+
+.brand-logo{
+    opacity: 0.8;
+    display: inline-block;
+}
+
+
+.brand-logo img{
+    opacity: 0.8;
+    opacity: 0.8;
+    width: calc(100%/1.2);
+
+}
+
+.brand-logo:hover{
+    opacity: 1;
+}
+
+.title{
+    margin-left: 2em;
+}
+
+.servicecarousel{
+    width: calc(100%/1.5);
+    align-content: center;
+    display: block;
+    align-items: center;
+    text-decoration: none;
+}
+
+.service-box{
+    width: calc(100%/3.1);
+    align-items: center;
+    text-decoration: none;
+    display: inline-block;
+    vertical-align:middle; 
+    text-align:center
+}
+
+.service-box img{
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.service-price-label{
+    box-sizing: border-box;
+    color: rgb(73, 125, 170);
+    font-family: "Arial",sans-serif;
+    font-size: 14px;
+    line-height: 50px;
+    text-align: center;   
+}
+
+.service-price{
+    box-sizing: border-box;
+    color: rgb(20, 99, 155);
+    font-family: "Arial",sans-serif;
+    font-size: 22.4px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.service-title{
+    box-sizing: border-box;
+    color: rgb(102, 102, 102);
+    font-family: "Arial",sans-serif;
+    font-size: 1.6em;
+    font-weight: 500;   
+    line-height: 46px;
+    margin-bottom: 0px; 
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    padding-bottom: 2px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 9px;
+    text-align: center;
+}
+
+
+/*__________________END OF INDEX BODY ___________*/
+
+
+/*__________________FOOTER__________________*/
+footer{
+  width: auto;
+  border-radius: 0;
+  border: 0;
+  background: linear-gradient(359deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.247059) 80%);
+  background-color: #24bf3e;
+  bottom: 0;
+  right: 0;
+  left: 0;
+     display:inline-block;
+}
+
+
+#about, #contact, #social{
+   display:inline-block;
+   width:calc(100% / 3.1);
+   color: white;
+   text-align: center;
+   text-decoration: none;
+
+}
+
+ /* Style all font awesome icons */
+.fa {
+    padding: 20px;
+    font-size: 40px;
+    width: 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.8;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-instagram {
+    background: #434547;
+    color: white;
+}
+
+.fa-google {
+    background: #E55;
+    color: white;
+}
+
+/*__________________END__________________*/

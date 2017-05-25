@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <title>Pet Shop</title>
+        <link rel="stylesheet" href="styleServicos.css">
+        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="cabecalho">
+         <header class="header" id="header">
+          <div id="logo">
+            <a href="../index.html" style="float:right" ><img border="0" alt="PetJava" width="60%" height="60%" src="../img/petjavawhite.png"></a>
+          </div>
+          <div id="searchbar">
+              <form method="get" action="searchShop">
+                  <input type="search" name="inputSearch" placeholder="Procurar produtos e serviços">
+                  <button id="subSearch" type="submit">Buscar</button>
+              </form>
+          </div>
+          <div id="links">
+              <nav>
+                  <ul>
+                      <li><a href="../login_cadastro/login.html"> <i class="material-icons md-48" style='vertical-align: middle'>account_circle</i>   Login</a></li>
+                      <li><a href="#cart"><i class="material-icons md-48">shopping_cart</i></a></li>
+                  </ul>
+              </nav>
+             </div>
+      </header>
+      <div id="menu">
+      <nav>
+          <ul>
+            <li><a href="../vendas/vendaProdutos.html">Produtos</a></li>
+            <li><a href="../vendas/vendaServicos.html">Serviços</a></li>
+          </ul>
+      </nav>
+    </div>
+    </div>
+    <div id="menu-produtos">
+      <nav class="nav-produtos">
+          <ul  class="ul-produtos">
+              <li class="button-produtos"><a href="#hospedagem">Hospedagem</a></li>
+              <li  class="button-produtos"><a href="#veterinario">Consulta Veterinária</a></li>
+              <li  class="button-produtos"><a href="#banhotosa">Banho e Tosa</a></li>
+          </ul>
+      </nav>
+    </div>
+
+        <div class="content">
+
+        <!-- **************** OFERTAS DA SEMANA RACAO*************************** -->
+            <div class="service-box">
+                <img class="service-img" src="../img/servicohospedagem.png" style="width:100%">
+                <div class="service-description">
+                    <h2 class="service-title">Hospedagem de Pet</h2>
+                    <p class="service-text">
+                        Vai viajar e não sabe onde deixar seu pet? O PetJava oferece uma hospedagem familiar com cuidados individuais e atualizações diárias.
+                        Todos os dias o profissional PetJava enviará um relatório por e-mail, como informações sobre a hospedagem e fotos dos seus pequenos. E claro, vocês também podem se comunicar sempre, durante todo o período por whatsapp.
+                    </p>
+                    <a href="#hospedagem" class="service-link">Agende sua hospedagem ></a>
+                </div>
+            </div>
+            <div class="service-box">
+                <img class="service-img" src="../img/servicoveterinaria.png" style="width:75%">
+                <div class="service-description">
+                    <h2 class="service-title">Consulta Veterinária</h2>
+                    <p class="service-text">
+                        Temos 3 veterinários bem qualificados em nossa loja física, prontos para dar o melhor atendimento ao seu animal. Agende uma consulta pelo site! Atendemos consultas rotineiras, vacinação, raio-x, emergências e internações.
+
+                        Ainda, caso seja necessário um atendimento urgente, ligue em nosso número 16 3434-3434 e tenha acesso ao nosso veterinário de plantão.
+                    </p>
+                    <a href="#hospedagem" class="service-link">Agende sua consulta ></a>
+                </div>
+            </div>
+            <div class="service-box">
+                <img class="service-img" src="../img/banhotosaservico.png" style="width:65%">
+                <div class="service-description">
+                    <h2 class="service-title">Banho e tosa para seu pet</h2>
+                    <p class="service-text">
+                        Deixe seu pet lindão com nosso serviço de banho e tosa! Temos os melhores shampoos, cabelereiros e secadores da região! Garantimos seu pet feliz e perfumado, com uma coleira de sua escolha para deixar ele pronto para a foto do instagram!
+                        Agende já um horário!
+                    </p>
+                    <a href="#hospedagem" class="service-link">Agende o dia de SPA do seu pet ></a>
+                </div>
+            </div>
+        <footer>
+
+        <section id="about">
+        <h3>SOBRE</h3>
+          <p>PetJava é o petshop perfeito para o seu pet! Temos os melhores produtos das melhores marcas disponíveis no mercado,
+            além de oferecermos o melhor tratamento para seu amigo!</p>
+        </section>
+
+        <section id="contact">
+        <h3>CONTATO</h3>
+            <ul style="list-style-type: none;">
+                <li><a><i class="material-icons" style='vertical-align: middle'>email</i>         petjava@gmail.com</a></li>
+                <li><a><i class="material-icons" style='vertical-align: middle'>location_on</i>       Av. Trabalhador São Carlense, 1400, Pq. Arnold Schimidt - São Carlos/SP</a></li>
+                <li><a><i class="material-icons" style='vertical-align: middle'>watch_later</i>        Segunda a sexta feira, 10h - 18h</a></li>
+                <li><a><i class="material-icons" style='vertical-align: middle'>call</i>        (16)3370-7070</a></li>
+            </ul>
+        </section>
+
+          <section id="social">
+            <h3>NOS ACOMPANHE NAS REDES SOCIAIS!</h3>
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-google"></a>
+          </section>
+
+        <div id="copyright" style="margin-left:auto; margin-right:auto;"> &copy; Copyright Pet Shop 2017</div>
+
+    </footer>
+
+        </div>
+    </body>
+</html>
