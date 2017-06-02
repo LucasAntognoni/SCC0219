@@ -1,0 +1,22 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+}
+
+.jumbotron {
+  padding: 70px;
+}
+
+.btn-group-vertical > button{
+    margin-bottom:40px;
+    border-radius:10px !important;
+}
+
+.input-group {
+  margin-bottom:10px;
+  border-radius:10px !important;
+}
+
+.col-lg-7{
+  background-color: red;
+}
