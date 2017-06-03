@@ -9,13 +9,10 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        
-        <script src="methods.js"></script>
         <title>Pet Shop - Registre um novo Pet</title>
 </head>
 
-<body onload="LoadDb()">
+<body>
 	<div class="start">
         <header class="header" id="header">
             <div id="logo">
@@ -50,27 +47,26 @@
     <div class = header>
         <h1>Registre um Novo pet</h1>
     </div>
-    <div class="form-group" id="pet-form">
-        <form>
+    <div class="form-group" >
+        <form id="pet-form" onsubmit="addPet()">
 			Nome do PET:
-			<input type="text" placeholder="Informe o nome do PET"
+			<input type="text" id="petname" placeholder="Informe o nome do PET"
                         name="pet-name"><br></br>
-			
-			ID:
-			<input type="text" name="ID"><br></br>
-			
+
+		
 			Raça:
-			<input type="text" placeholder="Informe a raça do pet" name="Raca" size=70><br</br>
+			<input type="text" placeholder="Informe a raça do pet"
+                        id="raca" name="Raca" size=70><br</br>
 			
 			Idade:
-			<input type="number" placeholder="Idade" name="Idade" max=99 min=0
+			<input type="number" id="idade"placeholder="Idade" name="Idade" max=99 min=0
 			default=0.0><br></br>
 
 			Imagem: 
-			<input type="file" accept="image/*"><br></br>
+			<input type="file" id="image" accept="image/*"><br></br>
 
 			<div class="clearfix">
-                        <button class="button"  type="submit"  onclick="getAnimal()"><span>Registrar</span></button>
+                        <button class="button"  type="submit" ><span>Registrar</span></button>
 				<button class="cancelbtn">Cancelar</button>
 			</div>
 		</form>
@@ -107,5 +103,8 @@
         <div id="copyright" style="margin-left:auto; margin-right:auto;"> &copy; Copyright Pet Shop 2017</div>
 
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <script src="methods.js"></script>
 </body>
 </html>
