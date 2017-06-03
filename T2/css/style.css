@@ -30,3 +30,10 @@ body {
     margin-bottom:10px;
     border-radius:10px !important;
 }
+
+#slots table, #slots th, #slots td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-spacing: 5px;
+    font-size: 1.5em;
+}
