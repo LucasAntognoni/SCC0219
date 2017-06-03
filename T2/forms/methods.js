@@ -4,7 +4,7 @@ $(document).ready(function(){
     request.onsuccess=function(e){
         console.log("Success creating database!");
         var db=e.target.result;
-    
+        var os=db.createObjectStore('Animals',{keyPath: "ID",autoIncrement: true});
     }
 
     request.onerror=function(){
@@ -16,7 +16,7 @@ $(document).ready(function(){
     request.onupgradeneeded=function(e){
         var db=e.target.result;
         if(!db.objectStoreNames.contains('Animals')){
-            var os=db.createObjectStore('Animals',{keyPath: "ID",autoIncrement: true});
+            var os=db.createObjectStore('Animals',{keyPath: "ID", autoIncrement: true});
 
         }
         
@@ -26,10 +26,10 @@ $(document).ready(function(){
 
 
 function addPet(){
-    var petname=$('petname').val();
-    var raca=$('raca').val();
-    var idade=$('idade').val();
-    var image=$('image').val();
+    var petname= $('petname').val();
+    var raca= $('raca').val();
+    var idade= $('idade').val();
+    var image= $('image').val();
     
     var transaction = db.transaction(["Animals"], "readwrite");
       
