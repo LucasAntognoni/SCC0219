@@ -48,7 +48,7 @@
         <h1>Registre um Novo pet</h1>
     </div>
     <div class="form-group" >
-        <form id="pet-form"  method="post">
+        <form id="pet-form"  method="post" onsubmit="addPet()">
 			Nome do PET:
 			<input type="text" id="petname" placeholder="Informe o nome do PET"
                         name="pet-name"><br></br>
@@ -66,8 +66,7 @@
 			<input type="file" id="image" accept="image/*"><br></br>
 
 			<div class="clearfix">
-                            <input type="submit" type="submit" value="Registrar"
-                            onsubmit="addPet()">
+                            <input  type="submit" value="Registrar">
                             <button class="cancelbtn">Cancelar</button>
 			</div>
 		</form>
