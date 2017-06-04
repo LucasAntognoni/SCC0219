@@ -1,10 +1,11 @@
+let db;
+
 $(document).ready(function(){
     var request=indexedDB.open('Pets',1);
 
     request.onsuccess=function(e){
         console.log("Success creating database!");
-        var db=e.target.result;
-        var os=db.createObjectStore('Animals',{keyPath: "ID",autoIncrement: true});
+        db=e.target.result;
     }
 
     request.onerror=function(){
@@ -14,43 +15,48 @@ $(document).ready(function(){
 
 
     request.onupgradeneeded=function(e){
-        var db=e.target.result;
-        if(!db.objectStoreNames.contains('Animals')){
-            var os=db.createObjectStore('Animals',{keyPath: "ID", autoIncrement: true});
-
-        }
-        
+       db=e.target.result;
+       if(!db.objectStore.names.contains("Animals")){
+            var os=db.createObjectStore("Animals",{keyPath: "ID", autoIncrement: true});
+            os.createIndex('petname','petname',{unique:false});
+            os.createIndex('pedigree', 'pedigree',{unique:false});
+            os.createIndex('age','age',{unique:false});
+            os.createIndex('image','image',{unique:false});
+       }   
     }
 
 });
 
 
 function addPet(){
-    var petname= $('petname').val();
-    var raca= $('raca').val();
-    var idade= $('idade').val();
-    var image= $('image').val();
+    var petname= $('#petname').val();
+    var raca= $('#raca').val();
+    var idade= $('#idade').val();
+    var image= $('#image').val();
     
-    var transaction = db.transaction(["Animals"], "readwrite");
-      
-    var store=transaction.objectStore("Animals");
-
-    var animal={
-        name: name,
-        raca: raca,
-        idade: idade,
+    var Pet={
+        petname: petname,
+        pedigree: raca,
+        age: idade,
         image: image
-    }
+    };
+   var transaction=db.transaction(["Animals"],"readwrite");
+   transaction.oncomplete=function(e){
+       console.log("Transaction stablished. Adding Pet");
+   };
+   transaction.onerror=function(e){
+       console.log("Transaction messed up. Please refresh your system");
+   };
+    
+    var os=transaction.objectStore("Animals");
 
-    var request = store.add(animal);
+    var request=os.add(Pet);
     
     request.onsuccess=function(e){
-        alert("Pet Added");
-    }
+        console.log("Pet added, congrats!");
+    };
     
-    request.onerror=function(){
-        alert("Sorry, cannot add your pet at the time");
-        conslole.log("Error",e.target.error.target.name);
-    
-    }
+    request.onerror=function(e){
+        console.log("I'm sorry Dave, I'm afraid I cannot do that");
+    };
 }

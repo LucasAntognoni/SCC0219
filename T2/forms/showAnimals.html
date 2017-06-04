@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -9,7 +10,7 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <title>Pet Shop - Registre um novo Pet</title>
+        <title>Pet Shop - Encontre seu Pet aqui!</title>
 </head>
 
 <body>
@@ -45,33 +46,22 @@
     </div>
     <div class="content">
     <div class = header>
-        <h1>Registre um Novo pet</h1>
+        <h1>Database</h1>
     </div>
-    <div class="form-group" >
-        <form id="pet-form"  method="post">
-			Nome do PET:
-			<input type="text" id="petname" placeholder="Informe o nome do PET"
-                        name="pet-name"><br></br>
-
-		
-			Raça:
-			<input type="text" placeholder="Informe a raça do pet"
-                        id="raca" name="Raca" size=70><br</br>
-			
-			Idade:
-			<input type="number" id="idade"placeholder="Idade" name="Idade" max=99 min=0
-			default=0.0><br></br>
-
-			Imagem: 
-			<input type="file" id="image" accept="image/*"><br></br>
-
-			<div class="clearfix">
-                            <input type="submit" type="submit" value="Registrar"
-                            onsubmit="addPet()">
-                            <button class="cancelbtn">Cancelar</button>
-			</div>
-		</form>
-	</div>
+        <div>			
+            <table id="viewPets">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Raça</th>
+                <tr></tr>
+                <tr></tr>
+                <tr</tr>
+            
+            </table> 
+        
+        </div>
+    </div>
 </div>
 
     <footer>
