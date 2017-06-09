@@ -2,12 +2,13 @@
 
 let db;
 
-$(document).ready(function(){
+$(document).ready(() => {
     var request=indexedDB.open('Pets',1);
 
     request.onsuccess=function(e){
        db=e.target.result;
        console.log("Database's up!");
+       showPets();
     };
 
     request.onerror=function(){
@@ -20,14 +21,11 @@ $(document).ready(function(){
        if(!db.objectStoreNames.contains("Animals")){
             var os=db.createObjectStore("Animals",{keyPath: "ID", autoIncrement: true});
             os.createIndex('petname','petname',{unique:false});
-            os.createIndex('pedigree', 'pedigree',{unique:false});
-            os.createIndex('age','age',{unique:false});
+            os.createIndex('raca', 'raca',{unique:false});
+            os.createIndex('idade','idade',{unique:false});
             os.createIndex('image','image',{unique:false});
        }   
     };
-
-
-
 });
 
 
@@ -38,24 +36,50 @@ function addPet(){
     var image= $('#image').val();
     
     var Pet={
-        petname: petname,
-        pedigree: raca,
-        age: idade,
-        image: image
+        petname:petname,
+        raca:raca,
+        idade:idade,
+        image:image
     }
-     var transaction=db.transaction(["Animals"],"readwrite");
     
+    var transaction=db.transaction(["Animals"],"readwrite");
     var os=transaction.objectStore("Animals");
-
     var request=os.add(Pet);
-    
+
+    console.log(request);
     request.onsuccess=function(e){
-        console.log("Pet added, congrats!");
+        console.log(e);
+        alert("Pet added, congrats!");
     };
     
     request.onerror=function(e){
-        console.log("I'm sorry Dave, I'm afraid I cannot do that", e.target.error.name);
+        alert("I'm sorry Dave, I'm afraid I cannot do that", e.target.error.name);
     };
-   
 }
 
+function showPets(e){
+    var transaction = db.transaction(["Animals"], 'readonly');
+    var os = transaction.objectStore("Animals");
+    var index = os.index('petname');
+
+    var output='';
+    
+    index.openCursor().onsuccess =function(e){
+        let cursor = e.target.result;
+        
+        if(cursor){
+            output += "<tr>";
+            output += "<td>"+cursor.value.id+"</td>";
+            output += "<td><span>"+cursor.value.petname+"</span></td>";
+            output += "<td><span>"+cursor.value.raca+"</span></td>";
+            output += "<td><span>"+cursor.value.idade+"</span></td>";
+            output += "<td>"+cursor.value.image+"</td>";
+            output += "<td><a href=''>Delete</a></td>";
+            output += "</tr>";
+            
+            cursor.continue();
+        }
+        
+        $('#LPets').html(output);
+    }
+}
