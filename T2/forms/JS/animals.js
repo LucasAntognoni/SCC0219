@@ -62,7 +62,7 @@ function showPets(e){
     var os = transaction.objectStore("Animals");
     var index = os.index('petname');
 
-    var output='';
+    var output="";
     
     index.openCursor().onsuccess =function(e){
         let cursor = e.target.result;
@@ -75,11 +75,13 @@ function showPets(e){
             output += "<td><span>"+cursor.value.idade+"</span></td>";
             output += "<td>"+cursor.value.image+"</td>";
             output += "<td><a href=''>Delete</a></td>";
-            output += "</tr>";
+            output += "<td><i class=\"material-icons\">delete</i></td>"; 
             
+            output += "</tr>";
             cursor.continue();
+            
+            $('#LPets').html(output);
         }
         
-        $('#LPets').html(output);
     }
 }
