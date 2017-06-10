@@ -4,18 +4,18 @@ let db;
 
 $(document).ready(() => {
     var request=indexedDB.open('Services',1);
-
+    
     request.onsuccess=function(e){
        db=e.target.result;
        console.log("Database's up!");
-       showPets();
+       showServs();
     };
-
+    
     request.onerror=function(){
         console.log("Messed up on creating database!");
     
     };
-
+    
     request.onupgradeneeded=function(e){
        db=e.target.result;
        if(!db.objectStoreNames.contains("Servs")){
@@ -29,23 +29,23 @@ $(document).ready(() => {
 });
 
 
-function addPet(){
-    var prodname= $('input[name=prodname]').val();
+function addServ(){
+    var servname= $('input[name=servname]').val();
     var description= $('input[name=description]').val();
     var price= $('input[name=price]').val();
     var image= $('input[name=image]').val();
     
     var Service={
-        prodname:prodname,
+        servname:servname,
         description:description,
         price:price,
         image:image
     }
-    
-    var transaction=db.transaction(["Services"],"readwrite");
+    console.log('Got your service, bro');
+    var transaction=db.transaction(["Servs"],"readwrite");
     var os=transaction.objectStore("Servs");
-    var request=os.add(Pet);
-
+    var request=os.add(Service);
+    
     console.log(request);
     request.onsuccess=function(e){
         console.log(e);
@@ -57,11 +57,11 @@ function addPet(){
     };
 }
 
-function showPets(e){
-    var transaction = db.transaction(["Animals"], 'readonly');
-    var os = transaction.objectStore("Animals");
-    var index = os.index('petname');
-
+function showServs(e){
+    var transaction = db.transaction(["Servs"], 'readonly');
+    var os = transaction.objectStore("Servs");
+    var index = os.index('servname');
+    
     var output="";
     
     index.openCursor().onsuccess =function(e){
@@ -69,19 +69,23 @@ function showPets(e){
         
         if(cursor){
             output += "<tr>";
-            output += "<td>"+cursor.value.id+"</td>";
-            output += "<td><span>"+cursor.value.petname+"</span></td>";
-            output += "<td><span>"+cursor.value.raca+"</span></td>";
-            output += "<td><span>"+cursor.value.idade+"</span></td>";
+            output += "<td>"+cursor.value.ID+"</td>";
+            output += "<td><span>"+cursor.value.servname+"</span></td>";
+            output += "<td><span>"+cursor.value.description+"</span></td>";
+            output += "<td><span>"+cursor.value.price+"</span></td>";
             output += "<td>"+cursor.value.image+"</td>";
-            output += "<td><a href=''>Delete</a></td>";
             output += "<td><i class=\"material-icons\">delete</i></td>"; 
             
             output += "</tr>";
+            console.log(cursor);
             cursor.continue();
             
-            $('#LPets').html(output);
         }
+            $('#LServs').html(output);
         
-    }
+    };
+    
+    index.openCursor.onerror=function(e){
+        alert("I'm sorry Dave, I'm afraid I cannot do that", e.target.error.name);
+    };
 }

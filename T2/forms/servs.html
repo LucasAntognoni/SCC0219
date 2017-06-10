@@ -50,9 +50,15 @@
 	<div class = header>
 		<h1>Registre um Novo Serviço</h1>
 	</div>
-	
+    <nav id="leftSidebar" style="display: block; float: left;">
+            <ul>
+                <li><a href="servs.html">Cadastrar</a> </li>
+                <li><a href="showServices.html">Serviços Cadastrados</a>
+                <li><a>Teste 2</a></li>
+            </ul>
+        </nav>
 	<div class="form-group">
-		<form>
+		<form method="post" onsubmit="addServ()">
 			Nome do Serviço:
 			<input type="text" placeholder "Nome do Serviço"
                         name="servname"><br></br>
@@ -68,9 +74,8 @@
 			default=0.0>
 
 			<div class="clearfix">
-				<button class="button" type="submit"
-                                    onclick="getService()"><span>Registrar</span></button>
-				<button class="cancelbtn">Cancelar</button>
+                            <input type="submit" value="Registrar">
+                            <button class="cancelbtn">Cancelar</button>
 			</div>
 		</form>
 	</div>

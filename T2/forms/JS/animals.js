@@ -69,19 +69,22 @@ function showPets(e){
         
         if(cursor){
             output += "<tr>";
-            output += "<td>"+cursor.value.id+"</td>";
+            output += "<td>"+cursor.value.ID+"</td>";
             output += "<td><span>"+cursor.value.petname+"</span></td>";
             output += "<td><span>"+cursor.value.raca+"</span></td>";
             output += "<td><span>"+cursor.value.idade+"</span></td>";
             output += "<td>"+cursor.value.image+"</td>";
-            output += "<td><a href=''>Delete</a></td>";
+
             output += "<td><i class=\"material-icons\">delete</i></td>"; 
             
             output += "</tr>";
             cursor.continue();
-            
-            $('#LPets').html(output);
+             
         }
-        
-    }
+            $('#Lpets').html(output);
+    };
+    
+    index.openCursor().onerror=function(e){
+        alert("I'm sorry Dave, I'm afraid I cannot do that", e.target.error.name);
+    };
 }

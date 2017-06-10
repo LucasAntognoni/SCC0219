@@ -9,15 +9,14 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="javascript" type="text/javascript" href="methods.js">
-	<title>Pet Shop - Registre um novo Produto</title>
+        <title>Pet Shop - Lista de Serviços</title>
 </head>
 
 <body>
 	<div class="start">
         <header class="header" id="header">
             <div id="logo">
-                <a href="./index.html" style="float:right" ><img border="0"
+                <a href="../index.html" style="float:right" ><img border="0"
 									alt="PetJava" width="60%" height="60%" src="../img/petjavawhite.png"></a>
             </div>
             <div id="searchbar">
@@ -45,48 +44,34 @@
         </div>
     </div>
     <div class="content">
-	
-	<div class = "header">
-		<h1>Registre um Novo Produto</h1>
-	</div>
-	
+        <div class = header>
+            <h1>Database</h1>
+        </div>
         <nav id="leftSidebar" style="display: block; float: left;">
             <ul>
-                <li><a href="prods.html">Cadastre o produto aqui</a></li> 
-                <li><a href="showProducts.html">Veja os Produtos Cadastrados</a></li>
+                <li><a href="servs.html">Cadastre o serviço aqui</a></li> 
+                <li><a href="showServices.html">Veja os serviços disponíveis</a></li>
                 <li><a>Teste 2</a></li>
             </ul>
         </nav>
-	
-        <div class="form-group" method="post" onsubmit="addProd()" >
-		<form>
-                    Nome do Produto:
-                    <input type="text" placeholder="Insira o Nome do Produto."name="produto"><br></br>
-
-                    Descrição:
-                    <input type="text" placeholder="Descreva brevemente o produto"
-			name="descricao" style="width:100px; width:100px" ><br</br>
-
-                    Imagem: 
-                    <input type="file" name='image' accept="image/*"><br></br>
-
-                    Preço:
-                    <input type="number" placeholder="Preço" name="preco" max=9999.99
-			min=0.0 step=0.1> <br></br>
-
-                    Estoque:
-                    <input type="number" placeholder="Quantia" name="estoque" min=0 max=999
-			default=0 >
-
-                    Quantidade Vedida:
-                    <input type="number" name="vendas" min=0>
-
-			<div class="clearfix">
-			    <input type="submit" value="Cadastrar">
-                            <button class="cancelbtn">Cancelar</button>
-			</div>
-		</form>
-	</div>
+        <table id="viewServs">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Serviço</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+                <th>Imagem</th>
+                <th>Delete</th>
+            </thead>
+            <tbody id="LServs">
+                
+                
+            </tbody>
+                
+        </table> 
+        
+    </div>
 </div>
 
     <footer>
@@ -119,8 +104,9 @@
         <div id="copyright" style="margin-left:auto; margin-right:auto;"> &copy; Copyright Pet Shop 2017</div>
 
     </footer>
-
+    
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="JS/prods.js"></script>
+    <script src="JS/servs.js"></script>
 </body>
 </html>

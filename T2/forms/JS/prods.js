@@ -22,8 +22,8 @@ $(document).ready(() => {
             var os=db.createObjectStore("Produtos",{keyPath: "ID", autoIncrement: true});
             os.createIndex('prodname','prodname',{unique:false});
             os.createIndex('description', 'description',{unique:false});
-            os.createIndex('preco','idade',{unique:false});
-            os.createIndex('image','image',{unique:false});
+            os.createIndex('preco','preco',{unique:false});
+            os.createIndex('qtdeVendida','qtdeVendida',{unique:false});
             os.createIndex('estoque','estoque',{unique:false});
             os.createIndex('image','image',{unique:false});
        }   
@@ -34,19 +34,22 @@ $(document).ready(() => {
 function addProd(){
     var prodname=$('input[name=produto]').val();
     var description=$('input[name=descricao]').val();
-    var preco=$('input[name=preco]');
-    var estoque=$('input[name=estoque]')
-    var qtdeVendida=$('input[name=vendas]');
-    
+    var preco=$('input[name=preco]').val();
+    var estoque=$('input[name=estoque]').val();
+    var qtdeVendida=$('input[name=vendas]').val();
+    var image=$('input[name=image]').val();
+   
+    console.log("product found!");
     var prod={
         prodname:prodname,
         description:description,
         preco:preco,
         estoque:estoque,
-        qtdeVendida:qtdeVendida
+        qtdeVendida:qtdeVendida,
+        image:image
     }
     
-    var transaction=db.transaction(["Prods"],"readwrite");
+    var transaction=db.transaction(["Produtos"],"readwrite");
     var os=transaction.objectStore("Produtos");
     var request=os.add(prod);
 
@@ -60,11 +63,10 @@ function addProd(){
         alert("I'm sorry Dave, I'm afraid I cannot do that", e.target.error.name);
     };
 }
-
 function showProds(e){
-    var transaction = db.transaction(["Animals"], 'readonly');
-    var os = transaction.objectStore("Animals");
-    var index = os.index('petname');
+    var transaction = db.transaction(["Produtos"], 'readonly');
+    var os = transaction.objectStore("Produtos");
+    var index = os.index('prodname');
 
     var output="";
     
@@ -73,19 +75,20 @@ function showProds(e){
         
         if(cursor){
             output += "<tr>";
-            output += "<td>"+cursor.value.id+"</td>";
-            output += "<td><span>"+cursor.value.petname+"</span></td>";
-            output += "<td><span>"+cursor.value.raca+"</span></td>";
-            output += "<td><span>"+cursor.value.idade+"</span></td>";
+            output += "<td>"+cursor.value.ID+"</td>";
+            output += "<td><span>"+cursor.value.prodname+"</span></td>";
+            output += "<td><span>"+cursor.value.description+"</span></td>";
+            output += "<td>"+cursor.value.preco+"</td>";
+            output += "<td><span>"+cursor.value.estoque+"</span></td>";
+            output += "<td><span>"+cursor.value.qtdeVendida+"</span></td>";
             output += "<td>"+cursor.value.image+"</td>";
-            output += "<td><a href=''>Delete</a></td>";
             output += "<td><i class=\"material-icons\">delete</i></td>"; 
             
             output += "</tr>";
             cursor.continue();
             
-            $('#LPets').html(output);
         }
         
+        $('#Lprods').html(output);
     }
 }
