@@ -20,158 +20,141 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <title>Pet Shop</title>
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+    <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+    <script src = "/js/serviço_script.js"></script>
+
+  <title>Pet Shop</title>
   </head>
   <body>
 
-    <div class="conteudo">
+    <div class="jumbotron" id="agendamento">
+      <div class="container-fluid">
 
-      <div class="menu">
-        <div class="left">
-          <button class="buscar" type="button">BUSCAR</button>
-          <button class="atualizar" type="button">ATUALIZAR</button>
+        <div class="col-lg-4">
+          <div id = "calendario"></div>
         </div>
-        <div class="right">
-          <button class="adicionar" type="button">ADICIONAR</button>
-          <button class="remover" type="button">REMOVER</button>
+
+        <div class="col-lg-8">
+
+          <h1>Serviços</h1>
+          <p>
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+            ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          <p>
+
+          <table id="slots">
+
+            <th>Horário</th>
+            <th id="data"></th>
+
+            <tr>
+              <td>10:00</td>
+              <td>
+                <span>Serviço</span>
+                <img src="" alt="">
+                <span>Animal</span>
+                <span>Cliente</span>
+                <button type="button" class="btn btn-link glyphicon glyphicon-plus"></button>
+                <button type="button" class="btn btn-link glyphicon glyphicon-minus"></button>
+              </td>
+            </tr>
+            <tr>
+              <td>11:00</td>
+              <td>
+                <span>Serviço</span>
+                <img src="" alt="">
+                <span>Animal</span>
+                <span>Cliente</span>
+                <button type="button" class="btn btn-link glyphicon glyphicon-plus"></button>
+                <button type="button" class="btn btn-link glyphicon glyphicon-minus"></button>
+              </td>
+            </tr>
+            <tr>
+              <td>12:00</td>
+              <td>
+                <span>Serviço</span>
+                <img src="" alt="">
+                <span>Animal</span>
+                <span>Cliente</span>
+                <button type="button" class="btn btn-link glyphicon glyphicon-plus"></button>
+                <button type="button" class="btn btn-link glyphicon glyphicon-minus"></button>
+              </td>
+            </tr>
+            <tr>
+              <td>13:00</td>
+              <td>
+                <span>Serviço</span>
+                <img src="" alt="">
+                <span>Animal</span>
+                <span>Cliente</span>
+                <button type="button" class="btn btn-link glyphicon glyphicon-plus"></button>
+                <button type="button" class="btn btn-link glyphicon glyphicon-minus"></button>
+              </td>
+            </tr>
+            <tr>
+              <td>14:00</td>
+              <td>
+                <span>Serviço</span>
+                <img src="" alt="">
+                <span>Animal</span>
+                <span>Cliente</span>
+                <button type="button" class="btn btn-link glyphicon glyphicon-plus"></button>
+                <button type="button" class="btn btn-link glyphicon glyphicon-minus"></button>
+              </td>
+            </tr>
+            <tr>
+              <td>15:00</td>
+              <td>
+                <span>Serviço</span>
+                <img src="" alt="">
+                <span>Animal</span>
+                <span>Cliente</span>
+                <button type="button" class="btn btn-link glyphicon glyphicon-plus"></button>
+                <button type="button" class="btn btn-link glyphicon glyphicon-minus"></button>
+              </td>
+            </tr>
+            <tr>
+              <td>16:00</td>
+              <td>
+                <span>Serviço</span>
+                <img src="" alt="">
+                <span>Animal</span>
+                <span>Cliente</span>
+                <button type="button" class="btn btn-link glyphicon glyphicon-plus"></button>
+                <button type="button" class="btn btn-link glyphicon glyphicon-minus"></button>
+              </td>
+            </tr>
+            <tr>
+              <td>17:00</td>
+              <td>
+                <span>Serviço</span>
+                <img src="" alt="">
+                <span>Animal</span>
+                <span>Cliente</span>
+                <button type="button" class="btn btn-link glyphicon glyphicon-plus"></button>
+                <button type="button" class="btn btn-link glyphicon glyphicon-minus"></button>
+              </td>
+            </tr>
+            <tr>
+              <td>18:00</td>
+              <td>
+                <span>Serviço</span>
+                <img src="" alt="">
+                <span>Animal</span>
+                <span>Cliente</span>
+                <button type="button" class="btn btn-link glyphicon glyphicon-plus"></button>
+                <button type="button" class="btn btn-link glyphicon glyphicon-minus"></button>
+              </td>
+            </tr>
+          </table>
         </div>
-      </div>
-
-      <div class="tela_servicos">
-        <div id="data">Abril - 2017 - Terceira Semana (09 - 15)</div>
-        <table class="calendario">
-          <th>Hor</th>
-          <th>Seg</th>
-          <th>Ter</th>
-          <th>Qua</th>
-          <th>Qui</th>
-          <th>Sex</th>
-          <th>Sab</th>
-          <th>Dom</th>
-
-          <tr>
-            <td>07:00</td>
-            <td>
-              <span class="material-icons">pets</span>
-              Banho e Tosa<br>
-              Pluto <br>
-              Mickey</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td>08:00</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td>09:00</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td>10:00</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td>11:00</td>
-            <td></td>
-            <td></td>
-            <td>
-              <span class="material-icons">pets</span>
-              Banho e Tosa<br>
-              Doge <br>
-              Anom</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td>13:00</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td>14:00</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td>15:00</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td>16:00</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td>17:00</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
-              <span class="material-icons">local_hospital</span>
-              Consulta<br>
-              Bolt <br>
-              Penny</td>
-            <td></td>
-            <td></td>
-          </tr>
-        </table>
       </div>
     </div>
+  </div>
   </body>
 </html>

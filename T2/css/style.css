@@ -3,12 +3,11 @@ body {
     font-size: 1em;
 }
 
-/*Gerenciamento*/
-
 .jumbotron {
   padding: 70px;
 }
 
+/*Produtos*/
 .btn-group-vertical > button{
     margin-bottom:40px;
     border-radius:10px !important;
@@ -18,22 +17,26 @@ body {
   margin-bottom:10px;
   border-radius:10px !important;
 }
-
-.col-lg-7 {
-  background-color: red;
-}
+/*Produtos*/
 
 
-/*Agendamento*/
-
-#agendamento .btn-group-vertical > button {
-    margin-bottom:10px;
-    border-radius:10px !important;
-}
-
+/*Tabela de Horários*/
 #slots table, #slots th, #slots td {
-    border: 1px solid black;
+    border: 2px solid #eee;
     border-collapse: collapse;
-    border-spacing: 5px;
+    border-spacing: 10px;
+    padding: 2%;
     font-size: 1.5em;
+    text-align: center;
+}
+
+#slots th, #slots td {
+  background-color: #24bf3e;
+  color: white;
+}
+/*Tabela de Horários*/
+
+
+#Agendar {
+  margin-top: 10px;
 }
