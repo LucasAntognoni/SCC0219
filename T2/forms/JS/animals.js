@@ -3,7 +3,7 @@
 let db;
 
 $(document).ready(() => {
-    var request=indexedDB.open('Pets',3);
+    var request=indexedDB.open('Pets',1);
 
     request.onsuccess=function(e){
        db=e.target.result;
@@ -71,10 +71,10 @@ function showPets(e){
         if(cursor){
             output += "<tr id='pet_"+cursor.value.ID+"'>";
             output += "<td>"+cursor.value.ID+"</td>";
-            output += "<td><span class='cursor pet' contenteditable='true' data-field='petname'>"+cursor.value.petname+"</span></td>";
-            output += "<td><span class='cursor pet' contenteditable='true'>"+cursor.value.raca+"</span></td>";
-            output += "<td><span class='cursor pet' contenteditable='true'>"+cursor.value.idade+"</span></td>";
-            output += "<td>"+cursor.value.image+"</td>";
+            output += "<td><span class='cursor pet' contenteditable='true' data-field='petname' data-id="+cursor.value.ID+">"+cursor.value.petname+"</span></td>";
+            output += "<td><span class='cursor pet' contenteditable='true' data-field='raca' data-id="+cursor.value.ID+">"+cursor.value.raca+"</span></td>";
+            output += "<td><span class='cursor pet' contenteditable='true' data-field='idade' data-id="+cursor.value.ID+">"+cursor.value.idade+"</span></td>";
+            output += "<td ><span class='cursor pet' contenteditable='true' data-field='image' data-id="+cursor.value.ID+">"+cursor.value.image+"</span></td>";
 
             output += "<td><a onclick=\"removePet("+cursor.value.ID+")\" href=\'\'><i class=\"material-icons\" style=\"color: crimson;\">delete</i></a></td>"; 
             
@@ -119,9 +119,41 @@ function removePet(ID){
 
 //Update Pets
 
-//$('#pets').on('blur','.pet').function(){
-    //var newText=$(this).html();
+$('#Lpets').on('blur','.pet', function(){
+    var newText=$(this).html();
+    var field=$(this).data('field');
+    var id=$(this).data('id');
     
+    var transaction = db.transaction(["Animals"], 'readwrite');
+    var os = transaction.objectStore("Animals");
     
-//}
+    var request = os.get(id);
+
+    request.onsuccess=function(){
+       var data =  request.result;
+
+       if(field=='petname'){
+           data.petname=newText;
+       }
+       else if(field=='raca'){
+            data.raca=newText;
+       }
+       else if(field=='idade'){
+            data.idade=newText;
+       }
+    
+        var requestUpdate = os.put(data);
+        
+        requestUpdate.onsuccess=function(){
+            console.log('Value Updated');
+        }
+        requestUpdate.onerror=function(e){
+            alert("I'm sorry Dave, I'm afraid I cannot do that", e.target.error.name);
+        }
+    }
+    
+    request.onerror=function(e){
+        alert("I'm sorry Dave, I'm afraid I cannot do that", e.target.error.name);
+    };
+});
 

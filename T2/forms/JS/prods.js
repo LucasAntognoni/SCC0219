@@ -53,9 +53,7 @@ function addProd(){
     var os=transaction.objectStore("Produtos");
     var request=os.add(prod);
 
-    console.log(request);
     request.onsuccess=function(e){
-        console.log(e);
         alert("Prod added, congrats!");
     };
     
@@ -74,14 +72,14 @@ function showProds(e){
         let cursor = e.target.result;
         
         if(cursor){
-            output += "<tr>";
+            output += "<tr id='prod_"+cursor.value.ID+"'>";
             output += "<td>"+cursor.value.ID+"</td>";
-            output += "<td><span class='cursor prod' contenteditable='true'>"+cursor.value.prodname+"</span></td>";
-            output += "<td><span class='cursor prod' contenteditable='true'>"+cursor.value.description+"</span></td>";
-            output += "<td class='cursor prod' contenteditable='true'>"+cursor.value.preco+"</td>";
-            output += "<td><span class='cursor prod' contenteditable='true'>"+cursor.value.estoque+"</span></td>";
-            output += "<td><span class='cursor prod' contenteditable='true'>"+cursor.value.qtdeVendida+"</span></td>";
-            output += "<td>"+cursor.value.image+"</td>";
+            output += "<td><span class='cursor prod' contenteditable='true' data-field='prodname' data-id="+cursor.value.ID+">"+cursor.value.prodname+"</span></td>";
+            output += "<td><span class='cursor prod' contenteditable='true' data-field='description' data-id="+cursor.value.ID+">"+cursor.value.description+"</span></td>";
+            output += "<td><span class='cursor prod' contenteditable='true' data-field='preco' data-id="+cursor.value.ID+">"+cursor.value.preco+"</span></td>";
+            output += "<td><span class='cursor prod' contenteditable='true' data-field='estoque' data-id="+cursor.value.ID+">"+cursor.value.estoque+"</span></td>";
+            output += "<td><span class='cursor prod' contenteditable='true' data-field='qtdeVendida' data-id="+cursor.value.ID+">"+cursor.value.qtdeVendida+"</span></td>";
+            output += "<td><span class='cursor prod' contenteditable='true' data-field='image' data-id="+cursor.value.ID+">"+cursor.value.image+"</td>";
             output += "<td><a onclick=\"removeProd("+cursor.value.ID+")\" href=\'\'><i class=\"material-icons\" style=\"color: crimson;\">delete</i></a></td>"; 
             
             output += "</tr>";
@@ -116,8 +114,51 @@ function removeProd(ID){
         $('#prod_'+ID).remove();
     }
     
+    request.onerror=function(e){
+        alert("I'm sorry Dave, I'm afraid I cannot do that", e.target.error.name);
+    };
+}  
+    
+$('#Lprods').on('blur','.prod', function(){
+    var newText=$(this).html();
+    var field=$(this).data('field');
+    var id=$(this).data('id');
+    
+    var transaction = db.transaction(["Produtos"], 'readwrite');
+    var os = transaction.objectStore("Produtos");
+    
+    var request = os.get(id);
+
+    request.onsuccess=function(){
+       var data =  request.result;
+
+       if(field=='prodname'){
+           data.prodname=newText;
+       }
+       else if(field=='description'){
+            data.description=newText;
+       }
+       else if(field=='preco'){
+            data.preco=newText;
+       }
+    
+       else if(field=='estoque'){
+            data.estoque=newText;
+       }
+       else if(field=='qtdeVendida'){
+            data.qtdeVendida=newText;
+       }
+        var requestUpdate = os.put(data);
+        
+        requestUpdate.onsuccess=function(){
+            console.log('Value Updated');
+        }
+        requestUpdate.onerror=function(e){
+            alert("I'm sorry Dave, I'm afraid I cannot do that", e.target.error.name);
+        }
+    }
     
     request.onerror=function(e){
         alert("I'm sorry Dave, I'm afraid I cannot do that", e.target.error.name);
     };
-}       
+});

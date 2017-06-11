@@ -622,4 +622,6 @@ td {
 .danger {color: crimson;}
 .cursor {cursor:pointer;}
 span.pet{padding:8px 20px;}
+span.prod{padding:8px 20px;}
+span.serv{padding:8px 20px;}
 /*__________________END__________________*/
