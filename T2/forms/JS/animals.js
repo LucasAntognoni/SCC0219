@@ -49,7 +49,7 @@ function addPet(){
     console.log(request);
     request.onsuccess=function(e){
         alert("Pet added, congrats!");
-       window.location.href("showAnimals.html");
+       window.location.href="showAnimals.html";
     };
     
     request.onerror=function(e){
