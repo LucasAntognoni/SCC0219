@@ -49,10 +49,12 @@ function addPet(){
     console.log(request);
     request.onsuccess=function(e){
         alert("Pet added, congrats!");
+       window.location.href("showAnimals.html");
     };
     
     request.onerror=function(e){
         alert("I'm sorry Dave, I'm afraid I cannot do that", e.target.error.name);
+       window.location.href="showAnimals.html";
     };
 
 }
