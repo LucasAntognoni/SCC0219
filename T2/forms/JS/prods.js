@@ -82,7 +82,7 @@ function showProds(e){
             output += "<td><span>"+cursor.value.estoque+"</span></td>";
             output += "<td><span>"+cursor.value.qtdeVendida+"</span></td>";
             output += "<td>"+cursor.value.image+"</td>";
-            output += "<td><i class=\"material-icons\">delete</i></td>"; 
+            output += "<td><a onclick=\"removeProd()\" href=\'\'><i class=\"material-icons\" style=\"color: crimson;\">delete</i></a></td>"; 
             
             output += "</tr>";
             cursor.continue();

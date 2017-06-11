@@ -48,13 +48,13 @@ function addPet(){
 
     console.log(request);
     request.onsuccess=function(e){
-        console.log(e);
         alert("Pet added, congrats!");
     };
     
     request.onerror=function(e){
         alert("I'm sorry Dave, I'm afraid I cannot do that", e.target.error.name);
     };
+
 }
 
 function showPets(e){
@@ -68,14 +68,14 @@ function showPets(e){
         let cursor = e.target.result;
         
         if(cursor){
-            output += "<tr>";
+            output += "<tr id='pet_"+cursor.value.ID+"'>";
             output += "<td>"+cursor.value.ID+"</td>";
             output += "<td><span>"+cursor.value.petname+"</span></td>";
             output += "<td><span>"+cursor.value.raca+"</span></td>";
             output += "<td><span>"+cursor.value.idade+"</span></td>";
             output += "<td>"+cursor.value.image+"</td>";
 
-            output += "<td><i class=\"material-icons\">delete</i></td>"; 
+            output += "<td><a onclick=\"removePet("+cursor.value.ID+")\" href=\'\'><i class=\"material-icons\" style=\"color: crimson;\">delete</i></a></td>"; 
             
             output += "</tr>";
             cursor.continue();
@@ -85,6 +85,34 @@ function showPets(e){
     };
     
     index.openCursor().onerror=function(e){
+        alert("I'm sorry Dave, I'm afraid I cannot do that", e.target.error.name);
+    };
+}
+
+
+
+
+function clearAllPets(){
+    if(confirm("Você tem certeza?")==true){
+        indexedDB.deleteDatabase('Pets');
+        alert("Pets excluídos :/")
+        window.location.href="showAnimals.html";
+    }   
+}
+
+function removePet(ID){
+    var transaction = db.transaction(["Animals"], 'readwrite');
+    var os = transaction.objectStore("Animals");
+    
+    var request = os.delete(ID); 
+
+    request.onsuccess=function(){
+        console.log('Pet deleted =/');
+        $('#pet_'+ID).remove();
+        
+    }
+    
+    request.onerror=function(e){
         alert("I'm sorry Dave, I'm afraid I cannot do that", e.target.error.name);
     };
 }
