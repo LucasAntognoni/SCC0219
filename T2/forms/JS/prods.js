@@ -76,13 +76,13 @@ function showProds(e){
         if(cursor){
             output += "<tr>";
             output += "<td>"+cursor.value.ID+"</td>";
-            output += "<td><span>"+cursor.value.prodname+"</span></td>";
-            output += "<td><span>"+cursor.value.description+"</span></td>";
-            output += "<td>"+cursor.value.preco+"</td>";
-            output += "<td><span>"+cursor.value.estoque+"</span></td>";
-            output += "<td><span>"+cursor.value.qtdeVendida+"</span></td>";
+            output += "<td><span class='cursor prod' contenteditable='true'>"+cursor.value.prodname+"</span></td>";
+            output += "<td><span class='cursor prod' contenteditable='true'>"+cursor.value.description+"</span></td>";
+            output += "<td class='cursor prod' contenteditable='true'>"+cursor.value.preco+"</td>";
+            output += "<td><span class='cursor prod' contenteditable='true'>"+cursor.value.estoque+"</span></td>";
+            output += "<td><span class='cursor prod' contenteditable='true'>"+cursor.value.qtdeVendida+"</span></td>";
             output += "<td>"+cursor.value.image+"</td>";
-            output += "<td><a onclick=\"removeProd()\" href=\'\'><i class=\"material-icons\" style=\"color: crimson;\">delete</i></a></td>"; 
+            output += "<td><a onclick=\"removeProd("+cursor.value.ID+")\" href=\'\'><i class=\"material-icons\" style=\"color: crimson;\">delete</i></a></td>"; 
             
             output += "</tr>";
             cursor.continue();
@@ -92,3 +92,32 @@ function showProds(e){
         $('#Lprods').html(output);
     }
 }
+
+
+
+
+function clearAllProds(){
+    if(confirm("Você tem certeza?")==true){
+        indexedDB.deleteDatabase('Prods');
+        alert("Produtos excluídos :/");
+        window.location.href="showProducts.html";
+    }
+}
+
+
+function removeProd(ID){
+    var transaction = db.transaction(["Produtos"], 'readwrite');
+    var os = transaction.objectStore("Produtos");
+    
+    var request = os.delete(ID);
+    
+    request.onsuccess=function(){
+        console.log('Product deleted :/');
+        $('#prod_'+ID).remove();
+    }
+    
+    
+    request.onerror=function(e){
+        alert("I'm sorry Dave, I'm afraid I cannot do that", e.target.error.name);
+    };
+}       

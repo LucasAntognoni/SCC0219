@@ -619,9 +619,7 @@ td {
 	
 }
 
-.danger{
-    
-    color: crimson;
-    
-}
+.danger {color: crimson;}
+.cursor {cursor:pointer;}
+span.pet{padding:8px 20px;}
 /*__________________END__________________*/

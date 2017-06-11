@@ -70,11 +70,11 @@ function showServs(e){
         if(cursor){
             output += "<tr>";
             output += "<td>"+cursor.value.ID+"</td>";
-            output += "<td><span>"+cursor.value.servname+"</span></td>";
-            output += "<td><span>"+cursor.value.description+"</span></td>";
-            output += "<td><span>"+cursor.value.price+"</span></td>";
+            output += "<td><span class='cursor serv' conteneditable='true'>"+cursor.value.servname+"</span></td>";
+            output += "<td><span class='cursor serv' conteneditable='true'>"+cursor.value.description+"</span></td>";
+            output += "<td><span class='cursor serv' conteneditable='true'>"+cursor.value.price+"</span></td>";
             output += "<td>"+cursor.value.image+"</td>";
-            output += "<td><i class=\"material-icons\">delete</i></td>"; 
+            output += "<td><a onclick=\"removeServ("+cursor.value.ID+")\" href=\'\'><i class=\"material-icons\" style=\"color: crimson;\">delete</i></a></td>"; 
             
             output += "</tr>";
             console.log(cursor);
@@ -86,6 +86,32 @@ function showServs(e){
     };
     
     index.openCursor.onerror=function(e){
+        alert("I'm sorry Dave, I'm afraid I cannot do that", e.target.error.name);
+    };
+}
+
+
+function clearAllServs(){
+    if(confirm("Você tem certeza?")==true){
+        indexedDB.deleteDatabase('Services');
+        alert("Serviços excluídos :/")
+        window.location.href="showServices.html";
+    }   
+}
+
+function removeServ(ID){
+    var transaction = db.transaction(["Servs"], 'readwrite');
+    var os = transaction.objectStore("Servs");
+    
+    var request = os.delete(ID); 
+
+    request.onsuccess=function(){
+        console.log('Service deleted =/');
+        $('#serv_'+ID).remove();
+        
+    }
+    
+    request.onerror=function(e){
         alert("I'm sorry Dave, I'm afraid I cannot do that", e.target.error.name);
     };
 }
