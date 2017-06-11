@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="../css/formscss.css">
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Pet Shop - Registre um novo Pet</title>
+</head>
+
+<body>
+	<div class="start">
+        <header class="header" id="header">
+            <div id="logo">
+                <a href="../index.html" style="float:right" ><img border="0"
+									alt="PetJava" width="60%" height="60%" src="../img/petjavawhite.png"></a>
+            </div>
+            <div id="searchbar">
+                <form method="get" action="searchShop">
+                    <input type="search" name="inputSearch" placeholder="Procurar produtos e serviços">
+                    <button id="subSearch" type="submit">Buscar</button>
+                </form>
+            </div>
+            <div id="links">
+                <nav>
+                    <ul>
+                        <li><a href="../login_cadastro/login.html"> <i class="material-icons md-48" style='vertical-align: middle'>account_circle</i>   Login</a></li>
+                        <li><a href="#cart"><i class="material-icons md-48">shopping_cart</i></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div id="menu">
+            <nav>
+                <ul>
+                    <li><a href="vendaProdutos.html">Produtos</a></li>
+                    <li><a href="vendaServicos.html">Serviços</a></li>
+                </ul>
+            </nav>        
+        </div>
+    </div>
+    <div class="content">
+    <div class = header>
+        <h1>Registre um Novo pet</h1>
+    </div>
+    <div class="form-group">
+        <form>
+			Nome do PET:
+			<input type="text" placeholder="Informe o nome do PET"  name="servico"><br></br>
+			
+			ID:
+			<input type="text" name="ID"><br></br>
+			
+			Raça:
+			<input type="text" placeholder="Informe a raça do pet" name="Raca" size=70><br</br>
+			
+			Idade:
+			<input type="number" placeholder="Idade" name="Idade" max=99 min=0
+			default=0.0><br></br>
+
+			Imagem: 
+			<input type="file" accept="image/*"><br></br>
+
+			<div class="clearfix">
+                <button class="button" type="submit"><span>Registrar</span></button>
+				<button class="cancelbtn">Cancelar</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+    <footer>
+        <section id="about">
+        <h3>SOBRE</h3>
+          <p>PetJava é o petshop perfeito para o seu pet! Temos os melhores produtos das melhores marcas disponíveis no mercado,
+            além de oferecermos o melhor tratamento para seu amigo!</p>
+        </section>
+
+        <section id="contact">
+        <h3>CONTATO</h3>
+            <ul style="list-style-type: none;">
+                <li><a><i class="material-icons" style='vertical-align: middle'>email</i>         petjava@gmail.com</a></li>
+                <li><a><i class="material-icons" style='vertical-align: middle'>location_on</i>       Av. Trabalhador São Carlense, 1400, Pq. Arnold Schimidt - São Carlos/SP</a></li>
+                <li><a><i class="material-icons" style='vertical-align: middle'>watch_later</i>        Segunda a sexta feira, 10h - 18h</a></li>
+                <li><a><i class="material-icons" style='vertical-align: middle'>call</i>        (16)3370-7070</a></li>
+            </ul>
+        </section>
+          
+          <section id="social">
+            <h3>NOS ACOMPANHE NAS REDES SOCIAIS!</h3>
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-google"></a>
+          </section>
+        
+          
+
+        <div id="copyright" style="margin-left:auto; margin-right:auto;"> &copy; Copyright Pet Shop 2017</div>
+
+    </footer>
+
+</body>
+</html>

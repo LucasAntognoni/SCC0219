@@ -1,0 +1,82 @@
+SCC0219
+├── LICENSE
+├── README.md
+├── agendamento
+|  ├── agendamento.html
+|  └── styleAgendamento.css
+├── css
+|  ├── formscss.css
+|  ├── style.css
+|  ├── styleAgendamento.css
+|  ├── styleGanhos.css
+|  └── styleLoginCadastro.css
+├── descricao.txt
+├── forms
+|  ├── animals.html
+|  ├── prods.html
+|  └── servs.html
+├── ganhos
+|  └── ganhos.html
+├── gerenciamento
+|  ├── produtos.html
+|  ├── serviços.html
+|  └── styleGerenciamento.css
+├── img
+|  ├── apoquel.jpeg
+|  ├── banhotosaservico.png
+|  ├── bayer.jpeg
+|  ├── bravecto.jpeg
+|  ├── dog.png
+|  ├── doggo.png
+|  ├── feliway.jpeg
+|  ├── frontline.jpeg
+|  ├── grey-bg.jpeg
+|  ├── lancamento1.jpeg
+|  ├── lancamento2.jpeg
+|  ├── lancamento3.jpeg
+|  ├── lancamento4.jpeg
+|  ├── lancamento5.jpeg
+|  ├── lancamento6.jpeg
+|  ├── login.png
+|  ├── logo.PNG
+|  ├── maisvendidos1.jpeg
+|  ├── maisvendidos2.jpeg
+|  ├── maisvendidos3.jpeg
+|  ├── maisvendidos4.jpeg
+|  ├── maisvendidos5.jpeg
+|  ├── maisvendidos6.jpeg
+|  ├── negard.jpeg
+|  ├── pedigree.jpeg
+|  ├── petjavawhite.png
+|  ├── purina.jpeg
+|  ├── racao1.jpeg
+|  ├── racao2.jpeg
+|  ├── racao3.jpeg
+|  ├── racao4.jpeg
+|  ├── racao5.jpeg
+|  ├── racao6.jpeg
+|  ├── racao7.jpeg
+|  ├── racao8.jpeg
+|  ├── remedio1.jpeg
+|  ├── remedio2.jpeg
+|  ├── remedio3.jpeg
+|  ├── remedio4.jpeg
+|  ├── remedio5.jpeg
+|  ├── remedio6.jpeg
+|  ├── remedio7.jpeg
+|  ├── remedio8.jpeg
+|  ├── royalcanin.jpeg
+|  ├── servicohospedagem.png
+|  ├── servicoveterinaria.png
+|  └── whiskas.jpeg
+├── index.html
+├── login_cadastro
+|  ├── cadastro.html
+|  └── login.html
+└── vendas
+   ├── styleServicos.css
+   ├── styleVendas.css
+   ├── vendaProdutos.html
+   └── vendaServicos.html
+
+directory: 8 file: 71 
