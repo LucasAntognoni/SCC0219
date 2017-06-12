@@ -4,14 +4,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>Pet Shop</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/styleLoginCadastro.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styleLoginCadastro.css">
+
   </head>
   <body>
     <a class="navbar-logo" href="../index.html"><img border="0" alt="PetJava" src="../img/petjavawhite.png" width="250%"></a>
+    <script>$(document).ready(function() { $(".qtdcart").text(localStorage.total + " itens"); });</script>
 
     <nav class="navbar-inverse nav-upper">
         <ul class="nav navbar-upper">
@@ -66,26 +71,41 @@
       <form class="logForm" style="border:1px solid #ccc">
           <div class="container">
               <label><b>Nome</b></label>
+              <br>
               <input class="logInput" type="text" placeholder="Digite o nome completo" name="name" required>
+              <br>
 
-              <label><b>Foto</b></label></br>
-              <input class="logInput" type="file" name="pic" accept="image/*"></br></br>
+              <label><b>Foto</b></label>
+              <br>
+              <input class="logInput" type="file" name="pic" accept="image/*">
+              <br>
 
               <label><b>Telefone</b></label>
+              <br>
               <input class="logInput" type="text" placeholder="Digite telefone para contato" name="phone" required>
+              <br>
 
               <label><b>Endereço</b></label>
+              <br>
               <input class="logInput" type="text" placeholder="Digite endereço de cobrança" name="address" required>
+              <br>
 
               <label><b>Email</b></label>
+              <br>
               <input class="logInput" type="text" placeholder="Digite o email" name="email" required>
+              <br>
 
               <label><b>Senha</b></label>
+              <br>
               <input class="logInput" type="password" placeholder="Digete a senha" name="psw" required>
+              <br>
 
               <label><b>Confirme senha</b></label>
+              <br>
               <input class="logInput" type="password" placeholder="Repita a senha" name="psw-repeat" required>
+              <br>
               <input type="checkbox" checked="checked"> Salvar dados
+              <br>
               <p>Ao criar seu cadastro estará aceitando nossa <a href="#">Política de termos</a>.</p>
 
               <div class="clearfix">
@@ -97,37 +117,41 @@
     </div>
 </div>
 
-    <footer>
-
-        <section id="about">
+<footer class="footer" style="margin-left:0px;">
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-4">
+      <section id="about">
         <h3>SOBRE</h3>
-          <p>PetJava é o petshop perfeito para o seu pet! Temos os melhores produtos das melhores marcas disponíveis no mercado,
-            além de oferecermos o melhor tratamento para seu amigo!</p>
-        </section>
-
-        <section id="contact">
+        <p>PetJava é o petshop perfeito para o seu pet! Temos os melhores produtos das melhores marcas disponíveis no mercado,
+        além de oferecermos o melhor tratamento para seu amigo!</p>
+      </section>
+    </div>
+    <div class="col-xs-4">
+      <section id="contact">
         <h3>CONTATO</h3>
-            <ul style="list-style-type: none;">
-                <li><a><i class="material-icons" style='vertical-align: middle'>email</i>         petjava@gmail.com</a></li>
-                <li><a><i class="material-icons" style='vertical-align: middle'>location_on</i>       Av. Trabalhador São Carlense, 1400, Pq. Arnold Schimidt - São Carlos/SP</a></li>
-                <li><a><i class="material-icons" style='vertical-align: middle'>watch_later</i>        Segunda a sexta feira, 10h - 18h</a></li>
-                <li><a><i class="material-icons" style='vertical-align: middle'>call</i>        (16)3370-7070</a></li>
-            </ul>
-        </section>
-
-          <section id="social">
-            <h3>NOS ACOMPANHE NAS REDES SOCIAIS!</h3>
-            <a href="#" class="fa fa-facebook"></a>
-            <a href="#" class="fa fa-twitter"></a>
-            <a href="#" class="fa fa-instagram"></a>
-            <a href="#" class="fa fa-google"></a>
-          </section>
-
-
-
-        <div id="copyright" style="margin-left:auto; margin-right:auto;"> &copy; Copyright Pet Shop 2017</div>
-
-    </footer>
+        <ul style="list-style-type: none;">
+            <li><a><i class="material-icons" style='vertical-align: middle'>email</i>         petjava@gmail.com</a></li>
+            <li><a><i class="material-icons" style='vertical-align: middle'>location_on</i>       Av. Trabalhador São Carlense, 1400, Pq. Arnold Schimidt - São Carlos/SP</a></li>
+            <li><a><i class="material-icons" style='vertical-align: middle'>watch_later</i>        Segunda a sexta feira, 10h - 18h</a></li>
+            <li><a><i class="material-icons" style='vertical-align: middle'>call</i>        (16)3370-7070</a></li>
+        </ul>
+    </section>
+  </div>
+  <div class="col-xs-4">
+    <section id="social">
+      <h3>NOS ACOMPANHE NAS REDES SOCIAIS!</h3>
+      <a href="#" class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-twitter"></a>
+      <a href="#" class="fa fa-instagram"></a>
+      <a href="#" class="fa fa-google"></a>
+    </section>
+  </div>
+</div>
+<div class="row justify-content-md-center">
+  <div id="copyright"> &copy; Copyright Pet Shop 2017</div>
+</div>
+</footer>
 
   </body>
 </html>

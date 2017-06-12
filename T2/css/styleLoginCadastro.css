@@ -2,13 +2,13 @@
 
 .logForm {
     border: 3px solid #f1f1f1;
-    max-width: 50%;
+    max-width: 44%;
     max-height: 50%;
     margin: 0 auto;
 }
 
 .logInput {
-    width: 100%;
+    width: 50%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -59,7 +59,6 @@
 .logCancelbtn {
     padding: 14px 20px;
     background-color: #f44336;
-    float: right;
     width: 50%;
 }
 
