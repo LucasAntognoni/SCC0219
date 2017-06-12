@@ -1,3 +1,9 @@
+// IndexedDB apresenta problemas na criação e transações em
+// determinados navegadores. A função listarHorarios() não
+// completa o seu ciclo normal de execução uma vez que o
+// o iterador cursor, durante os testes, sempre apresenta
+// valor 'null'.
+
 $(document).ready(function() {
 
   $('table, button, #formAgenda, #formDeletar').hide();
