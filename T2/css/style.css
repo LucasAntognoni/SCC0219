@@ -7,19 +7,6 @@ body {
   padding: 70px;
 }
 
-/*Produtos*/
-.btn-group-vertical > button{
-    margin-bottom:40px;
-    border-radius:10px !important;
-}
-
-.input-group {
-  margin-bottom:10px;
-  border-radius:10px !important;
-}
-/*Produtos*/
-
-
 /*Tabela de Horários*/
 #slots table, #slots th, #slots td {
     border: 2px solid #eee;
@@ -28,6 +15,7 @@ body {
     padding: 2%;
     font-size: 1.5em;
     text-align: center;
+    width: 1%;
 }
 
 #slots th, #slots td {
@@ -36,7 +24,6 @@ body {
 }
 /*Tabela de Horários*/
 
-
-#Agendar {
+#Agendar, #Deletar {
   margin-top: 10px;
 }

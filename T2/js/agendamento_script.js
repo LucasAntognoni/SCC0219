@@ -7,6 +7,7 @@ $(document).ready(function() {
       $('h1, p').hide();
       $('table, button').show();
       $('#data').html(date);
+      listarHorarios();
     }
   });
 
@@ -53,8 +54,7 @@ function agendarServico() {
   var servico = $('#servico').val();
   var animal = $('#animal').val();
   var cliente = $('#cliente').val();
-  var data = $('#calendario').datepicker().getDate();
-
+  var data = $('#data').text();
   var transaction = db.transaction(["agenda"], "readwrite");
 
   // Request for objectStore
@@ -83,14 +83,36 @@ function agendarServico() {
   }
 }
 
+function removerServico(animal) {
+
+    var transaction = db.transaction(["agenda"], 'readwrite');
+    var os = transaction.objectStore("agenda");
+
+    var request = os.delete(animal);
+
+    request.onerror=function(event){
+      alert("Não foi possível remover o horário!");
+      console.log("Erro:", event.target.error.name);
+    };
+
+    request.onsuccess=function(){
+        alert('Horário removido com sucesso!');
+    }
+
+    listarHorarios();
+}
+
+
 function listarHorarios(event) {
 
   var transaction = db.transaction(["agenda"], 'readonly');
   var os = transaction.objectStore("agenda");
   var index = os.index('data');
-  var d = $('#data').val();
+  var d = $('#data').text();
+
   var table = document.getElementById("#slots");
   var row;
+  var col;
   var i = 0;
   var output = "";
 
@@ -98,7 +120,8 @@ function listarHorarios(event) {
     var cursor = event.target.result;
 
     if(cursor){
-      if(cursor.value.data === d)
+        console.log("cheguei3");
+      if(cursor.value.data == d)
       {
         row = table.rows[i];
         col = row.cells[1];
@@ -106,10 +129,12 @@ function listarHorarios(event) {
         output += "+cursor.value.servico+";
         output += "+cursor.value.animal+";
         output += "+cursor.value.cliente+";
+
         $(col).html(output);
 
         i += 1;
       }
+      cursor.continue();
     }
 
     index.openCursor().onerror = function(event){
