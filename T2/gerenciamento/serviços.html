@@ -91,7 +91,7 @@
           <h1>Agendamento</h1>
           <p>
             Escolha uma data no calendário e, caso disponível,
-            escolha um horário para incluir o serviço desejado.
+            escolha um horário para incluir ou deletar um serviço desejado.
           <p>
 
             <form id="formAgenda" role="form" onsubmit="agendarServico()">
@@ -116,6 +116,20 @@
               <div class="form-group row">
                 <div class="offset-sm-2 col-sm-10">
                   <button type="submit" class="btn btn-primary">Agendar</button>
+                </div>
+              </div>
+            </form>
+
+            <form id="formDeletar" role="form" onsubmit="chamarFuncao()">
+              <div class="form-group row">
+                <label>Animal</label>
+                  <div class="col-10">
+                    <input id="delAnimal" class="form-control" type="text">
+                  </div>
+              </div>
+              <div class="form-group row">
+                <div class="offset-sm-2 col-sm-10">
+                  <button type="submit" class="btn btn-primary">Deletar</button>
                 </div>
               </div>
             </form>

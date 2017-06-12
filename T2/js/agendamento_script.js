@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  $('table, button, #formAgenda').hide();
+  $('table, button, #formAgenda, #formDeletar').hide();
 
   $( '#calendario' ).datepicker({
     onSelect: function (date) {
@@ -15,24 +15,32 @@ $(document).ready(function() {
     $('#slots').hide();
     $('#formAgenda').show();
   });
+
+  $('#Deletar').click(function() {
+    $('#slots').hide();
+    $('#formDeletar').show();
+  });
+
 });
 
 var indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.msIndexedDB;
 var IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction;
 var IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange;
 
+let db;
+
 $(document).ready(function() {
 
   var request = indexedDB.open("agenda", 3);
 
   request.onupgradeneeded = function(event) {
-    var db = event.target.result;
+    db = event.target.result;
 
     if(!db.objectStoreNames.contains('agenda'))
     {
       var objectStore = db.createObjectStore("agenda", { keyPath: "ID", autoIncrement:true});
       objectStore.createIndex('serviço','serviço',{unique:false});
-      objectStore.createIndex('animal', 'animal',{unique:false});
+      objectStore.createIndex('animal', 'animal',{unique:true});
       objectStore.createIndex('cliente','cliente',{unique:false});
       objectStore.createIndex('data','data',{unique:false});
     }
@@ -83,12 +91,18 @@ function agendarServico() {
   }
 }
 
+function chamarFuncao() {
+
+  var aninal = $('#delAnimal').val();
+  removerServico(animal);
+}
+
 function removerServico(animal) {
 
     var transaction = db.transaction(["agenda"], 'readwrite');
-    var os = transaction.objectStore("agenda");
+    var objectStore = transaction.objectStore("agenda");
 
-    var request = os.delete(animal);
+    var objectStoreRequest = objectStore.delete(animal);
 
     request.onerror=function(event){
       alert("Não foi possível remover o horário!");
@@ -98,10 +112,8 @@ function removerServico(animal) {
     request.onsuccess=function(){
         alert('Horário removido com sucesso!');
     }
-
     listarHorarios();
 }
-
 
 function listarHorarios(event) {
 
@@ -120,15 +132,15 @@ function listarHorarios(event) {
     var cursor = event.target.result;
 
     if(cursor){
-        console.log("cheguei3");
+
       if(cursor.value.data == d)
       {
         row = table.rows[i];
         col = row.cells[1];
 
-        output += "+cursor.value.servico+";
-        output += "+cursor.value.animal+";
-        output += "+cursor.value.cliente+";
+        output += cursor.value.servico;
+        output += cursor.value.animal;
+        output += cursor.value.cliente;
 
         $(col).html(output);
 
