@@ -8,8 +8,9 @@
 	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<title>Pet Shop - Registre um novo Pet</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+				<link rel="stylesheet" href="../css/style.css">
+	<title>Pet Shop - Registre um novo Produto</title>
 </head>
 
 <body>
@@ -40,44 +41,49 @@
                     <li><a href="vendaProdutos.html">Produtos</a></li>
                     <li><a href="vendaServicos.html">Serviços</a></li>
                 </ul>
-            </nav>        
+            </nav>
         </div>
     </div>
     <div class="content">
-	
+
 	<div class = "header">
 		<h1>Registre um Novo Produto</h1>
 	</div>
-	
-	<div class="form-group">
+
+        <nav id="leftSidebar" style="display: block; float: left;">
+            <ul>
+                <li><a href="prods.html">Cadastre o produto aqui</a></li>
+                <li><a href="showProducts.html">Veja os Produtos Cadastrados</a></li>
+                <li><a class="danger" href='' onclick='clearAllProds()'>Remover todos!</a></li>
+            </ul>
+        </nav>
+
+        <div class="form-group" method="post" onsubmit="addProd()" >
 		<form>
-			Nome do Produto:
-			<input type="text" placeholder="Insira o Nome do Produto."name="produto"><br></br>
+                    Nome do Produto:
+                    <input type="text" placeholder="Insira o Nome do Produto."name="produto"><br></br>
 
-			ID:
-			<input type="text" name="ID"><br></br>
+                    Descrição:
+                    <input type="text" placeholder="Descreva brevemente o produto"
+			name="descricao" style="width:100px; width:100px" ><br</br>
 
-			Descrição:
-			<input type="text" placeholder="Descreva brevemente o produto"
-			name="Descricao" size=200><br</br>
+                    Imagem:
+                    <input type="file" name='image' accept="image/*"><br></br>
 
-			Imagem: 
-			<input type="file" accept="image/*"><br></br>
-
-			Preço:
-			<input type="number" placeholder="Preço" name="Preço" max=9999.99
+                    Preço:
+                    <input type="number" placeholder="Preço" name="preco" max=9999.99
 			min=0.0 step=0.1> <br></br>
 
-			Estoque:
-			<input type="number" placeholder="Quantia" name="Estoque" min=0 max=999
+                    Estoque:
+                    <input type="number" placeholder="Quantia" name="estoque" min=0 max=999
 			default=0 >
 
-			Quantidade Vedida:
-			<input type="number" name="Vendas" min=0>
+                    Quantidade Vedida:
+                    <input type="number" name="vendas" min=0>
 
 			<div class="clearfix">
-				<button class="button" type="submit"><span>Registrar</span></button>
-				<button class="cancelbtn">Cancelar</button>
+			    <input type="submit" value="Cadastrar">
+                            <button class="cancelbtn">Cancelar</button>
 			</div>
 		</form>
 	</div>
@@ -99,7 +105,7 @@
                 <li><a><i class="material-icons" style='vertical-align: middle'>call</i>        (16)3370-7070</a></li>
             </ul>
         </section>
-          
+
           <section id="social">
             <h3>NOS ACOMPANHE NAS REDES SOCIAIS!</h3>
             <a href="#" class="fa fa-facebook"></a>
@@ -107,12 +113,14 @@
             <a href="#" class="fa fa-instagram"></a>
             <a href="#" class="fa fa-google"></a>
           </section>
-        
-          
+
+
 
         <div id="copyright" style="margin-left:auto; margin-right:auto;"> &copy; Copyright Pet Shop 2017</div>
 
     </footer>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./JS/prods.js"></script>
 </body>
 </html>

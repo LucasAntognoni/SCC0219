@@ -8,8 +8,10 @@
 	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<title>Pet Shop - Registre um novo Pet</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+				<link rel="stylesheet" href="../css/style.css">
+
+        <title>Pet Shop - Registre um novo Servico</title>
 </head>
 
 <body>
@@ -40,36 +42,40 @@
                     <li><a href="vendaProdutos.html">Produtos</a></li>
                     <li><a href="vendaServicos.html">Serviços</a></li>
                 </ul>
-            </nav>        
+            </nav>
         </div>
     </div>
     <div class="content">
-	
+
 	<div class = header>
 		<h1>Registre um Novo Serviço</h1>
 	</div>
-	
+    <nav id="leftSidebar" style="display: block; float: left;">
+            <ul>
+                <li><a href="servs.html">Cadastrar</a> </li>
+                <li><a href="showServices.html">Serviços Cadastrados</a>
+                <li><a class="danger" href='' onclick='clearAllServs()'>Remover todos!</a></li>
+            </ul>
+        </nav>
 	<div class="form-group">
-		<form>
+		<form method="post" onsubmit="addServ()">
 			Nome do Serviço:
-			<input type="text" placeholder "Nome do Serviço" name="serviço"><br></br>
-
-			ID:
-			<input type="text" name="ID"><br></br>
+			<input type="text" placeholder "Nome do Serviço"
+                        name="servname"><br></br>
 
 			Descrição:
-			<input type="text" name="Descrição" size=200><br</br>
+			<input type="text" name="description" size=200><br</br>
 
 			Imagem:
-			<input type="file" accept="image/*"><br></br>
+			<input type="file" name='image' accept="image/*"><br></br>
 
 			Preço:
-			<input type="number" placeholder="Preço" name="Preço" max=9999.99 min=0.0
+			<input type="number" placeholder="Preço" name="price" max=9999.99 min=0.0
 			default=0.0>
 
 			<div class="clearfix">
-				<button class="button" type="submit"><span>Registrar</span></button>
-				<button class="cancelbtn">Cancelar</button>
+                            <input type="submit" value="Registrar">
+                            <button class="cancelbtn">Cancelar</button>
 			</div>
 		</form>
 	</div>
@@ -90,7 +96,7 @@
                 <li><a><i class="material-icons" style='vertical-align: middle'>call</i>        (16)3370-7070</a></li>
             </ul>
         </section>
-          
+
           <section id="social">
             <h3>NOS ACOMPANHE NAS REDES SOCIAIS!</h3>
             <a href="#" class="fa fa-facebook"></a>
@@ -98,12 +104,14 @@
             <a href="#" class="fa fa-instagram"></a>
             <a href="#" class="fa fa-google"></a>
           </section>
-        
-          
+
+
 
         <div id="copyright" style="margin-left:auto; margin-right:auto;"> &copy; Copyright Pet Shop 2017</div>
 
     </footer>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./JS/servs.js"></script>
 </body>
 </html>

@@ -9,7 +9,8 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <title>Pet Shop - Registre um novo Pet</title>
+        <title>Pet Shop - Encontre seu Pet aqui!</title>
+				<link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
@@ -40,45 +41,38 @@
                     <li><a href="vendaProdutos.html">Produtos</a></li>
                     <li><a href="vendaServicos.html">Serviços</a></li>
                 </ul>
-            </nav>        
+            </nav>
         </div>
     </div>
     <div class="content">
-    <div class = header>
-        <h1>Registre um Novo pet</h1>
-    </div>
-        
-    <nav id="leftSidebar" style="display: block; float: left;">
+        <div class = header>
+            <h1>Pets Cadastrados</h1>
+        </div>
+        <nav id="leftSidebar" style="display: block; float: left;">
             <ul>
-                <li><a href="animals.html">Cadastre o PET aqui</a> </li>
+                <li><a href="animals.html">Cadastre seu PET aqui</a></li>
                 <li><a href="showAnimals.html">Pets Cadastrados</a></li>
-                <li><a class="danger" href='' onclick='clearAllPets()'>Remover todos!</a></li>
+                <li><a class="danger" onclick="clearAllPets()" href=''>Remover todos!</a></li>
             </ul>
         </nav>
-    <div class="form-group" >
-        <form id="pet-form"  method="post" onsubmit="addPet()">
-			Nome do PET:
-			<input type="text" id="petname" placeholder="Informe o nome do PET"
-                        name="pet-name"><br></br>
+        <table id="viewPets">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Raça</th>
+                <th>Idade</th>
+                <th>Foto</th>
+                <th>Delete</th>
+            </thead>
+            <tbody id="Lpets">
 
-		
-			Raça:
-			<input type="text" placeholder="Informe a raça do pet"
-                        id="raca" name="Raca" size=70><br</br>
-			
-			Idade:
-			<input type="number" id="idade" placeholder="Idade" name="Idade" max=99 min=0
-			default=0.0><br></br>
 
-			Imagem: 
-			<input type="file" id="image" accept="image/*"><br></br>
+            </tbody>
 
-			<div class="clearfix">
-                            <input  type="submit" value="Registrar">
-                            <button class="cancelbtn">Cancelar</button>
-			</div>
-		</form>
-	</div>
+        </table>
+
+    </div>
 </div>
 
     <footer>
@@ -97,7 +91,7 @@
                 <li><a><i class="material-icons" style='vertical-align: middle'>call</i>        (16)3370-7070</a></li>
             </ul>
         </section>
-          
+
           <section id="social">
             <h3>NOS ACOMPANHE NAS REDES SOCIAIS!</h3>
             <a href="#" class="fa fa-facebook"></a>
@@ -105,14 +99,15 @@
             <a href="#" class="fa fa-instagram"></a>
             <a href="#" class="fa fa-google"></a>
           </section>
-        
-          
+
+
 
         <div id="copyright" style="margin-left:auto; margin-right:auto;"> &copy; Copyright Pet Shop 2017</div>
 
     </footer>
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
     <script src="./JS/animals.js"></script>
 </body>
 </html>
