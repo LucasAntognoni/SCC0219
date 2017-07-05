@@ -1,0 +1,207 @@
+/* GENERAL CSS */
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none !important;
+}
+/*__________________INDEX BODY___________*/
+
+
+.product-box{
+    width: calc(100%/4.3);
+    align-items: center;
+    text-decoration: none;
+    display: inline-block;
+    vertical-align:middle;
+    text-align:center;
+         padding-bottom: 50px;
+}
+
+.product-box img{
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-price-label{
+    box-sizing: border-box;
+    color: rgb(73, 125, 170);
+    font-family: "Arial",sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.product-price{
+    box-sizing: border-box;
+color: rgb(20, 99, 155);
+font-family: "Arial",sans-serif;
+font-size: 22.4px;
+line-height: 20px;
+text-align: center;
+
+}
+
+.product-title{
+    box-sizing: border-box;
+    color: rgb(102, 102, 102);
+    font-family: "Arial",sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16.8px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    padding-bottom: 2px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 9px;
+    text-align: center;
+}
+
+.brands{
+    display: inline-block;
+    align-content: center;
+}
+
+.brand-logo{
+    opacity: 0.8;
+    display: inline-block;
+}
+
+
+.brand-logo img{
+    opacity: 0.8;
+    opacity: 0.8;
+    width: calc(100%/1.2);
+
+}
+
+.brand-logo:hover{
+    opacity: 1;
+}
+
+.title{
+    margin-left: 2em;
+}
+
+.servicecarousel{
+    width: calc(100%/1.5);
+    align-content: center;
+    display: block;
+    align-items: center;
+    text-decoration: none;
+}
+
+.service-box{
+    width: calc(100%/3.1);
+    align-items: center;
+    text-decoration: none;
+    display: inline-block;
+    vertical-align:middle;
+    text-align:center
+}
+
+.service-box img{
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.service-price-label{
+    box-sizing: border-box;
+    color: rgb(73, 125, 170);
+    font-family: "Arial",sans-serif;
+    font-size: 14px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.service-price{
+    box-sizing: border-box;
+    color: rgb(20, 99, 155);
+    font-family: "Arial",sans-serif;
+    font-size: 22.4px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.service-title{
+    box-sizing: border-box;
+    color: rgb(102, 102, 102);
+    font-family: "Arial",sans-serif;
+    font-size: 1.6em;
+    font-weight: 500;
+    line-height: 46px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    padding-bottom: 2px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 9px;
+    text-align: center;
+}
+
+
+/*__________________END OF INDEX BODY ___________*/
+
+
+/*__________________FOOTER__________________*/
+footer{
+  background: linear-gradient(359deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.247059) 80%);
+  background-color: #24bf3e;
+}
+
+
+#about, #contact, #social{
+   color: white;
+   text-align: center;
+   text-decoration: none;
+
+}
+
+ /* Style all font awesome icons */
+.fa {
+    padding: 15px;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.8;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-instagram {
+    background: #434547;
+    color: white;
+}
+
+.fa-google {
+    background: #E55;
+    color: white;
+}
+
+/*__________________END__________________*/
