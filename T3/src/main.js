@@ -1,6 +1,10 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import path from 'path';
+// import express from 'express';
+// import bodyParser from 'body-parser';
+// import path from 'path';
+
+const express = require('express');
+const bodyParser = require('body-parser');
+const path = require('path');
 
 const app = express();
 
@@ -15,7 +19,7 @@ app.use((err, request, response, next) => {
         console.log(err)
         response.status(500).send('Server error');
     }
-    
+
     console.log(request.headers);
     next();
 });
@@ -27,7 +31,7 @@ app.get('/', (request, response) => {
 app.listen(3000, (err) => {
     if(err)
         console.log(err);
-    
+
     else
         console.log('Server is up and running');
 });
