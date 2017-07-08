@@ -6,12 +6,16 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 
+const nano = require('nano')('http://localhost:5984');
 const app = express();
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(__dirname+'/website'));
+
+nano.db.create('petJava');
+nano.db.use('petJava');
 
 app.use((err, request, response, next) => {
     if(err) {
