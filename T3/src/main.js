@@ -11,8 +11,7 @@ const app = express();
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(express.static(__dirname+'/view'));
-app.use(express.static(__dirname+'/script'));
+app.use(express.static(__dirname+'/website'));
 
 app.use((err, request, response, next) => {
     if(err) {

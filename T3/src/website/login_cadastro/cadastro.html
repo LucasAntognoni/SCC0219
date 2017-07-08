@@ -65,35 +65,62 @@
         </div>
       </div>
     </nav>
-      <div class="content">
-          <div style="padding: 20px 20px;">
-              <h2 style="text-align: center";>Login</h2>
-              <form class="logForm">
-                  <div class="imgcontainer">
-                      <img src="../img/login.png" alt="Avatar" class="avatar">
-                  </div>
-                  <div class="container">
-                    <div class="row">
-                      <label><b>Usuário </b></label>
-                      <input class="logInput" type="text" style="width:400px;" placeholder="Digite seu usuário ou e-mail" name="uname" required>
-                    </div>
-                    <div class="row">
-                      <label><b>Senha  </b></label>
-                      <input class="logInput" type="password" style="width:400px;" placeholder="Digite sua senha" name="psw" type="hidden" required>
-                    </div>
-                      <button class="logButton" type="submit" style="width:150px;"><span>Login</span></button>
-                      <button class="logButton logCancelbtn" style="width:150px;">Cancelar</button>
-                      <input type="checkbox" checked="checked">Salvar dados
-                  </div>
-                  <div class="container" style="background-color:#f1f1f1; width:700px">
-                      <span class="psw">Relembre sua <a href="#">senha</a></span>
-                      <span class="new">Não possui cadastro? <a href="./cadastro.html">Clique aqui</a></span></br>
-                  </div>
-              </form>
-        </div>
-      </div>
 
-      <footer class="footer" style="margin-left:0px;">
+      <div class="content">
+
+    <div style="padding: 20px 20px;">
+      <h2>Cadastre-se</h2>
+
+      <form class="logForm" style="border:1px solid #ccc" onsubmit="addCustomer()">
+          <div class="container">
+              <label><b>Nome</b></label>
+              <br>
+              <input class="logInput" type="text" placeholder="Digite o nome completo" name="name" required>
+              <br>
+
+              <label><b>Foto</b></label>
+              <br>
+              <input class="logInput" type="file" name="pic" accept="image/*">
+              <br>
+
+              <label><b>Telefone</b></label>
+              <br>
+              <input class="logInput" type="text" placeholder="Digite telefone para contato" name="phone" required>
+              <br>
+
+              <label><b>Endereço</b></label>
+              <br>
+              <input class="logInput" type="text" placeholder="Digite endereço de cobrança" name="address" required>
+              <br>
+
+              <label><b>Email</b></label>
+              <br>
+              <input class="logInput" type="text" placeholder="Digite o email" name="email" required>
+              <br>
+
+              <label><b>Senha</b></label>
+              <br>
+              <input class="logInput" type="password" placeholder="Digete a senha" name="psw" required>
+              <br>
+
+              <label><b>Confirme senha</b></label>
+              <br>
+              <input class="logInput" type="password" placeholder="Repita a senha" name="psw-repeat" required>
+              <br>
+              <input type="checkbox" checked="checked"> Salvar dados
+              <br>
+              <p>Ao criar seu cadastro estará aceitando nossa <a href="#">Política de termos</a>.</p>
+
+              <div class="clearfix">
+                  <button class="logButton" type="submit"><span>Cadastrar</span></button>
+                  <button class="logButton logCancelbtn">Cancelar</button>
+              </div>
+          </div>
+    </form>
+    </div>
+</div>
+
+     <footer class="footer" style="margin-left:0px;">
         <div class="container-fluid">
         <div class="row">
           <div class="col-xs-4">
@@ -129,5 +156,8 @@
       </div>
     </footer>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/login_singn_up.js"></script>
   </body>
 </html>
