@@ -1,0 +1,19 @@
+/*_________________GANHOS__________________*/
+
+.ganhos {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tdGanhos, .thGanhos {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.trGanhos:nth-child(even) {
+    background-color: #dddddd;
+}
+
+/*__________________END__________________*/
