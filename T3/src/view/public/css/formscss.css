@@ -1,0 +1,169 @@
+/*______________AGENDAMENTO______________*/
+
+ul {list-style-type: none;}
+
+.mes {
+    padding: 70px 25px;
+    background: #1abc9c;
+    margin-top: 7%;
+    margin-bottom: 1%;
+}
+
+.semana {
+    padding: 70px 25px;
+    background: #1abc3c;
+    margin-bottom: 1%;
+}
+
+.mes ul, .semana ul {
+    margin: 0;
+    padding: 0;
+}
+
+.mes ul li, .semana ul li {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+#anterior {
+    float: left;
+    padding-top: 10px;
+}
+
+#proximo {
+    float: right;
+    padding-top: 10px;
+}
+
+.calendario, th ,td {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin-bottom: 1%;
+}
+
+th {
+  border: 1px solid black;
+  background-color: #1abc9c;
+  color: white;
+}
+
+tr:nth-child(odd) {
+    background-color: #dddddd;
+}
+
+td {
+  border: 1px solid black;
+  table-layout: auto;
+}
+/*__________________END__________________*/
+
+
+/*_____________GERENCIAMENTO_____________*/
+
+.conteudo {
+  width: 100%;
+  margin-bottom:50px;
+  border: 0;
+}
+
+.menu {
+  width: 100%;
+  margin-bottom: 1%;
+  display: inline-block;
+  align-content: center;
+}
+
+.left {
+  float: left;
+  width: 50%;
+  margin: 0;
+  padding: 0;
+}
+
+.right {
+  float: right;
+  width: 50%;
+  margin-left: 0;
+  padding: 0;
+}
+
+.consultar, .atualizar, .adicionar, .remover, .buscar {
+  border-radius: 11px;
+  width: 100%;
+  height: 50px;
+  color: white;
+  font-size: 1em;
+}
+
+.consultar, .buscar{
+  border: 1px solid #0b7ab0;
+  background-color:#0b7ab0;
+  margin-bottom: 2%;
+}
+
+.atualizar {
+  border: 1px solid #ff7403;
+  background-color:#ff7403;
+  margin-bottom: 2%;
+}
+
+.adicionar {
+  border: 1px solid #780482;
+  background-color: #780482;
+  margin-bottom: 2%;
+}
+
+.remover {
+  border: 1px solid #f01616;
+  background-color: #f01616;
+}
+
+.tela_produtos {
+  width: 100%;
+  margin-bottom: 10%;
+  font-size: 1em;
+  border: 1px solid black;
+}
+
+.tela_servicos {
+  width: 100%;
+  margin-bottom: 10%;
+  font-size: 1em;
+}
+
+.tela_produtos img {
+  height: 20%;
+  width: 20%;
+}
+
+#data {
+  width: 100%;
+  margin-bottom: 1%;
+  border: 1px solid #1abc9c;
+  color: white;
+  font-size: 2em;
+  text-align: center;
+  background-color: #1abc9c;
+}
+/*__________________Forms__________________*/
+
+.form-grupo{
+	height:420px;
+	width:800px;
+	margin:0.5% auto 0.5% 25%;
+	font-size:0.8em;
+	text-align:left;
+}
+
+.input-group{
+	padding: 5px 10px;
+
+
+}
+/*__________________END__________________*/
