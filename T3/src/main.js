@@ -85,6 +85,38 @@ app.post('/addUser', (request, response) => {
     });
 });
 
+app.post('/addProduct', (request, response) => {
+    db.insert(request.body, (err, body, header) => {
+        if(err)
+            console.log('[Product.insert]', err.message);
+        else
+            console.log('New product:\n', body);
+    });
+});
+
+app.post('/addService', (request, response) => {
+    db.insert(request.body, (err, body, header) => {
+        if(err)
+            console.log('[Service.insert]', err.message);
+        else
+            console.log('New service:\n', body);
+    });
+});
+
+app.post('/removeAllServices', (request, response) => {
+  console.log('Chegou aqui\n');
+  ap_fun = function(doc){
+    if (doc.doc_type == 'Product'){
+      emit(doc._id, doc)
+    }
+  }
+  deldoclist = []
+  for row in db.query(map_fun):deldoclist.append(row.key)
+  for item in deldoclist:del db[item]
+  console.log('Deleted services:\n');
+
+}
+
 app.listen(3000, (err) => {
     if(err)
         console.log(err);

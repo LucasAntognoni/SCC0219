@@ -13,8 +13,6 @@
 		<link rel="stylesheet" type="text/css" href="../css/style.css" />
 		<link rel="stylesheet" href="../css/formscss.css">
 
-
-
   </head>
   <body>
     <script src="../js/script.js"></script>
@@ -58,7 +56,7 @@
                 <li style="margin-top: 0px; font-size: 18px;"><a href="./vendas/vendaServicos.html">Serviços</a></li>
               </div>
               <div class="col-xs-3">
-                <li style="margin-top: 0px; font-size: 18px;"><a href="about"> Sobre nós </a></li>
+                <li style="margin-top: 0px; font-size: 18px;"><a href="../about.html"> Sobre nós </a></li>
               </div>
             </div>
           </div>
@@ -80,20 +78,15 @@
             </ul>
         </nav>
 	<div class="form-grupo">
-		<form method="post" onsubmit="addServ()">
-			Nome do Serviço:
-			<input type="text" placeholder "Nome do Serviço"
-                        name="servname"><br></br>
+		<form onsubmit="addServ()">
+			Nome do Serviço:<br>
+			<input type="text" placeholder "Nome do Serviço" name="servname"  class="inputProduct"><br><br>
 
-			Descrição:
-			<input type="text" name="description" size=200><br</br>
+			Descrição:<br>
+			<input type="text" name="description" size=200  class="inputProduct"><br><br>
 
-			Imagem:
-			<input type="file" name='image' accept="image/*"><br></br>
-
-			Preço:
-			<input type="number" placeholder="Preço" name="price" max=9999.99 min=0.0
-			default=0.0>
+			Preço:<br>
+			<input type="number" placeholder="Preço" name="price" max=9999.99 min=0.0 default=0.0  class="inputProduct"><br><br>
 
 			<div class="clearfix">
                             <input type="submit" value="Registrar">

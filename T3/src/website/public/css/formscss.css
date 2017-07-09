@@ -163,7 +163,9 @@ td {
 
 .input-group{
 	padding: 5px 10px;
+}
 
-
+.inputProduct {
+  width: 500px;
 }
 /*__________________END__________________*/

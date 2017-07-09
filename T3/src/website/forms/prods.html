@@ -10,8 +10,8 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="../css/formscss.css">
-		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="/public/css/formscss.css">
+		<link rel="stylesheet" type="text/css" href="/public/css/style.css" />
 
 
   </head>
@@ -57,7 +57,7 @@
                 <li style="margin-top: 0px; font-size: 18px;"><a href="./vendas/vendaServicos.html">Serviços</a></li>
               </div>
               <div class="col-xs-3">
-                <li style="margin-top: 0px; font-size: 18px;"><a href="about"> Sobre nós </a></li>
+                <li style="margin-top: 0px; font-size: 18px;"><a href="../about.html"> Sobre nós </a></li>
               </div>
             </div>
           </div>
@@ -80,28 +80,27 @@
             </ul>
         </nav>
 
-        <div class="form-grupo" method="post" onsubmit="addProd()" >
+        <div class="form-grupo" onsubmit="addProd()" >
 		<form>
-                    Nome do Produto:
-                    <input type="text" placeholder="Insira o Nome do Produto."name="produto"><br></br>
+                    Nome do Produto:<br>
+                    <input type="text" placeholder="Insira o Nome do Produto."name="produto" class="inputProduct"><br><br>
 
-                    Descrição:
-                    <input type="text" placeholder="Descreva brevemente o produto"
-			name="descricao" style="width:100px; width:100px" ><br</br>
+                    Descrição:<br>
+                    <input type="text" placeholder="Descreva brevemente o produto" name="descricao" class="inputProduct" ><br><br>
 
-                    Imagem:
-                    <input type="file" name='image' accept="image/*"><br></br>
+                    Imagem:<br>
+                    <input type="text" name='image' placeholder="Coloque o link da imagem (use imgur por exemplo.)" class="inputProduct"><br><br>
 
-                    Preço:
+                    Preço:<br>
                     <input type="number" placeholder="Preço" name="preco" max=9999.99
-			min=0.0 step=0.1> <br></br>
+			min=0.0 step=0.1> <br><br>
 
-                    Estoque:
+                    Estoque:<br>
                     <input type="number" placeholder="Quantia" name="estoque" min=0 max=999
-			default=0 >
+			default=0 ><br><br>
 
-                    Quantidade Vedida:
-                    <input type="number" name="vendas" min=0>
+                    Quantidade Vedida:<br>
+                    <input type="number" name="vendas" min=0><br><br>
 
 			<div class="clearfix">
 			    <input type="submit" value="Cadastrar">

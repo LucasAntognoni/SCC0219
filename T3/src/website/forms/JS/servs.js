@@ -4,18 +4,18 @@ let db;
 
 $(document).ready(() => {
     var request=indexedDB.open('Services',1);
-    
+
     request.onsuccess=function(e){
        db=e.target.result;
        console.log("Database's up!");
        showServs();
     };
-    
+
     request.onerror=function(){
         console.log("Messed up on creating database!");
-    
+
     };
-    
+
     request.onupgradeneeded=function(e){
        db=e.target.result;
        if(!db.objectStoreNames.contains("Servs")){
@@ -24,49 +24,29 @@ $(document).ready(() => {
             os.createIndex('description', 'description',{unique:false});
             os.createIndex('price','price',{unique:false});
             os.createIndex('image','image',{unique:false});
-       }   
+       }
     };
 });
 
 
 function addServ(){
-    var servname= $('input[name=servname]').val();
-    var description= $('input[name=description]').val();
-    var price= $('input[name=price]').val();
-    var image= $('input[name=image]').val();
-    
-    var Service={
-        servname:servname,
-        description:description,
-        price:price,
-        image:image
-    }
-    console.log('Got your service, bro');
-    var transaction=db.transaction(["Servs"],"readwrite");
-    var os=transaction.objectStore("Servs");
-    var request=os.add(Service);
-    
-    console.log(request);
-    request.onsuccess=function(e){
-        console.log(e);
-        alert("Service added, congrats!");
-    };
-    
-    request.onerror=function(e){
-        alert("I'm sorry Dave, I'm afraid I cannot do that", e.target.error.name);
-    };
+    const servname= $('input[name=servname]').val();
+    const description= $('input[name=description]').val();
+    const price= $('input[name=price]').val();
+
+    $.post('http://localhost:3000/addService', {servname, description, price});
 }
 
 function showServs(e){
     var transaction = db.transaction(["Servs"], 'readonly');
     var os = transaction.objectStore("Servs");
     var index = os.index('servname');
-    
+
     var output="";
-    
+
     index.openCursor().onsuccess =function(e){
         let cursor = e.target.result;
-        
+
         if(cursor){
             output += "<tr id='serv_"+cursor.value.ID+"'>";
             output += "<td>"+cursor.value.ID+"</td>";
@@ -74,17 +54,17 @@ function showServs(e){
             output += "<td><span class='cursor serv' contenteditable='true' data-field='description' data-id="+cursor.value.ID+">"+cursor.value.description+"</span></td>";
             output += "<td><span class='cursor serv' contenteditable='true' data-field='price' data-id="+cursor.value.ID+">"+cursor.value.price+"</span></td>";
             output += "<td>"+cursor.value.image+"</td>";
-            output += "<td><a onclick=\"removeServ("+cursor.value.ID+")\" href=\'\'><i class=\"material-icons\" style=\"color: crimson;\">delete</i></a></td>"; 
-            
+            output += "<td><a onclick=\"removeServ("+cursor.value.ID+")\" href=\'\'><i class=\"material-icons\" style=\"color: crimson;\">delete</i></a></td>";
+
             output += "</tr>";
             console.log(cursor);
             cursor.continue();
-            
+
         }
             $('#LServs').html(output);
-        
+
     };
-    
+
     index.openCursor.onerror=function(e){
         alert("I'm sorry Dave, I'm afraid I cannot do that", e.target.error.name);
     };
@@ -93,24 +73,22 @@ function showServs(e){
 
 function clearAllServs(){
     if(confirm("Você tem certeza?")==true){
-        indexedDB.deleteDatabase('Services');
-        alert("Serviços excluídos :/")
-        window.location.href="showServices.html";
-    }   
+        $.post('http://localhost:3000/removeAllServices');
+    }
 }
 
 function removeServ(ID){
     var transaction = db.transaction(["Servs"], 'readwrite');
     var os = transaction.objectStore("Servs");
-    
-    var request = os.delete(ID); 
+
+    var request = os.delete(ID);
 
     request.onsuccess=function(){
         console.log('Service deleted =/');
         $('#serv_'+ID).remove();
-        
+
     }
-    
+
     request.onerror=function(e){
         alert("I'm sorry Dave, I'm afraid I cannot do that", e.target.error.name);
     };
@@ -122,10 +100,10 @@ $('#LServs').on('blur','.serv', function(){
     var newText=$(this).html();
     var field=$(this).data('field');
     var id=$(this).data('id');
-    
+
     var transaction = db.transaction(["Servs"], 'readwrite');
     var os = transaction.objectStore("Servs");
-    
+
     var request = os.get(id);
 
     request.onsuccess=function(){
@@ -140,9 +118,9 @@ $('#LServs').on('blur','.serv', function(){
        else if(field=='price'){
             data.idade=newText;
        }
-    
+
         var requestUpdate = os.put(data);
-        
+
         requestUpdate.onsuccess=function(){
             console.log('Value Updated');
         }
@@ -150,9 +128,8 @@ $('#LServs').on('blur','.serv', function(){
             alert("I'm sorry Dave, I'm afraid I cannot do that", e.target.error.name);
         }
     }
-    
+
     request.onerror=function(e){
         alert("I'm sorry Dave, I'm afraid I cannot do that", e.target.error.name);
     };
 });
-
