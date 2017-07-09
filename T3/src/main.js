@@ -75,6 +75,15 @@ app.post('/addUser', (request, response) => {
     });
 });
 
+app.post('/addHorario', (request, response) => {
+  db.insert(request.body, (err, body, header) => {
+    if(err)
+      console.log('[Horario.insert]', err.message);
+    else
+      console.log('Novo Horário:\n', body);
+  });
+});
+
 app.listen(3000, (err) => {
     if(err)
         console.log(err);

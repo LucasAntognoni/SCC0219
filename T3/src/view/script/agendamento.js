@@ -1,9 +1,3 @@
-// IndexedDB apresenta problemas na criação e transações em
-// determinados navegadores. A função listarHorarios() não
-// completa o seu ciclo normal de execução uma vez que o
-// o iterador cursor, durante os testes, sempre apresenta
-// valor 'null'.
-
 $(document).ready(function() {
 
   $('table, button, #formAgenda, #formDeletar').hide();
@@ -26,41 +20,6 @@ $(document).ready(function() {
     $('#slots').hide();
     $('#formDeletar').show();
   });
-
-});
-
-var indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.msIndexedDB;
-var IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction;
-var IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange;
-
-let db;
-
-$(document).ready(function() {
-
-  var request = indexedDB.open("agenda", 3);
-
-  request.onupgradeneeded = function(event) {
-    db = event.target.result;
-
-    if(!db.objectStoreNames.contains('agenda'))
-    {
-      var objectStore = db.createObjectStore("agenda", { keyPath: "ID", autoIncrement:true});
-      objectStore.createIndex('serviço','serviço',{unique:false});
-      objectStore.createIndex('animal', 'animal',{unique:true});
-      objectStore.createIndex('cliente','cliente',{unique:false});
-      objectStore.createIndex('data','data',{unique:false});
-    }
-  };
-
-  request.onerror = function(event) {
-  console.log('Erro: não foi possível conectar ao Banco de Dados...');
-  console.log("Erro:", event.target.error.name);
-  };
-
-  request.onsuccess = function(event) {
-    console.log('Conectado ao Banco de Dados...');
-    db = event.target.result;
-  };
 });
 
 function agendarServico() {
@@ -69,33 +28,10 @@ function agendarServico() {
   var animal = $('#animal').val();
   var cliente = $('#cliente').val();
   var data = $('#data').text();
-  var transaction = db.transaction(["agenda"], "readwrite");
 
-  // Request for objectStore
-  var store = transaction.objectStore("agenda");
-
-  // Define horario
-  var horario = {
-    s:servico,
-    a:animal,
-    c:cliente,
-    d:data
-  };
-
-  // Adding entry
-  var request = store.add(horario);
-
-  // Error
-  request.onerror = function(event) {
-    alert("Não foi possível adicionar o horário!");
-    console.log("Erro:", event.target.error.name);
-  }
-
-  // Success
-  request.onsuccess = function(event) {
-      alert("Horário agendado com sucesso!");
-  }
+  $.post('http://localhost:3000/addHorario', {servico, animal, cliente, data});
 }
+
 
 function chamarFuncao() {
 
