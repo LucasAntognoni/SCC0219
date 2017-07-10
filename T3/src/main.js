@@ -19,6 +19,10 @@ nano.db.create('products');
 const products = nano.db.use('products');
 const productsModel = couchDBModel(products);
 
+
+nano.db.create('users');
+const users = nano.db.use('users');
+
 app.use((err, request, response, next) => {
     if(err) {
         console.log(err)
@@ -79,6 +83,56 @@ app.get('/forms/servs.html', (request, response) => {
 
 app.get('/carrinho/checkout.html', (request, response) => {
     response.sendFile(path.join(__dirname+'/carrinho/checkout.html'));
+});
+
+app.post('/addUser', (request, response) => {
+    users.insert(request.body, (err, body, header) => {
+        if(err) {
+            console.log('[User.insert]', err.message);
+            response.send(false);
+        }
+        else
+            response.send(true);
+    });
+});
+
+const usersModel = couchDBModel(users);
+
+app.post('/loginUser', (request, response) => {
+    usersModel.findAll((err, results) => {
+        if(err) {
+            console.log('[User.find]', error);
+            response.send(false);
+        }
+        else
+            Promise.all(results.filter(element => {
+                // Verifica se cada dado do DB é igual ao requisistado.
+                return element.email === request.body.email && element.psw === request.body.psw;
+            })).then(data => {
+                if(data.length > 0)
+                    response.send(true);
+                else
+                    response.send(false);
+            }).catch(console.log);;
+    });
+});
+
+app.post('/showCustomers', (request, response) => {
+    usersModel.findAll((err, results) => {
+        if(err) {
+            console.log('[User.find]', error);
+            response.send(false);
+        }
+        else
+            Promise.all(results.map(element => {
+                return {
+                    name: element.name,
+                    email: element.email
+                }
+            })).then(data => {
+                response.send(data);
+            }).catch(console.log);
+    })
 });
 
 app.post('/addUser', (request, response) => {
