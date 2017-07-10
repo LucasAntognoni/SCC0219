@@ -32,67 +32,21 @@ function agendarServico() {
   $.post('http://localhost:3000/addHorario', {servico, animal, cliente, data});
 }
 
-
 function chamarFuncao() {
-
-  var aninal = $('#delAnimal').val();
-  removerServico(animal);
+  var animal = $('#delAnimal').val();
+  var data = $('#delData').val();
+  removerServico(animal, data);
 }
 
-function removerServico(animal) {
-
-    var transaction = db.transaction(["agenda"], 'readwrite');
-    var objectStore = transaction.objectStore("agenda");
-
-    var objectStoreRequest = objectStore.delete(animal);
-
-    request.onerror=function(event){
-      alert("Não foi possível remover o horário!");
-      console.log("Erro:", event.target.error.name);
-    };
-
-    request.onsuccess=function(){
-        alert('Horário removido com sucesso!');
-    }
-    listarHorarios();
+function removerServico(animal, data) {
+  $.post('http://localhost:3000/removerHorario', {animal, data});
 }
 
 function listarHorarios(event) {
 
-  var transaction = db.transaction(["agenda"], 'readonly');
-  var os = transaction.objectStore("agenda");
-  var index = os.index('data');
-  var d = $('#data').text();
-
-  var table = document.getElementById("#slots");
-  var row;
-  var col;
-  var i = 0;
-  var output = "";
-
-  index.openCursor().onsuccess = function(event) {
-    var cursor = event.target.result;
-
-    if(cursor){
-
-      if(cursor.value.data == d)
-      {
-        row = table.rows[i];
-        col = row.cells[1];
-
-        output += cursor.value.servico;
-        output += cursor.value.animal;
-        output += cursor.value.cliente;
-
-        $(col).html(output);
-
-        i += 1;
-      }
-      cursor.continue();
-    }
-
-    index.openCursor().onerror = function(event){
-        console.log("Error:", e.target.error.name);
-    };
-  }
+  var data = $('#data').text();
+  $.post('http://localhost:3000/listHorarios', {data}, response => {
+    if(!response)
+      alert('Dados não encontrados');
+  });
 }
