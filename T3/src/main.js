@@ -186,7 +186,7 @@ app.post('/loginUser', (request, response) => {
     });
 });
 
-app.post('/allProducts', (request, response) => {
+/*app.post('/allProducts', (request, response) => {
   productsModel.findAll((err, results) => {
     var results = [];
       if(err)
@@ -209,7 +209,7 @@ app.post('/allProducts', (request, response) => {
             send(JSON.stringify(results));
         });
     });
-});
+});*/
 
 
 
