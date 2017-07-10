@@ -45,8 +45,10 @@ const usersModel = couchDBModel(users);
 
 app.post('/loginUser', (request, response) => {
     usersModel.findAll((err, results) => {
-        if(err)
+        if(err) {
             console.log('[User.find]', error);
+            response.send(false);
+        }
         else
             Promise.all(results.filter(element => {
                 // Verifica se cada dado do DB é igual ao requisistado.
@@ -56,8 +58,26 @@ app.post('/loginUser', (request, response) => {
                     response.send(true);
                 else
                     response.send(false);
-            });
+            }).catch(console.log);;
     });
+});
+
+app.post('/showCustomers', (request, response) => {
+    usersModel.findAll((err, results) => {
+        if(err) {
+            console.log('[User.find]', error);
+            response.send(false);
+        }
+        else
+            Promise.all(results.map(element => {
+                return {
+                    name: element.name,
+                    email: element.email
+                }
+            })).then(data => {
+                response.send(data);    
+            }).catch(console.log);
+    })
 });
 
 app.listen(3000, (err) => {
