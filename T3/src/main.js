@@ -69,18 +69,24 @@ app.post('/removerHorario', (request, response) => {
 
 app.post('/listHorarios', (request, response) => {
   horarioModel.findAll((err, results) => {
-         if(err)
-             console.log('[Horario.find]', error);
-         else
-             Promise.all(results.filter(element => {
-                 return element.data === request.body.data;
-             })).then(data => {
-                 if(data.length > 0)
-                     response.send(true);
-                 else
-                     response.send(false);
-             });
-     });
+          if(err) {
+              console.log('[Horario.find]', error);
+              response.send(false);
+          }
+          else
+              Promise.all(results.map(element => {
+                  if (element.data === request.body.data) {
+                    return {
+                      animal: element.animal,
+                      cliente: element.cliente,
+                      data: element.data,
+                      servico: element.servico
+                    }
+                  }
+              })).then(data => {
+                  response.send(data);
+              }).catch(console.log);
+      });
 });
 
 app.listen(3000, (err) => {

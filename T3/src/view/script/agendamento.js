@@ -48,5 +48,8 @@ function listarHorarios(event) {
   $.post('http://localhost:3000/listHorarios', {data}, response => {
     if(!response)
       alert('Dados não encontrados');
+    else {
+      console.log(response);
+    }
   });
 }
