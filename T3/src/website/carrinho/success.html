@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Pet Shop</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+  </head>
+  <body onload="displayShoppingCart()">
+    <script>$(document).ready(function() { $(".qtdcart").text(localStorage.total + " itens"); });</script>
+
+    <script src="../js/script.js"></script>
+
+    <a class="navbar-logo" href="../index.html"><img border="0" alt="PetJava" src="../img/petjavawhite.png" width="250%"></a>
+
+    <nav class="navbar-inverse nav-upper">
+        <ul class="nav navbar-upper">
+          <form class="navbar-form" id="searchbar" style="margin-right: 200px;">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Procurar produtos e serviços">
+            </div>
+            <button type="submit" class="btn btn-default">Buscar</button>
+          </form>
+          <li><a href="../login_cadastro/login.html"> <i class="material-icons md-48" style='vertical-align: middle'>account_circle</i>   Login</a></li>
+          <li><a href="./checkout.html"><i class="material-icons md-48" style='vertical-align: middle'>shopping_cart </i> <span class="qtdcart"> 0 itens </span></a></li>
+        </ul>
+    </nav>
+
+    <nav class="navbar navbar-inverse navbar-static-top navbar-lower">
+      <div class="container-fluid">
+
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"> <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-lower">
+            <div class="container-fluid menu">
+            <div class="row">
+              <div class="col-xs-3">
+              </div>
+              <div class="col-xs-3">
+                <li style="margin-top: 0px; font-size: 18px;"><a href="./vendas/vendaProdutos.html">Produtos</a></li>
+              </div>
+              <div class="col-xs-3">
+                <li style="margin-top: 0px; font-size: 18px;"><a href="./vendas/vendaServicos.html">Serviços</a></li>
+              </div>
+              <div class="col-xs-3">
+                <li style="margin-top: 0px; font-size: 18px;"><a href="../about.html"> Sobre nós </a></li>
+              </div>
+            </div>
+          </div>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid" style="margin-left:20px;">
+      <center><h2> Seu pagamento foi aprovado!</h2></center>
+      <center><h4> Entre 3-5 dias seu pet terá o melhor ou melhores produtos entregues no conforto da sua casa </h4></center>
+      <center><h5> Retorne a <a href="../index.html">página principal</a> e confira mais ofertas imperdíveis </h5>
+      <iframe src="https://giphy.com/embed/JIX9t2j0ZTN9S" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/JIX9t2j0ZTN9S">via GIPHY</a></p>
+    <footer class="footer" style="margin-left:-20px;">
+        <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-4">
+            <section id="about">
+              <h3>SOBRE</h3>
+              <p>PetJava é o petshop perfeito para o seu pet! Temos os melhores produtos das melhores marcas disponíveis no mercado,
+              além de oferecermos o melhor tratamento para seu amigo!</p>
+            </section>
+          </div>
+          <div class="col-xs-4">
+            <section id="contact">
+              <h3>CONTATO</h3>
+              <ul style="list-style-type: none;">
+                  <li><a><i class="material-icons" style='vertical-align: middle'>email</i>         petjava@gmail.com</a></li>
+                  <li><a><i class="material-icons" style='vertical-align: middle'>location_on</i>       Av. Trabalhador São Carlense, 1400, Pq. Arnold Schimidt - São Carlos/SP</a></li>
+                  <li><a><i class="material-icons" style='vertical-align: middle'>watch_later</i>        Segunda a sexta feira, 10h - 18h</a></li>
+                  <li><a><i class="material-icons" style='vertical-align: middle'>call</i>        (16)3370-7070</a></li>
+              </ul>
+          </section>
+        </div>
+        <div class="col-xs-4">
+          <section id="social">
+            <h3>NOS ACOMPANHE NAS REDES SOCIAIS!</h3>
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-google"></a>
+          </section>
+        </div>
+      </div>
+      <div class="row justify-content-md-center">
+        <div id="copyright"> &copy; Copyright Pet Shop 2017</div>
+      </div>
+    </footer>
+  </body>
+</html>
