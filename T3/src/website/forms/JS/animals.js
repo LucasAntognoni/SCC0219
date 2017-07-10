@@ -31,6 +31,7 @@ $(document).ready(() => {
 
 function addPet(){
     const petname= $('#petname').val();
+    const dono= $('#emaildono').val();
     const raca= $('#raca').val();
     const idade= $('#idade').val();
     const category = 'Animal';
