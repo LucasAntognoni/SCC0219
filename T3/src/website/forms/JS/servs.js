@@ -33,8 +33,9 @@ function addServ(){
     const servname= $('input[name=servname]').val();
     const description= $('input[name=description]').val();
     const price= $('input[name=price]').val();
+    const category = 'Service';
 
-    $.post('http://localhost:3000/addService', {servname, description, price});
+    $.post('http://localhost:3000/addService', {servname, description, price, category});
 }
 
 function showServs(e){

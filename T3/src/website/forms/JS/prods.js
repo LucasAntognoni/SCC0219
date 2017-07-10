@@ -39,43 +39,36 @@ function addProd(){
       const estoque=$('input[name=estoque]').val();
       const qtdeVendida=$('input[name=vendas]').val();
       const image=$('input[name=image]').val();
+      const category = 'Product';
 
-      $.post('http://localhost:3000/addProduct', {prodname, description, preco, estoque, qtdeVendida, image});
+      $.post('http://localhost:3000/addProduct', {prodname, description, preco, estoque, qtdeVendida, image, category});
 
 }
 
-function showProds(e){
-    var transaction = db.transaction(["Produtos"], 'readonly');
-    var os = transaction.objectStore("Produtos");
-    var index = os.index('prodname');
-
-    var output="";
-
-    index.openCursor().onsuccess =function(e){
-        let cursor = e.target.result;
-
-        if(cursor){
-            output += "<tr id='prod_"+cursor.value.ID+"'>";
-            output += "<td>"+cursor.value.ID+"</td>";
-            output += "<td><span class='cursor prod' contenteditable='true' data-field='prodname' data-id="+cursor.value.ID+">"+cursor.value.prodname+"</span></td>";
-            output += "<td><span class='cursor prod' contenteditable='true' data-field='description' data-id="+cursor.value.ID+">"+cursor.value.description+"</span></td>";
-            output += "<td><span class='cursor prod' contenteditable='true' data-field='preco' data-id="+cursor.value.ID+">"+cursor.value.preco+"</span></td>";
-            output += "<td><span class='cursor prod' contenteditable='true' data-field='estoque' data-id="+cursor.value.ID+">"+cursor.value.estoque+"</span></td>";
-            output += "<td><span class='cursor prod' contenteditable='true' data-field='qtdeVendida' data-id="+cursor.value.ID+">"+cursor.value.qtdeVendida+"</span></td>";
-            output += "<td><span class='cursor prod' contenteditable='true' data-field='image' data-id="+cursor.value.ID+">"+cursor.value.image+"</td>";
-            output += "<td><a onclick=\"removeProd("+cursor.value.ID+")\" href=\'\'><i class=\"material-icons\" style=\"color: crimson;\">delete</i></a></td>";
-
-            output += "</tr>";
-            cursor.continue();
-
+function showProds(){
+  $(document).ready(function(){
+    $.ajax({
+      url: "/allProducts",
+      type: "POST",
+      dataType:"json",
+      success: function (response){
+        var trHTML = '';
+        $.each(response, function (key,value) {
+          trHTML +=
+              '<tr><td>' + value.id +
+              '</td><td>' + value.prodname +
+              '</td><td>' + value.description +
+              '</td><td>' + value.preco +
+              '</td><td>' + value.estoque +
+              '</td><td>' + value.qtdeVendida +
+              '</td><td>' + value.image +
+              '</td></tr>';
+            });
+          $('#viewProds').append(trHTML);
         }
-
-        $('#Lprods').html(output);
-    }
+      });
+    });
 }
-
-
-
 
 function clearAllProds(){
     if(confirm("Você tem certeza?")==true){

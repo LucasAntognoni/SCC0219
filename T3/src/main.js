@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 
 const nano = require('nano')('http://localhost:5984');
+const couchDBModel = require('couchdb-model');
 const app = express();
 
 app.use(express.static(__dirname +'/website/public'));
@@ -13,6 +14,10 @@ app.use(bodyParser.json());
 
 nano.db.create('petjava');
 const db = nano.db.use('petjava');
+
+nano.db.create('products');
+const products = nano.db.use('products');
+const productsModel = couchDBModel(products);
 
 app.use((err, request, response, next) => {
     if(err) {
@@ -103,19 +108,59 @@ app.post('/addService', (request, response) => {
     });
 });
 
-app.post('/removeAllServices', (request, response) => {
-  console.log('Chegou aqui\n');
-  ap_fun = function(doc){
-    if (doc.doc_type == 'Product'){
-      emit(doc._id, doc)
-    }
-  }
-  deldoclist = []
-  for row in db.query(map_fun):deldoclist.append(row.key)
-  for item in deldoclist:del db[item]
-  console.log('Deleted services:\n');
+app.post('/addAnimal', (request, response) => {
+    db.insert(request.body, (err, body, header) => {
+        if(err)
+            console.log('[Animal.insert]', err.message);
+        else
+            console.log('New animal:\n', body);
+            response.sendFile(path.join(__dirname+'/forms/sucessAnimal.html'));
+          });
+});
 
-}
+app.post('/loginUser', (request, response) => {
+    usersModel.findAll((err, results) => {
+        if(err)
+            console.log('[User.find]', error);
+        else
+            Promise.all(results.filter(element => {
+                // Verifica se cada dado do DB é igual ao requisistado.
+                return element.email === request.body.email && element.psw === request.body.psw;
+            })).then(data => {
+                if(data.length > 0)
+                    response.send(true);
+                else
+                    response.send(false);
+            });
+    });
+});
+
+app.post('/allProducts', (request, response) => {
+  productsModel.findAll((err, results) => {
+    var results = [];
+      if(err)
+          console.log('[User.find]', error);
+      else
+        provides('JSON', function() {
+          Promise.all(results.filter(element => {
+            if(element.category == 'Product')
+              results.push({
+                      id: row.value.id,
+                      prodname: row.value.address,
+                      description: row.value.description,
+                      preco: row.value.preco,
+                      estoque:row.value.estoque,
+                      qtdeVendida: row.value.qtdeVendida,
+                      image: row.value.image,
+                });
+            }));
+            // make sure to stringify the results :)
+            send(JSON.stringify(results));
+        });
+    });
+});
+
+
 
 app.listen(3000, (err) => {
     if(err)

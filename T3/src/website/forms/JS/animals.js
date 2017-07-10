@@ -13,7 +13,7 @@ $(document).ready(() => {
 
     request.onerror=function(){
         console.log("Messed up on creating database!");
-    
+
     };
 
     request.onupgradeneeded=function(e){
@@ -24,38 +24,18 @@ $(document).ready(() => {
             os.createIndex('raca', 'raca',{unique:false});
             os.createIndex('idade','idade',{unique:false});
             os.createIndex('image','image',{unique:false});
-       }   
+       }
     };
 });
 
 
 function addPet(){
-    var petname= $('#petname').val();
-    var raca= $('#raca').val();
-    var idade= $('#idade').val();
-    var image= $('#image').val();
-    
-    var Pet={
-        petname:petname,
-        raca:raca,
-        idade:idade,
-        image:image
-    }
-    
-    var transaction=db.transaction(["Animals"],"readwrite");
-    var os=transaction.objectStore("Animals");
-    var request=os.add(Pet);
+    const petname= $('#petname').val();
+    const raca= $('#raca').val();
+    const idade= $('#idade').val();
+    const category = 'Animal';
 
-    console.log(request);
-    request.onsuccess=function(e){
-        alert("Pet added, congrats!");
-       window.location.href="showAnimals.html";
-    };
-    
-    request.onerror=function(e){
-        alert("I'm sorry Dave, I'm afraid I cannot do that", e.target.error.name);
-       window.location.href="showAnimals.html";
-    };
+    $.get('http://localhost:3000/addAnimal', {petname, raca, idade, category});
 
 }
 
@@ -65,11 +45,10 @@ function showPets(e){
     var index = os.index('petname');
 
     var output="";
-    
-  
+
     index.openCursor().onsuccess =function(e){
         let cursor = e.target.result;
-        
+
         if(cursor){
             output += "<tr id='pet_"+cursor.value.ID+"'>";
             output += "<td>"+cursor.value.ID+"</td>";
@@ -78,15 +57,15 @@ function showPets(e){
             output += "<td><span class='cursor pet' contenteditable='true' data-field='idade' data-id="+cursor.value.ID+">"+cursor.value.idade+"</span></td>";
             output += "<td ><span class='cursor pet' contenteditable='true' data-field='image' data-id="+cursor.value.ID+">"+cursor.value.image+"</span></td>";
 
-            output += "<td><a onclick=\"removePet("+cursor.value.ID+")\" href=\'\'><i class=\"material-icons\" style=\"color: crimson;\">delete</i></a></td>"; 
-            
+            output += "<td><a onclick=\"removePet("+cursor.value.ID+")\" href=\'\'><i class=\"material-icons\" style=\"color: crimson;\">delete</i></a></td>";
+
             output += "</tr>";
             cursor.continue();
-             
+
         }
             $('#Lpets').html(output);
     };
-    
+
     index.openCursor().onerror=function(e){
         alert("I'm sorry Dave, I'm afraid I cannot do that", e.target.error.name);
     };
@@ -97,21 +76,21 @@ function clearAllPets(){
         indexedDB.deleteDatabase('Pets');
         alert("Pets excluídos :/")
         window.location.href="showAnimals.html";
-    }   
+    }
 }
 
 function removePet(ID){
     var transaction = db.transaction(["Animals"], 'readwrite');
     var os = transaction.objectStore("Animals");
-    
-    var request = os.delete(ID); 
+
+    var request = os.delete(ID);
 
     request.onsuccess=function(){
         console.log('Pet deleted =/');
         $('#pet_'+ID).remove();
-        
+
     }
-    
+
     request.onerror=function(e){
         alert("I'm sorry Dave, I'm afraid I cannot do that", e.target.error.name);
     };
@@ -125,10 +104,10 @@ $('#Lpets').on('blur','.pet', function(){
     var newText=$(this).html();
     var field=$(this).data('field');
     var id=$(this).data('id');
-    
+
     var transaction = db.transaction(["Animals"], 'readwrite');
     var os = transaction.objectStore("Animals");
-    
+
     var request = os.get(id);
 
     request.onsuccess=function(){
@@ -143,9 +122,9 @@ $('#Lpets').on('blur','.pet', function(){
        else if(field=='idade'){
             data.idade=newText;
        }
-    
+
         var requestUpdate = os.put(data);
-        
+
         requestUpdate.onsuccess=function(){
             console.log('Value Updated');
         }
@@ -153,9 +132,8 @@ $('#Lpets').on('blur','.pet', function(){
             alert("I'm sorry Dave, I'm afraid I cannot do that", e.target.error.name);
         }
     }
-    
+
     request.onerror=function(e){
         alert("I'm sorry Dave, I'm afraid I cannot do that", e.target.error.name);
     };
 });
-

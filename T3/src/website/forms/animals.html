@@ -13,7 +13,6 @@
 		<link rel="stylesheet" href="../css/formscss.css">
 		<link rel="stylesheet" type="text/css" href="../css/style.css" />
 
-
   </head>
   <body>
     <script src="../js/script.js"></script>
@@ -57,7 +56,7 @@
                 <li style="margin-top: 0px; font-size: 18px;"><a href="./vendas/vendaServicos.html">Serviços</a></li>
               </div>
               <div class="col-xs-3">
-                <li style="margin-top: 0px; font-size: 18px;"><a href="about"> Sobre nós </a></li>
+                <li style="margin-top: 0px; font-size: 18px;"><a href="../about.html"> Sobre nós </a></li>
               </div>
             </div>
           </div>
@@ -79,22 +78,16 @@
             </ul>
         </nav>
     <div class="form-grupo" >
-        <form id="pet-form"  method="post" onsubmit="addPet()">
-			Nome do PET:
-			<input type="text" id="petname" placeholder="Informe o nome do PET"
-                        name="pet-name"><br></br>
+      <form id="pet-form" onsubmit="addPet()">
 
+      Nome do PET:<br>
+			<input type="text" id="petname" placeholder="Informe o nome do PET" name="pet-name"><br><br>
 
-			Raça:
-			<input type="text" placeholder="Informe a raça do pet"
-                        id="raca" name="Raca" size=70><br</br>
+			Raça:<br>
+			<input type="text" placeholder="Informe a raça do pet" id="raca" name="Raca" size=70><br><br>
 
-			Idade:
-			<input type="number" id="idade" placeholder="Idade" name="Idade" max=99 min=0
-			default=0.0><br></br>
-
-			Imagem:
-			<input type="file" id="image" accept="image/*"><br></br>
+			Idade:<br>
+			<input type="number" id="idade" placeholder="Idade" name="Idade" max=99 min=0 default=0.0><br><br>
 
 			<div class="clearfix">
                             <input  type="submit" value="Registrar">
@@ -104,36 +97,41 @@
 	</div>
 </div>
 
-    <footer>
-        <section id="about">
+<footer class="footer">
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-4">
+      <section id="about">
         <h3>SOBRE</h3>
-          <p>PetJava é o petshop perfeito para o seu pet! Temos os melhores produtos das melhores marcas disponíveis no mercado,
-            além de oferecermos o melhor tratamento para seu amigo!</p>
-        </section>
-
-        <section id="contact">
+        <p>PetJava é o petshop perfeito para o seu pet! Temos os melhores produtos das melhores marcas disponíveis no mercado,
+        além de oferecermos o melhor tratamento para seu amigo!</p>
+      </section>
+    </div>
+    <div class="col-xs-4">
+      <section id="contact">
         <h3>CONTATO</h3>
-            <ul style="list-style-type: none;">
-                <li><a><i class="material-icons" style='vertical-align: middle'>email</i>         petjava@gmail.com</a></li>
-                <li><a><i class="material-icons" style='vertical-align: middle'>location_on</i>       Av. Trabalhador São Carlense, 1400, Pq. Arnold Schimidt - São Carlos/SP</a></li>
-                <li><a><i class="material-icons" style='vertical-align: middle'>watch_later</i>        Segunda a sexta feira, 10h - 18h</a></li>
-                <li><a><i class="material-icons" style='vertical-align: middle'>call</i>        (16)3370-7070</a></li>
-            </ul>
-        </section>
-
-          <section id="social">
-            <h3>NOS ACOMPANHE NAS REDES SOCIAIS!</h3>
-            <a href="#" class="fa fa-facebook"></a>
-            <a href="#" class="fa fa-twitter"></a>
-            <a href="#" class="fa fa-instagram"></a>
-            <a href="#" class="fa fa-google"></a>
-          </section>
-
-
-
-        <div id="copyright" style="margin-left:auto; margin-right:auto;"> &copy; Copyright Pet Shop 2017</div>
-
-    </footer>
+        <ul style="list-style-type: none;">
+            <li><a><i class="material-icons" style='vertical-align: middle'>email</i>         petjava@gmail.com</a></li>
+            <li><a><i class="material-icons" style='vertical-align: middle'>location_on</i>       Av. Trabalhador São Carlense, 1400, Pq. Arnold Schimidt - São Carlos/SP</a></li>
+            <li><a><i class="material-icons" style='vertical-align: middle'>watch_later</i>        Segunda a sexta feira, 10h - 18h</a></li>
+            <li><a><i class="material-icons" style='vertical-align: middle'>call</i>        (16)3370-7070</a></li>
+        </ul>
+    </section>
+  </div>
+  <div class="col-xs-4">
+    <section id="social">
+      <h3>NOS ACOMPANHE NAS REDES SOCIAIS!</h3>
+      <a href="#" class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-twitter"></a>
+      <a href="#" class="fa fa-instagram"></a>
+      <a href="#" class="fa fa-google"></a>
+    </section>
+  </div>
+</div>
+<div class="row justify-content-md-center">
+  <center id="copyright"> &copy; Copyright Pet Shop 2017</center>
+</div>
+</footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <script src="./JS/animals.js"></script>
