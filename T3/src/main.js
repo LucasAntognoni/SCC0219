@@ -108,6 +108,57 @@ app.post('/addService', (request, response) => {
     });
 });
 
+nano.db.create('horarios');
+const horarios = nano.db.use('horarios');
+const horarioModel = couchDBModel(horarios);
+
+
+app.post('/addHorario', (request, response) => {
+
+  horarios.insert(request.body, (err, body, header) => {
+    if (err)
+      console.log('[Horario.insert]', err.message);
+    else
+      console.log('Novo Horário:\n', body);
+  });
+});
+
+app.post('/removerHorario', (request, response) => {
+
+  horarioModel.findAll((err, results) => {
+      if(err)
+          console.log('[Horario.find]', error);
+      else
+          Promise.all(results.filter(element => {
+              return element.animal === request.body.animal && element.data === request.body.data;
+          })).then(dado => {
+              if(dado.length > 0)
+                document.delete(function(error) {
+                  if (error) console.error('failed to delete document');
+                  else console.log('document deleted.');
+                });
+              else
+                  response.send(false);
+          });
+  });
+});
+
+app.post('/listHorarios', (request, response) => {
+  horarioModel.findAll((err, results) => {
+         if(err)
+             console.log('[Horario.find]', error);
+         else
+             Promise.all(results.filter(element => {
+                 return element.data === request.body.data;
+             })).then(data => {
+                 if(data.length > 0)
+                     response.send(true);
+                 else
+                     response.send(false);
+             });
+     });
+});
+
 app.post('/addAnimal', (request, response) => {
     db.insert(request.body, (err, body, header) => {
         if(err)
