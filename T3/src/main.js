@@ -32,8 +32,10 @@ const users = nano.db.use('users');
 
 app.post('/addUser', (request, response) => {
     users.insert(request.body, (err, body, header) => {
-        if(err)
+        if(err) {
             console.log('[User.insert]', err.message);
+            response.send(false);
+        }
         else
             response.send(true);
     });

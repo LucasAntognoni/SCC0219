@@ -8,11 +8,14 @@ const signUp = () => {
     const psw = $('input[name=psw]').val();
     const psw_repeat = $('input[name=psw-repeat]').val();
 
-    if(psw === psw_repeat) {
-        alert('Usuário cadastrado');
-        window.location.href = 'http://localhost:3000/index.html';
-        $.post('http://localhost:3000/addUser', {name, phone, address, email, psw});
-    }
+    if(psw === psw_repeat)
+        $.post('http://localhost:3000/addUser', {name, phone, address, email, psw}, response => {
+            if(response)
+                alert('Usuário cadastrado');
+
+            else
+                alert('Erro no servidor');            
+        });
 
     else
         alert('Senhas diferentes!');    

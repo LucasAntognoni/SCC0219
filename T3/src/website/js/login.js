@@ -1,8 +1,11 @@
 function loginCustomer(e) {
-    const email = $('input[name=uname]').val();
+    const email = $('input[name=email]').val();
     const psw = $('input[name=psw]').val();
     
-    $.post('http://localhost:3000/loginUser', {email, psw}, success => {
-        console.log(success);
+    $.post('http://localhost:3000/loginUser', {email, psw}, response => {
+        if(response)
+            alert('Login efetuado com sucesso');
+        else
+            alert('Dados não encontrados');
     });
 }
